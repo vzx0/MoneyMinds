@@ -1,2 +1,0 @@
-# MoneyMinds
-Projeto Semestral - SENAI
