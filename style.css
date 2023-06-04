@@ -239,4 +239,15 @@ nav>a:hover {
     font-size: 1.4rem;
     padding: 12px 16px;
     font-weight: 600;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-around; */
+    justify-content: space-between;
+    width: max-content;
+}
+
+.botao-section-principal:hover {
+    box-shadow: 0 10px 20px -15px var(--primary-color);
+    background-color: white;
+    color: var(--primary-color);
 }
