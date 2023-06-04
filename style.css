@@ -55,3 +55,80 @@ h6 {
 h1 {
     font-size: 5rem;
 }
+
+h2 {
+    font-size: 3.4rem;
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: 2.4rem;
+}
+
+b {
+    color: var(--text);
+}
+
+p {
+    font-family: var(--font-secundary);
+    font-size: 1.4rem;
+    color: var(--text);
+}
+
+s {
+    text-decoration: line-through !important;
+}
+
+a {
+    transition-duration: 0.3s;
+}
+
+button {
+    background-color: transparent;
+    color: transparent;
+    border: none;
+    text-decoration: none;
+    width: 100%;
+}
+
+.texto-destaque {
+    color: var(--primary-color) !important;
+}
+
+.paragraph {
+    color: var(--text-paragraph);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.p-margin-top {
+    margin-top: 32px;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.accent {
+    margin-bottom: 8px;
+}
+
+/* Barra de Anuncio */
+
+.section-barra-anuncio{
+    background-color: var(--primary-color);
+    height: 40px;
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-barra-anuncio{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
