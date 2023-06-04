@@ -132,3 +132,8 @@ button {
     justify-content: center;
     align-items: center;
 }
+
+.content-barra-anuncio>span{
+    color: white;
+    text-align: center;
+}
