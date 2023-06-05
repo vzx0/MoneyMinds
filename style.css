@@ -340,3 +340,29 @@ small {
 }
 
 
+/* CARTÕES */
+
+.card {
+    background-color: var(--bg-secondary);
+    border-radius: 16px;
+    padding: 32px 32px 40px 32px;
+    transition-duration: 0.3s;
+}
+
+.card-width {
+    width: 50%;
+}
+
+.card-width-infos {
+    width: 100%;
+    top: 0px;
+    padding: 32px 64px;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    z-index: 999;
+}
+
+.card-gap {
+    gap: 24px;
+}
