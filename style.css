@@ -80,7 +80,7 @@ h3 {
 }
 
 b {
-    color: var(--text);
+    color: var(--primary-color);
 }
 
 p {
@@ -434,6 +434,8 @@ a {
   
   span {
     font-size: 14px;
+    text-align: center;
+    top: 200px;
   }
   
   p {
@@ -494,7 +496,7 @@ a {
   .preco__card {
     padding: 2rem 1.5rem;
   
-    box-shadow: 1px 0 94px #8714faa7;
+    box-shadow: 1px 0 74px #8714faa7;
   
     border-radius: 1rem;
   
@@ -512,6 +514,11 @@ a {
   .preco__details h3 {
     font-size: 32px;
     line-height: 1.7;
+    text-align: center;
+    background: linear-gradient(91.43deg, rgba(169, 96, 252, 0.966) -1.07%, rgba(1, 187, 72, 0.993) 99.54%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
   
   .preco__details ul {
@@ -537,11 +544,11 @@ a {
   }
   
   .preco__card .preco {
-    font-size: 32px;
-  
-    font-weight: 600;
-  
-    letter-spacing: -2px;
+    font-size: 35px;
+    text-align: center;
+    font-weight: 670;
+    color: #FFF;
+    letter-spacing: -1px;
   }
   
   .preco__card .preco:before {
@@ -550,36 +557,24 @@ a {
   
   .btn {
     display: inline-flex;
-  
+    font-weight: 600;
     align-items: center;
-  
     justify-content: center;
-  
     padding: 1rem 1rem;
-  
     border-radius: 2rem;
-  
     transition: 0.3s ease-in-out;
   }
 
   .btn2 {
     display: inline-flex;
-  
     align-items: center;
-  
+    font-weight: 600;
     justify-content: center;
-  
     padding: 1rem 1rem;
-  
     border-radius: 2rem;
-  
     transition: 0.3s ease-in-out;
   }
   
-  .fa-solid .fa-credit-card{
-    color: aqua;
-    background-color: #272727;
-  }
   
   .fa-solid, .fas {
     font-weight: 900;
@@ -603,7 +598,7 @@ a {
     margin: 0 30px;
     justify-content: center;
     padding: 10px 10px;
-    border: solid 2px #7700EE;
+    border: solid 2px var(--primary-color);
     transition: 0.3s ease-in-out;
   }
 
@@ -614,7 +609,7 @@ a {
     margin: 0 30px;
     justify-content: center;
     padding: 10px 10px;
-    border: solid 2px #7700EE;
+    border: solid 2px var(--primary-color);
     transition: 0.3s ease-in-out;
   }
 
@@ -630,12 +625,6 @@ a {
     transition: 0.3s ease-in-out;
   }
   
-  .bg__primary {
-    background: var(--primary-color);
-  
-    color: fff;
-  }
-  
   .btn:hover {
     display: inline-flex;
     /* color: #ffffff; */
@@ -643,16 +632,20 @@ a {
     justify-content: center;
     /* border: solid 2px #7700EE; */
     transition: 0.3s ease-in-out;
+    color: var(--primary-color);
+    background-color: #fff;
 
   }
 
   .btn2:hover {
     display: inline-flex;
-    color: #ffffff;
-    scale: 1.2;
+    color: var(--primary-color);
+    scale: 1.1;
     align-items: center;
+    background-color: #ffffff;
     justify-content: center;
-    transition: 0.3s ease-in-out;
+    border: solid 0px #7700EE;
+    transition: 0.5s ease-in-out;
 
   }
 
@@ -661,8 +654,27 @@ a {
   }
 
 
-  a.btn:hover .fa-solid, a.btn, .fa-rocket  {
-    color: fff;
-    background-color: var(--primary-color);
+
+  a.btn:hover .fa-solid, a.btn2, .fa-rocket, .fa-credit-card  {
+    color: var(--primary-color);
+    /* background-color: var(--primary-color); */
     transition: 0.3s ease-in-out;
   }
+
+  
+
+  i.fa-credit-card{
+  color: var(--primary-color);
+}
+
+  i.fa-credit-card:hover{
+  color: var(--primary-color);
+}
+
+.btn2.bg__accent-3{
+  color: white;
+}
+
+.btn2.bg__accent-3:hover{
+  color: var(--primary-color);
+}
