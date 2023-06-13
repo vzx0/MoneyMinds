@@ -69,6 +69,7 @@ body {
 
 #texto-principal{
   text-align: center;
+  margin: 30px;
 }
 
 h1,
@@ -132,6 +133,7 @@ button {
     font-size: 25px;
     color: #fff;
     margin-bottom: 15px;
+    font-weight: 285;
 }
 
 .paragraph {
@@ -491,7 +493,7 @@ a {
   
 
   #coricon{
-    color: #7700EE;
+    color: var(--otimizate-color);
   }
 
   #coricon3{
@@ -1175,6 +1177,15 @@ footer {
       border-radius: 8px;
       width: 100%;
   }
+
+  .section-principal {
+    display: flex;
+    flex-direction: row;
+    padding-top: 35px;
+    justify-content: space-between;
+    align-items: center;
+    height: 70rem;
+}
   
 }
 
@@ -1339,8 +1350,8 @@ footer {
   /* TÍTULOS SEM BR */
 
   #title-pc {
-      display: none;
-      text-align: center;
+      /* display: none; */
+      /* text-align: center; */
   }
 
   #title-mob-bar {
@@ -1505,4 +1516,3 @@ h1 {
         width: 100%;
     }
 }
-
