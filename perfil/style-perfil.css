@@ -1,0 +1,48 @@
+@import '../style.css';
+
+/* menu burger */
+#menuBurger {
+    display: flex;
+    flex-direction: column;
+
+    z-index: 1;
+
+    width: 100px;
+    height: 100vh;
+    background-color: var(--corUm);
+}
+
+#barra-divisao {
+    display: flex;
+
+    width: 100px;
+    height: 5px;
+
+    background-color: #fff;
+}
+
+/* opcoes menuBurger */
+.opcao-menuBurger {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100px;
+    height: 75px;
+
+    transition: 600ms ease-out;
+
+    cursor: pointer;
+}
+
+.opcao-menuBurger:hover {
+    background-color: #185a9b; /* <--------- mudar isso ------------ */
+}
+
+#sair-menu {
+    display: flex;
+    position: fixed;
+
+    bottom: 20px;
+}
