@@ -1,0 +1,1 @@
+const menuBurguer = document.getElementById("menuBurguer")
