@@ -13,7 +13,7 @@
     height: 100vh;
     background-color: var(--primary-color);
 
-    transition: 0.5s ease;
+    transition: 100ms ease;
 }
 
 #barra-divisao {
@@ -24,7 +24,7 @@
 
     background-color: #fff;
 
-        transition: 0.5s ease;
+    transition: 100ms ease;
 }
 
 /* opcoes menuBurger */
@@ -32,16 +32,24 @@
     display: flex;
 
     align-items: center;
-    justify-content: center;
 
     position: inherit;
 
     width: 100px;
     height: 75px;
 
-    transition: 600ms ease-out;
+    transition: 100ms ease;
 
     cursor: pointer;
+}
+
+.opcao-icone {
+    display: flex;
+    width: 100px;
+    height: 75px;
+
+    align-items: center;
+    justify-content: center;
 }
 
 .opcao-menuBurger:hover {
@@ -69,4 +77,10 @@
 
     margin-left: 125px;
     margin-right: 25px;
+}
+
+
+/* remover-------------------------------------------------------------------- */
+p {
+    color: #fff;
 }

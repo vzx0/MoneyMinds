@@ -6,6 +6,7 @@ function menuExtendido() {
     const nomeOpcoes = document.querySelectorAll(".opcao-nome");
 
     if (menuBurger.style.width === "400px") {
+        
         menuBurger.style.width = "100px";
         barraDivisao.style.width = "100px";
 
@@ -25,7 +26,7 @@ function menuExtendido() {
         });
 
         nomeOpcoes.forEach(nomeOpcao => {
-            nomeOpcao.style.display = "inline";
+            nomeOpcao.style.display = "flex";
         });
     }
 }
