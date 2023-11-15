@@ -137,6 +137,7 @@ button {
 
 }
 
+
 @keyframes animacao {
 	0% {
 		background-position: 0%;
@@ -610,7 +611,6 @@ p {
 
 #coricon {
   color: var(--cor-primaria);
-  margin-right: 15px;
 }
 
 #coricon3 {
@@ -724,12 +724,24 @@ hr {
 }
 
 .preco__card .preco {
-  font-size: 35px;
+  font-size: 55px;
   text-align: center;
   font-weight: 670;
   padding-bottom: 10px;
   color: #FFF;
   letter-spacing: -1px;
+}
+
+.descricao-preco{
+  font-weight: 300;
+  font-style: normal;
+  text-align: center;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.azul-negrito{
+  color: #268DF3;
 }
 
 /* .preco__card .preco:before {
