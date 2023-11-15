@@ -9,7 +9,7 @@
 
     width: 100px;
     height: 100vh;
-    background-color: var(--corUm);
+    background-color: var(--primary-color);
 }
 
 #barra-divisao {
