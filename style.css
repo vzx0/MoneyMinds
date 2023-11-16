@@ -10,7 +10,7 @@
   --background-principal: #222125;
   --accent: #6e7090;
   --background-secundario: #272735;
-  --bg-tertiary: #1a181f;
+  --bg-tertiary: #070719;
 
   --corUm: #268DF3;
   --corDois: #393e46;
@@ -135,6 +135,10 @@ button {
 	-webkit-background-clip: text;
 	animation: animacao 10s linear infinite;
 
+}
+
+.background-inicial{
+  top: 100px;
 }
 
 
@@ -287,7 +291,6 @@ button {
 /* Inicio Cabeçalho */
 
 header {
-  background-color: var(--background-secundario);
   width: 100%;
   z-index: 5000;
   /* margin-bottom: -80px; */
@@ -308,12 +311,16 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 64px;
+  padding: 0px 100px;
+}
+
+.logo{
+  margin-top: 20px;
 }
 
 .content-header>nav {
-  font-size: 1.4rem;
-  gap: 12px;
+  font-size: 1.5rem;
+  gap: 20px;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -394,10 +401,6 @@ nav>a:hover {
 
 /* SEÇÃO PRINCIPAL */
 
-.section-principal {
-  width: 100%;
-  height: 90vh;
-}
 
 .accent {
   margin-bottom: 8px;
@@ -413,16 +416,21 @@ small {
 .section-principal {
   /* display: flex; */
   flex-direction: row;
-  padding-top: 35px;
-  justify-content: space-between;
+  /* padding-top: 35px; */
+  background-image: url('Assets/background.webp'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  /* justify-content: space-between; */
   align-items: center;
-  /* height: 100%; */
+  width: 100%;
+  height: 85vh;
 }
 
 .content {
   /* max-width: 1440px; */
   margin: auto;
-  padding: 90px 100px;
+  padding: 90px 0px;
   width: 100%;
   text-align: center;
 }
