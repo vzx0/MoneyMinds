@@ -10,7 +10,7 @@
   --background-principal: #222125;
   --accent: #6e7090;
   --background-secundario: #272735;
-  --bg-tertiary: #070719;
+  --bg-tertiary: #0c0c13;
 
   --corUm: #268DF3;
   --corDois: #393e46;
@@ -122,13 +122,14 @@ button {
 
 #title-pc {
   text-align: center;
-  line-height: 55px;
-  font-weight: 285;
+  line-height: 70px;
+  font-weight: 600;
+  font-size: 7rem
 }
 
 .texto-destaque {
 	background: linear-gradient(90deg, #244ffa, #96dbf0, #20d1fd, #244ffa);
-	font-size: 5rem;
+	font-size: 7rem;
 	font-weight: 600;
   background-size: 400%;
 	-webkit-text-fill-color: transparent;
@@ -197,34 +198,6 @@ button {
     position: absolute;
 }
 
-.marquee {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  opacity: .5;
-  background-position: 50% 0;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  mix-blend-mode: overlay;
-  position: absolute;
-}
-.marquee span {
-  display: inline-block;
-  padding-left: 100%;
-  text-align: center;
-  white-space: nowrap;
-  min-width: 100%;
-  height: 100%;
-  line-height: 710px;
-  font-weight: 800;
-  border-color: #fff;
-  font-size: 400px;
-  animation: marquee 20s linear infinite;
-}
 .marquee2 span {
   animation-delay: 5s;
 }
@@ -305,6 +278,9 @@ header {
   padding: 0 24px;
 }
 
+
+/* Fim Slide Empresa */
+
 .header-align {
   display: flex;
   z-index: 99;
@@ -376,18 +352,40 @@ nav>a:hover {
   background-color: var(--cor-primaria);
   color: white;
   border: none;
-  border-radius: 100px;
-  font-size: 16px;
+  border-radius: 3rem;
+  font-size: 19px;
   box-shadow: 0 0 25px rgb(0, 140, 255);
-  padding: 12px 16px;
-  padding-top: 10px;
+  padding: 15px 40px;
   margin-top: 20px;
-  font-weight: 600;
+  align-items: center;
+  font-weight: 400;
+  margin-bottom: 30px;
   display: flex;
   align-items: center;
   /* justify-content: space-around; */
   justify-content: space-between;
   width: max-content;
+}
+
+.botao-secundario {
+  color: white;
+  border: 1px white solid;
+  border-radius: 3rem;
+  font-size: 19px;
+  padding: 15px 40px;
+  margin-top: 20px;
+  align-items: center;
+  font-weight: 400;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-around; */
+  justify-content: space-between;
+  width: max-content;
+}
+
+.botoes-iniciais{
+  gap: 200px;
 }
 
 .botao-section-principal:hover {
@@ -417,18 +415,16 @@ small {
   /* display: flex; */
   flex-direction: row;
   /* padding-top: 35px; */
-  background-image: url('Assets/background.webp'); 
-  background-size: cover; 
+  /* background-image: url('Assets/background.webp');  */
+  /* background-size: cover;  */
   background-position: center; 
-  background-repeat: no-repeat; 
-  /* justify-content: space-between; */
   align-items: center;
   width: 100%;
-  height: 85vh;
+  height: 95vh;
 }
 
 .content {
-  /* max-width: 1440px; */
+  max-width: 1440px;
   margin: auto;
   padding: 90px 0px;
   width: 100%;
@@ -686,6 +682,71 @@ p {
   font-size: 15px;
 }
 
+/* Slide Empresa */
+
+@-webkit-keyframes scroll {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(calc(-250px * 7));
+            transform: translateX(calc(-250px * 7));
+  }
+}
+
+@keyframes scroll {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(calc(-250px * 7));
+            transform: translateX(calc(-250px * 7));
+  }
+}
+.slide-empresa {
+  height: 100px;
+  padding-bottom: 0px;
+  width: 1100px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+}
+.slide-empresa::before, .slide-empresa::after {
+  background: -webkit-gradient(linear, left top, right top, from(white), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(to right, #0c0c13 0%, rgba(255, 255, 255, 0) 100%);
+  content: "";
+  height: 100px;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+.slide-empresa::after {
+  right: 0;
+  top: 0;
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
+}
+.slide-empresa::before {
+  left: 0;
+  top: 0;
+}
+.slide-empresa .empresa-logo-main {
+  -webkit-animation: scroll 40s linear infinite;
+          animation: scroll 40s linear infinite;
+  display: -webkit-box;
+  display: flex;
+  width: calc(250px * 14);
+}
+.slide-empresa .empresa-logo {
+  height: 100px;
+  width: 250px;
+}
+
+
 
 .preco__cards .preco__details .preco-riscado {
   text-align: center;
@@ -721,6 +782,12 @@ p {
   margin-right: 8px;
 
   font-weight: bold;
+}
+
+
+
+#inicio{
+  padding-bottom: 200px;
 }
 
 hr {
