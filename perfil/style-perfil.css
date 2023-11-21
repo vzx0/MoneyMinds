@@ -11,7 +11,7 @@
 
     width: 100px;
     height: 100vh;
-    background-color: var(--primary-color);
+    background-color: var(--cor-primaria);
 
     transition: 100ms ease;
 }
