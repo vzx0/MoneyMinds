@@ -13,12 +13,16 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" href="swiper-bundle.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/TextPlugin.min.js"></script>
 
 </head>
 
 <body>
 
+
   <!-- Barra de Anuncio -->
+
   <a href="#planos">
     <section class="section-barra-anuncio">
       <div class="barra-de-anuncio">
@@ -42,7 +46,7 @@
         <a href="#faq">Depoimentos</a>
         <a href="#faq">Contato</a>
       </nav>
-      <div class="botao-header">
+      <div class="botoes-header">
         <button id="botao1"><a href="login/login.html" class="botao-comprar">Comprar</a></button>
         <button id="botao1"><a href="login/login.html" class="botao-login">Minha Conta</a></button>
       </div>
@@ -53,13 +57,14 @@
   <!-- Inicio Main -->
 
 
-  
+
   <main>
     <section class="section-main" id="inicio">
       <div class="content section-principal">
         <div>
           <h1 id="title-pc">Texto muito chamativo <span class="texto-destaque"><br>nesse lugar!<br></span></h1>
-          <p id="descricao-pc">Aprenda com os melhores especialistas, com os melhores<br> cursos e conquiste seu lugar no mercado.</p>
+          <p id="descricao-pc">Aprenda com os melhores especialistas, com os melhores<br> cursos e conquiste seu lugar
+            no mercado.</p>
           <div class="botoes-iniciais">
             <button id="botao-principal"><a href="#cursos" class="botao-section-principal">Ver planos</a></button>
             <button id="botao-principal"><a href="#cursos" class="botao-secundario">Ver planos</a></button>
@@ -74,7 +79,7 @@
   <!-- Fim Main -->
 
   <!-- Inicio Infos -->
-  
+
   <!-- Inicio Slide Empresas -->
 
   <div class="slide-empresa">
@@ -126,11 +131,22 @@
   <!-- Fim Slide Empresas -->
 
 
-  
+
 
   <!-- /Depoimentos --><!-- Benefícios -->
 
   <!-- Fim Depoimentos -->
+
+  <div class="containerteste">
+  <div class="cartao">
+    <div class="card-inner">
+      <div class="front"></div>
+      <h2 class="titulo-cartao">Tecnologia</h2>
+      <p class="descricao-cartao">Descrição do curso de tecnologia aqui nesse campo, para dar uma introdução sobre o tema</p>
+      <div class="back"></div>
+    </div>
+  </div>
+</div>
 
   <!-- Inicio Planos -->
 
@@ -139,43 +155,54 @@
       <div class="titulo__plano">
         <h2>Escolha seu Curso</h2>
 
+        <div class="mensal-anual">
+          <span class="mensal active">Mensal</span>
+          <span class="anual">Anual</span>
+        </div>
+
       </div>
       <!-- <span class="preco-riscado">DE R$ 190,90</span> -->
       <div class="preco__cards">
         <div data-aos="slide-left" data-aos-duration="20" class="preco__card bg__accent-2">
           <div class="preco__details">
             <h3>TECNOLOGIA</h3>
-            <p class="descricao-preco">Teste de descrição para <span class="azul-negrito">colocar em baixo</span> do titulo principal</p>
+            <p class="descricao-preco">Teste de descrição para <span class="azul-negrito">colocar em baixo</span> do
+              titulo principal</p>
             <span class="preco-riscado">DE R$ 190,90</span>
-            <div class="preco"><span class="preco-pequeno">R$</span>99<span class="preco-pequeno">,90</span></div>
+            <div class="preco mensal"><span class="preco-pequeno">R$</span>99<span class="preco-pequeno">,90</span>
+              
+            
+            </div>
             <div class="parcela">12x de <b class="negrito-parcela">R$300</b></div>
             <div class="lista-beneficios">
-            <ul>
-              <li><i class="fa-solid fa-check" id="coricon"></i> Certificado de conclusão de curso</li>
-              <li><i class="fa-solid fa-check" id="coricon"></i> +5000 Horas de Duração</li>
-              <li><i class="fa-solid fa-check" id="coricon"></i> 98 Módulos: Básico ao Avançado</li>
-              <li><i class="fa-solid fa-check" id="coricon"></i> Suporte 24h</li>
-              <li><i class="fa-solid fa-check" id="coricon"></i> Grupo exclusivo de membros</li>
+              <ul>
+                <li><i class="fa-solid fa-check" id="coricon"></i> Certificado de conclusão de curso</li>
+                <li><i class="fa-solid fa-check" id="coricon"></i> +5000 Horas de Duração</li>
+                <li><i class="fa-solid fa-check" id="coricon"></i> 98 Módulos: Básico ao Avançado</li>
+                <li><i class="fa-solid fa-check" id="coricon"></i> Suporte 24h</li>
+                <li><i class="fa-solid fa-check" id="coricon"></i> Grupo exclusivo de membros</li>
             </div>
             </ul>
           </div>
           <!-- <a href="login/login.html" class="btn bg__accent"><i class="fa-solid fa-rocket"></i>TESTE GRÁTIS</a> -->
-          <a href="login/login.html" class="btn2 bg__accent-3"><!--<i class="fa-solid fa-credit-card"></i>-->COMPRAR AGORA</a>
+          <a href="login/login.html" class="btn2 bg__accent-3"><!--<i class="fa-solid fa-credit-card"></i>-->COMPRAR
+            AGORA</a>
         </div>
         <div data-aos="zoom-out" data-aos-duration="30" class="preco__card bg__accent-2">
           <div class="preco__details">
             <h3>MARKETING</h3>
-            <p class="descricao-preco">Teste de descrição para <span class="azul-negrito">colocar em baixo</span> do titulo principal</p>
+            <p class="descricao-preco">Teste de descrição para <span class="azul-negrito">colocar em baixo</span> do
+              titulo principal</p>
             <span class="preco-riscado">DE R$ 350,90</span>
             <div class="preco"><span class="preco-pequeno">R$</span>199<span class="preco-pequeno">,90</span></div>
             <div class="parcela">12x de <b class="negrito-parcela">R$300</b></div>
             <div class="lista-beneficios">
-            <ul>
-              <li><i class="fa-solid fa-check" id="coricon"></i> +5000 Horas de Duração</li>
-              <li><i class="fa-solid fa-check" id="coricon"></i> 98 Módulos: Básico ao Avançado</li>
-              <li><i class="fa-solid fa-check" id="coricon"></i> Certificado de conclusão de curso</li>
-              <li><i class="fa-solid fa-check" id="coricon"></i> Suporte 24h</li>
-              <li><i class="fa-solid fa-check" id="coricon"></i> Grupo exclusivo de membros</li>
+              <ul>
+                <li><i class="fa-solid fa-check" id="coricon"></i> +5000 Horas de Duração</li>
+                <li><i class="fa-solid fa-check" id="coricon"></i> 98 Módulos: Básico ao Avançado</li>
+                <li><i class="fa-solid fa-check" id="coricon"></i> Certificado de conclusão de curso</li>
+                <li><i class="fa-solid fa-check" id="coricon"></i> Suporte 24h</li>
+                <li><i class="fa-solid fa-check" id="coricon"></i> Grupo exclusivo de membros</li>
             </div>
             </ul>
           </div>
@@ -184,18 +211,19 @@
         </div>
         <div data-aos="slide-right" data-aos-duration="20" class="preco__card bg__accent-2">
           <div class="preco__details">
-            <h3  la>FINANÇAS</h3>
-            <p class="descricao-preco">Teste de descrição para <span class="azul-negrito">colocar em baixo</span> do titulo principal</p>
+            <h3 la>FINANÇAS</h3>
+            <p class="descricao-preco">Teste de descrição para <span class="azul-negrito">colocar em baixo</span> do
+              titulo principal</p>
             <span class="preco-riscado">DE R$ 550,90</span>
             <div class="preco"><span class="preco-pequeno">R$</span>399<span class="preco-pequeno">,90</span></div>
             <div class="parcela">12x de <b class="negrito-parcela">R$300</b></div>
             <div class="lista-beneficios">
-            <ul>
-              <li class=""><i class="fa-solid fa-check" id="coricon"></i> +2000 Horas de Duração</li>
-              <li class=""><i class="fa-solid fa-check" id="coricon"></i> Certificado de conclusão de curso</li>
-              <li class=""><i class="fa-solid fa-check" id="coricon"></i> 45 Módulos: Básico ao Avançado</li>
-              <li><i class="fa-solid fa-check" id="coricon"></i> Suporte 24h</li>
-              <li><i class="fa-solid fa-check" id="coricon"></i> Grupo exclusivo de membros</li>
+              <ul>
+                <li class=""><i class="fa-solid fa-check" id="coricon"></i> +2000 Horas de Duração</li>
+                <li class=""><i class="fa-solid fa-check" id="coricon"></i> Certificado de conclusão de curso</li>
+                <li class=""><i class="fa-solid fa-check" id="coricon"></i> 45 Módulos: Básico ao Avançado</li>
+                <li><i class="fa-solid fa-check" id="coricon"></i> Suporte 24h</li>
+                <li><i class="fa-solid fa-check" id="coricon"></i> Grupo exclusivo de membros</li>
             </div>
             </ul>
           </div>
@@ -266,12 +294,12 @@
             Você tem acesso imediato a todos os nossos conteúdos assim que assinar um de nossos cursos.
           </p>
         </details>
-  
+
       </div>
     </div>
   </section>
 
-</div>
+  </div>
 
 
   <!-- Fim FAQ -->
@@ -322,14 +350,12 @@
       AOS.init();
     </script>
 
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/swiper.min.js"></script>
-    <script src="js/jquery.mask.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="botao-plano"></script>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <scriptnomodule src="https://unpkg .com/ionicons@7.1.0/dist/ionicons/ionicons.js">
-      </script>
+    <scripnomodule src="https://unpkg .com/ionicons@7.1.0/dist/ionicons/ionicons.js">
+
 </body>
 
 
