@@ -1211,7 +1211,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0px;
   font-weight: 500;
-  color: var(--corUm);
+  color: var(--cor-primaria);
 }
 
 .blog-slider__text {
