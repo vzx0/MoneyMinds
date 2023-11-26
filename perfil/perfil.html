@@ -76,17 +76,56 @@
             <section id="dashboard">
                 <div id="container-progresso">
                     <!-- progresso-investimentos -->
-                    <div class="box-progresso" id="progresso-investimentos">
-                        
+                    <div onclick="progressoInvestimento()" class="box-progresso" id="progresso-investimentos">
+                        <h3>Investimento</h3>
+
+                        <div class="box-grafico-circulo">
+                            <svg class="circulo">
+                                <circle cx="70" cy="70" r="70"></circle>
+                                <circle id="circuloProgressoInvestimento" cx="70" cy="70" r="70"></circle>
+                            </svg>
+                            <div class="porcentagem" id="porcentagemProgressoInvestimento">
+                                0%
+                            </div>
+                        </div>
+
+                        <button class="botaoDashboard">Continuar</button>
+
                     </div>
 
                     <!-- progresso tecnologia -->
                     <div class="box-progresso" id="progresso-tecnologia">
+                        <h3>Tecnologia</h3>
+
+                        <div class="box-grafico-circulo">
+                            <svg class="circulo">
+                                <circle cx="70" cy="70" r="70"></circle>
+                                <circle id="circuloProgressoTecnologia" cx="70" cy="70" r="70"></circle>
+                            </svg>
+                            <div class="porcentagem" id="porcentagemProgressoTecnologia">
+                                0%
+                            </div>
+                        </div>
+
+                        <button class="botaoDashboard">Continuar</button>
 
                     </div>
 
                     <!-- progresso marketing -->
                     <div class="box-progresso" id="progresso-marketing">
+                        <h3>Marketing</h3>
+
+                        <div class="box-grafico-circulo">
+                            <svg class="circulo">
+                                <circle cx="70" cy="70" r="70"></circle>
+                                <circle id="circuloProgressoMarketing" cx="70" cy="70" r="70"></circle>
+                            </svg>
+                            <div class="porcentagem" id="porcentagemProgressoMarketing">
+                                0%
+                            </div>
+                        </div>
+                        
+                        <button class="botaoDashboard">Continuar</button>
 
                     </div>
 

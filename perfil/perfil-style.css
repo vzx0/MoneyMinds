@@ -18,7 +18,7 @@ main {
     height: 100vh;
     background-color: var(--cor-primaria);
 
-    /* box-shadow: 5px 5px 15px 10px var(--cor-primaria); */ 
+    /* box-shadow: 5px 5px 15px 10px var(--cor-primaria); */
 }
 
 #titulo {
@@ -70,7 +70,8 @@ main {
 }
 
 .opcao-menuBurger:hover {
-    background-color: #185a9b; /* <--------- mudar isso ------------ */
+    background-color: #185a9b;
+    /* <--------- mudar isso ------------ */
 }
 
 #sair-menu {
@@ -91,7 +92,6 @@ main {
 
 /* corpo perfil */
 #principal-perfil {
-    background-color: #f8f8f8;
 
     width: auto;
     height: 100vh;
@@ -124,17 +124,102 @@ main {
 /* ---caixa padrao dashboard */
 .box-progresso {
     display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
 
     width: 300px;
     height: 300px;
 
-    margin: 5px;
+    margin: 10px 5px;
     border-radius: 25px;
 
-    background-color: aqua;
+    background-color: var(--background-secundario);
 }
+
+.box-grafico-circulo {
+    width: 150px;
+    height: 150px;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    margin: 10px 0px;
+}
+
+/* --- --- grafico circulo */
+svg {
+    width: 150px;
+    height: 150px;
+
+    transform-origin: center;
+    /* Define o ponto de origem da rotação (centro) */
+    transform: rotate(-90deg);
+    /* Rotaciona o elemento em 45 graus */
+
+}
+
+circle {
+    width: 150px;
+    height: 150px;
+    fill: none;
+    stroke: var(--background-principal);
+    stroke-width: 10;
+    transform: translate(5px, 5px);
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+}
+
+circle:nth-child(1) {
+    stroke-dashoffset: 0;
+    stroke: var(--background-principal);
+}
+
+/* --- --- --- calculo porcentagem circulo --- --- --- */
+circle:nth-child(2) {
+    /* stroke-dashoffset: calc(440 - 220); */
+    transition: stroke-dashoffset 0.8s;
+    stroke: var(--cor-primaria);
+}
+
+.porcentagem {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+
+    z-index: 1;
+
+    top: 0;
+    left: 0;
+
+    width: 150px;
+    height: 150px;
+
+    color: #fff;
+}
+
+/* botaoDashboard */
+.botaoDashboard {
+    width: 150px;
+    height: 50px;
+    background-color: #00FF66;
+
+    border-radius: 30px;
+
+    margin: 20px 0px;
+    color: #fff;
+    font-size: 20px;
+}
+
 
 /* ---caixa grafico dashboard */
 #grafico-dashboard {
     width: 610px;
+    
 }

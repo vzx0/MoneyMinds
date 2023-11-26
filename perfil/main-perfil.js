@@ -1,33 +1,36 @@
-// funçao expandir e retrair menu Hamburguer
-function menuExtendido() {
-    const menuBurger = document.getElementById("menuBurger");
-    const barraDivisao = document.getElementById("barra-divisao");
+document.addEventListener("DOMContentLoaded", function() {
+    progressoInvestimento();
+    progressoTecnologia()
+    progressoMarketing()
+})
 
-    const opcoes = document.querySelectorAll(".opcao-menuBurger");
-    const nomeOpcoes = document.querySelectorAll(".opcao-nome");
+// progresso em cada curso
+porcentagemProgressoInvestimento = 100;
+porcentagemProgressoTecnologia = 75;
+porcentagemProgressoMarketing = 75;
 
-    if (menuBurger.style.width === "400px") {
+// funcoes para exibir o progresso em cada curso
+function progressoInvestimento() {
+    let circuloInvestimento = document.querySelector('#circuloProgressoInvestimento');
 
-        menuBurger.style.width = "100px";
-        barraDivisao.style.width = "100px";
+    document.getElementById("porcentagemProgressoInvestimento").innerHTML = porcentagemProgressoInvestimento + "%";
 
-        opcoes.forEach(opcao => {
-            opcao.style.width = "100px";
-        });
-
-        nomeOpcoes.forEach(nomeOpcao => {
-            nomeOpcao.style.display = "none";
-        });
-    } else {
-        menuBurger.style.width = "400px";
-        barraDivisao.style.width = "400px";
-
-        opcoes.forEach(opcao => {
-            opcao.style.width = "400px";
-        });
-
-        nomeOpcoes.forEach(nomeOpcao => {
-            nomeOpcao.style.display = "flex";
-        });
-    }
+    circuloInvestimento.style.strokeDashoffset = 440 - (440 * porcentagemProgressoInvestimento) / 100;
 }
+
+function progressoTecnologia() {
+    let circuloInvestimento = document.querySelector('#circuloProgressoTecnologia');
+
+    document.getElementById("porcentagemProgressoTecnologia").innerHTML = porcentagemProgressoTecnologia + "%";
+
+    circuloInvestimento.style.strokeDashoffset = 440 - (440 * porcentagemProgressoTecnologia) / 100;
+}
+
+function progressoMarketing() {
+    let circuloInvestimento = document.querySelector('#circuloProgressoMarketing');
+
+    document.getElementById("porcentagemProgressoMarketing").innerHTML = porcentagemProgressoMarketing + "%";
+
+    circuloInvestimento.style.strokeDashoffset = 440 - (440 * porcentagemProgressoMarketing) / 100;
+}
+
