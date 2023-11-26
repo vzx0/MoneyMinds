@@ -30,7 +30,7 @@
 
             <!-- opcoes -->
             <!-- //dashboard -->
-            <a href="" class="opcao-menuBurger">
+            <a onclick="exibirDashboard()" class="opcao-menuBurger">
                 <div class="opcao-icone">
                     <i class="fa-solid fa-chart-line fa-2xl"></i>
                 </div>
@@ -38,7 +38,7 @@
             </a>
 
             <!-- //meus cursos -->
-            <a href="" class="opcao-menuBurger">
+            <a onclick="exibirCursos()" class="opcao-menuBurger">
                 <div class="opcao-icone">
                     <i class="fa-regular fa-pen-to-square fa-2xl"></i>
                 </div>
@@ -46,21 +46,20 @@
             </a>
 
             <!-- //ranking -->
-            <a href="" class="opcao-menuBurger">
+            <a onclick="exibirRanking()" class="opcao-menuBurger">
                 <div class="opcao-icone">
                     <i class="fa-solid fa-ranking-star fa-2xl"></i>
                 </div>
-                <p class="opcao-nome">ranking</p>
+                <p class="opcao-nome">Ranking</p>
             </a>
 
             <!-- //atividades -->
-            <a href="" class="opcao-menuBurger">
+            <a onclick="exibirAtividades()" class="opcao-menuBurger">
                 <div class="opcao-icone">
                     <i class="fa-solid fa-list fa-2xl"></i>
                 </div>
                 <p class="opcao-nome">Atividades pendentes</p>
             </a>
-
 
             <!-- //sair -->
             <a href="../index.html" class="opcao-menuBurger" id="sair-menu">
@@ -73,6 +72,8 @@
 
         <!-- corpo perfil -->
         <nav id="principal-perfil">
+
+            <!-- dashboard -->
             <section id="dashboard">
                 <div id="container-progresso">
                     <!-- progresso-investimentos -->
@@ -135,10 +136,25 @@
                     </div>
 
                     <!-- atividades -->
-                    <div class="box-progresso" id="atividades">
+                    <div class="box-progresso" id="tarefas">
 
                     </div>
                 </div>
+            </section>
+
+            <!-- meus cursos -->
+            <section id="cursos" class="escondido">
+                1
+            </section>
+
+            <!-- ranking -->
+            <section id="ranking" class="escondido">
+                2
+            </section>
+
+            <!-- atividades -->
+            <section id="atividades" class="escondido">
+                3
             </section>
         </nav>
 

@@ -1,5 +1,5 @@
 // executar funcoes quando a página carrega
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     progressoInvestimento();
     progressoTecnologia()
     progressoMarketing()
@@ -18,7 +18,6 @@ function progressoInvestimento() {
 
     circuloInvestimento.style.strokeDashoffset = 440 - (440 * porcentagemProgressoInvestimento) / 100;
 }
-
 function progressoTecnologia() {
     let circuloInvestimento = document.querySelector('#circuloProgressoTecnologia');
 
@@ -26,7 +25,6 @@ function progressoTecnologia() {
 
     circuloInvestimento.style.strokeDashoffset = 440 - (440 * porcentagemProgressoTecnologia) / 100;
 }
-
 function progressoMarketing() {
     let circuloInvestimento = document.querySelector('#circuloProgressoMarketing');
 
@@ -35,3 +33,49 @@ function progressoMarketing() {
     circuloInvestimento.style.strokeDashoffset = 440 - (440 * porcentagemProgressoMarketing) / 100;
 }
 
+// funcoes trocar pagina
+dashboard = document.getElementById('dashboard');
+cursos = document.getElementById('cursos');
+ranking = document.getElementById('ranking');
+atividades = document.getElementById('atividades');
+
+function exibirDashboard() {
+    if (dashboard.style.display === "flex") {
+        return
+    } else {
+        dashboard.style.display = "flex";
+        cursos.style.display = "none";
+        ranking.style.display = "none";
+        atividades.style.display = "none";
+    }
+}
+function exibirCursos() {
+    if (cursos.style.display === "flex") {
+        return
+    } else {
+        dashboard.style.display = "none";
+        cursos.style.display = "flex";
+        ranking.style.display = "none";
+        atividades.style.display = "none";
+    }
+}
+function exibirRanking() {
+    if (ranking.style.display === "flex") {
+        return
+    } else {
+        dashboard.style.display = "none";
+        cursos.style.display = "none";
+        ranking.style.display = "flex";
+        atividades.style.display = "none";
+    }
+}
+function exibirAtividades() {
+    if (atividades.style.display === "flex") {
+        return
+    } else {
+        dashboard.style.display = "none";
+        cursos.style.display = "none";
+        ranking.style.display = "none";
+        atividades.style.display = "flex";
+    }
+}
