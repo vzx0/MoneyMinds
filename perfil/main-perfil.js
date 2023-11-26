@@ -35,7 +35,7 @@ function progressoMarketing() {
 
 // funcoes trocar pagina
 dashboard = document.getElementById('dashboard');
-cursos = document.getElementById('cursos');
+cursosDashboard = document.getElementById('cursos');
 ranking = document.getElementById('ranking');
 atividades = document.getElementById('atividades');
 
@@ -44,17 +44,17 @@ function exibirDashboard() {
         return
     } else {
         dashboard.style.display = "flex";
-        cursos.style.display = "none";
+        cursosDashboard.style.display = "none";
         ranking.style.display = "none";
         atividades.style.display = "none";
     }
 }
 function exibirCursos() {
-    if (cursos.style.display === "flex") {
+    if (cursosDashboard.style.display === "flex") {
         return
     } else {
         dashboard.style.display = "none";
-        cursos.style.display = "flex";
+        cursosDashboard.style.display = "flex";
         ranking.style.display = "none";
         atividades.style.display = "none";
     }
@@ -64,7 +64,7 @@ function exibirRanking() {
         return
     } else {
         dashboard.style.display = "none";
-        cursos.style.display = "none";
+        cursosDashboard.style.display = "none";
         ranking.style.display = "flex";
         atividades.style.display = "none";
     }
@@ -74,8 +74,30 @@ function exibirAtividades() {
         return
     } else {
         dashboard.style.display = "none";
-        cursos.style.display = "none";
+        cursosDashboard.style.display = "none";
         ranking.style.display = "none";
         atividades.style.display = "flex";
+    }
+}
+
+// ---------- CURSOS ----------
+let cursos = document.querySelectorAll('.curso');
+
+cursos.forEach(curso => {
+    curso.addEventListener("mouseover", extenderInformacoes);
+    curso.addEventListener("mouseleave", retrairInformacoes);
+});
+
+function extenderInformacoes(event) {
+    let informacoesCurso = event.currentTarget.querySelector('.informacoesCurso');
+    if (informacoesCurso.style.height !== "300px") {
+        informacoesCurso.style.height = "300px";
+    }
+}
+
+function retrairInformacoes(event) {
+    let informacoesCurso = event.currentTarget.querySelector('.informacoesCurso');
+    if (informacoesCurso.style.height !== "125px") {
+        informacoesCurso.style.height = "125px";
     }
 }

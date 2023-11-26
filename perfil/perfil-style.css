@@ -10,6 +10,17 @@ main {
     display: none;
 }
 
+.secao {
+    display: none;
+    
+    margin: 0px 10px;
+    width: 100%;
+    height: 100%;
+
+    align-items: center;
+    justify-content: center;
+}
+
 /* menu burger */
 #menuBurger {
     display: flex;
@@ -86,15 +97,6 @@ main {
     bottom: 20px;
 }
 
-/* barra-divisao */
-#barra-divisao {
-    display: flex;
-    width: 5px;
-    height: 100vh;
-
-    background-color: #fff;
-}
-
 /* corpo perfil */
 #principal-perfil {
 
@@ -105,7 +107,7 @@ main {
     margin-left: 25px;
 }
 
-/* dashboard */
+/* ---------- DASHBOARD ---------- */
 #dashboard {
     display: flex;
     margin: 0px 10px;
@@ -226,5 +228,58 @@ circle:nth-child(2) {
 /* ---caixa grafico dashboard */
 #grafico-dashboard {
     width: 610px;
-    
 }
+
+/* ---------- CURSOS ---------- */
+#cursos {
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+}
+
+.curso {
+    flex-direction: column;
+
+    position: relative;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 375px;
+    height: 600px;
+
+    background-color: var(--background-secundario);
+    background-image: url(../Assets/technology.jpg);
+
+    border-radius: 15px;
+
+    margin: 5px;
+}
+
+.informacoesCurso {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 125px;
+
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+    border-top: 5px solid var(--cor-primaria);
+
+    background-color: rgb(0, 0, 0, 0.75);
+
+    bottom: 0;
+
+    transition: 500ms;
+}
+

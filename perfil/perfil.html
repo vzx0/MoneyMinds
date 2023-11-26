@@ -74,7 +74,7 @@
         <nav id="principal-perfil">
 
             <!-- dashboard -->
-            <section id="dashboard">
+            <section class="secao" id="dashboard">
                 <div id="container-progresso">
                     <!-- progresso-investimentos -->
                     <div onclick="progressoInvestimento()" class="box-progresso" id="progresso-investimentos">
@@ -143,17 +143,46 @@
             </section>
 
             <!-- meus cursos -->
-            <section id="cursos" class="escondido">
-                1
+            <section class="secao" id="cursos" class="escondido">
+
+                <div onmouseover="extenderInformacoes(); informacoesInvestimento()" onmouseleave="retrairInformações()" class="curso" id="cursoInvestimentos">
+                    <div class="informacoesCurso">
+                        <h3>Investimento</h3>
+
+                        <p></p>
+
+                        <button class="botaoDashboard">Continuar</button>
+                    </div>
+                </div>
+
+                <div onmouseover="informacoesTecnologia()" onmouseleave="retrairInformações()" class="curso" id="cursoTecnologia">
+                    <div class="informacoesCurso" id="infoTecnologia">
+                        <h3>Tecnologia</h3>
+
+                        <p></p>
+
+                        <button class="botaoDashboard">Continuar</button>
+                    </div>
+                </div>
+
+                <div onmouseover="extenderInformacoes(); informacoesMarkenting()" onmouseleave="retrairInformações()" class="curso" id="cursoMarketing">
+                    <div class="informacoesCurso">
+                        <h3>Marketing</h3>
+
+                        <p></p>
+
+                        <button class="botaoDashboard">Continuar</button>
+                    </div>
+                </div>
             </section>
 
             <!-- ranking -->
-            <section id="ranking" class="escondido">
+            <section class="secao" id="ranking" class="escondido">
                 2
             </section>
 
             <!-- atividades -->
-            <section id="atividades" class="escondido">
+            <section class="secao" id="atividades" class="escondido">
                 3
             </section>
         </nav>
