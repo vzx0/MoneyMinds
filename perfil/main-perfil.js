@@ -1,3 +1,4 @@
+// executar funcoes quando a página carrega
 document.addEventListener("DOMContentLoaded", function() {
     progressoInvestimento();
     progressoTecnologia()
