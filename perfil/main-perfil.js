@@ -1,3 +1,4 @@
+// funçao expandir e retrair menu Hamburguer
 function menuExtendido() {
     const menuBurger = document.getElementById("menuBurger");
     const barraDivisao = document.getElementById("barra-divisao");
@@ -6,7 +7,7 @@ function menuExtendido() {
     const nomeOpcoes = document.querySelectorAll(".opcao-nome");
 
     if (menuBurger.style.width === "400px") {
-        
+
         menuBurger.style.width = "100px";
         barraDivisao.style.width = "100px";
 
