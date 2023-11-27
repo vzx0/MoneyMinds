@@ -10,7 +10,7 @@
   --background-principal: #222125;
   --accent: #6e7090;
   --background-secundario: #272735;
-  --bg-tertiary: #0c0c13;
+  --bg-tertiary: #1a181f;
 
   --corUm: #268DF3;
   --corDois: #393e46;
@@ -550,6 +550,41 @@ small {
   background: #104e3d;
   border: 2px solid #00F79B;
 }
+
+
+/* Intro Cortina */
+
+.cortina-container {
+  position: fixed; 
+  z-index: 9999; 
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cortina {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%; /* Metade da largura da tela */
+  background-color: #211e29;
+}
+
+.cortina-esquerda {
+  left: 0;
+}
+
+.cortina-direita {
+  right: 0;
+}
+
+
+/* Intro Cortina */
+
 
 .card-icon-bg-4>ion-icon {
   color: #00F79B;
