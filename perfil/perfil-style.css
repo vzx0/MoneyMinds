@@ -306,9 +306,11 @@ circle:nth-child(2) {
     display: flex;
     flex-direction: row;
 
-    justify-content: center;
     align-items: center;
 
+    width: 100%;
+
+    margin-bottom: 25px;
 
 }
 
@@ -470,6 +472,10 @@ circle:nth-child(2) {
     flex-direction: column;
 
     margin: 25px 0px;
+}
+
+.secaoTrocarInfo {
+    margin-right: 25px;
 }
 
 #alterarInfo {
