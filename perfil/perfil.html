@@ -82,10 +82,11 @@
                     <h3 onmouseover="alteracaoNome()" id="alterarNome">Adicionar nome de usuário</h3>
                 </div>
 
+
                 <div id="alterarInformacoes">
                     <h2>Alterar dados</h2>
-
-                    <div class="secaoTrocarInfo">
+                    <div id="alterarInfo">
+                        <div class="secaoTrocarInfo">
                             <div class="formTrocarInformacoes">
                                 <h3>Nome de usuário</h3>
                                 <div class="formTrocarInfo">
@@ -103,13 +104,14 @@
                                     <button class="botaoPopup" onclick="trocarDescricao()">Trocar descrição</button>
                                 </div>
                             </div>
+                        </div>
 
 
-
+                        <div class="secaoTrocarInfo">
                             <div class="formTrocarInformacoes">
                                 <h3>E-mail</h3>
                                 <div class="formTrocarInfo">
-                                    <input id="inputEmail" class="inputInformacoes" type="text"
+                                    <input id="inputEmail" class="inputInformacoes" type="email"
                                         placeholder="Insira seu novo e-mail">
                                     <button class="botaoPopup" onclick="trocarEmail()">Trocar e-mail</button>
                                 </div>
@@ -118,13 +120,24 @@
                             <div class="formTrocarInformacoes">
                                 <h3>Senha</h3>
                                 <div class="formTrocarInfo">
-                                    <input id="inputTelefone" class="inputInformacoes" type="text"
+                                    <input id="inputSenha" class="inputInformacoes" type="password"
                                         placeholder="Insira sua nova senha">
                                     <button class="botaoPopup" onclick="trocarSenha()">Trocar senha</button>
                                 </div>
                             </div>
-                            
+
+                            <div class="formTrocarInformacoes">
+                                <h3>Confirme a senha</h3>
+                                <div class="formTrocarInfo">
+                                    <input id="inputConfirmarSenha" class="inputInformacoes" type="password"
+                                        placeholder="Confirme sua nova senha">
+                                    <button class="botaoPopup" onclick="trocarSenha()">Trocar senha</button>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
+
                 </div>
             </section>
 

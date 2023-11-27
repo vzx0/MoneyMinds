@@ -162,6 +162,15 @@ function abrirCamera() {
         })
 };
 
+function fecharCamera() {
+    navigator.mediaDevices.getUserMedia({ video: false });
+
+    const areaVideo = document.getElementById('camera')
+
+    areaVideo.srcObject = null;
+    mediaStream = null;
+}
+
 let downloadLink;
 const perfilImg = document.getElementById('perfil-img');
 const perfilImgPagina = document.getElementById('imagemPerfil');

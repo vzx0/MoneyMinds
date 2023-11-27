@@ -472,3 +472,10 @@ circle:nth-child(2) {
     margin: 25px 0px;
 }
 
+#alterarInfo {
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+}
+
