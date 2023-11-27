@@ -241,9 +241,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function trocarNome() {
     const inputNome = document.getElementById('inputNome').value;
-    const nome = document.getElementById('alterarNome');
+    const nomes = document.querySelectorAll('.nomeDeUsuario');
 
-    nome.textContent = inputNome;
+    nomes.forEach(nome => {
+        nome.textContent = inputNome;
+    });
 }
+
 
 
