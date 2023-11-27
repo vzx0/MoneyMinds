@@ -3,6 +3,8 @@
 main {
     display: flex;
     flex-direction: row;
+
+    background-color: var(--background-principal);
 }
 
 /* trocar paginas */
@@ -296,6 +298,8 @@ circle:nth-child(2) {
     height: 100%;
 
     align-items: center;
+
+    background-color: var(--background-principal);
 }
 
 #perfilInformacoesPrincipal {
@@ -454,5 +458,17 @@ circle:nth-child(2) {
     color: #fff;
 
     border-style: none;
+}
+
+.formTrocarInfo {
+    display: flex;
+    flex-direction: row;
+}
+
+.formTrocarInformacoes {
+    display: flex;
+    flex-direction: column;
+
+    margin: 25px 0px;
 }
 
