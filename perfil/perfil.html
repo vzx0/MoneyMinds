@@ -21,11 +21,11 @@
             <h2 id="titulo">MoneyMinds</h2>
 
             <!-- perfil -->
-            <div id="perfil">
+            <div onclick="exibirAlteracaoPerfil()" id="perfil">
                 <div id="perfil-img">
 
                 </div>
-                <p>Jean Lucindo</p>
+                <p class="nomeDeUsuario">Jean Lucindo</p>
             </div>
 
             <!-- opcoes -->
@@ -72,6 +72,108 @@
 
         <!-- corpo perfil -->
         <nav id="principal-perfil">
+
+            <!-- alteracao perfil -->
+            <section class="secao" id="alteracaoPerfil" class="escondido">
+                <div id="perfilInformacoesPrincipal">
+
+                    <div onclick="popupFoto()" id="imagemPerfil"></div>
+
+                    <h3 onmouseover="alteracaoNome()" class="nomeDeUsuario" id="alterarNome">Adicionar nome de usuário</h3>
+                </div>
+
+
+                <div id="alterarInformacoes">
+                    <h2>Alterar dados</h2>
+                    <div id="alterarInfo">
+                        <div class="secaoTrocarInfo">
+                            <div class="formTrocarInformacoes">
+                                <h3>Nome de usuário</h3>
+                                <div class="formTrocarInfo">
+                                    <input id="inputNome" class="inputInformacoes" type="text"
+                                        placeholder="Insira seu novo nome de usuário" maxlength="32">
+                                    <button class="botaoPopup" onclick="trocarNome()">Trocar Nome</button>
+                                </div>
+                            </div>
+
+                            <div class="formTrocarInformacoes">
+                                <h3>Descrição</h3>
+                                <div class="formTrocarInfo">
+                                    <input id="inputDescrição" class="inputInformacoes" type="text"
+                                        placeholder="Insira sua nova descrição" maxlength="128">
+                                    <button class="botaoPopup" onclick="trocarDescricao()">Trocar descrição</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="secaoTrocarInfo">
+                            <div class="formTrocarInformacoes">
+                                <h3>E-mail</h3>
+                                <div class="formTrocarInfo">
+                                    <input id="inputEmail" class="inputInformacoes" type="email"
+                                        placeholder="Insira seu novo e-mail">
+                                    <button class="botaoPopup" onclick="trocarEmail()">Trocar e-mail</button>
+                                </div>
+                            </div>
+
+                            <div class="formTrocarInformacoes">
+                                <h3>Senha</h3>
+                                <div class="formTrocarInfo">
+                                    <input id="inputSenha" class="inputInformacoes" type="password"
+                                        placeholder="Insira sua nova senha">
+                                    <button class="botaoPopup" onclick="trocarSenha()">Trocar senha</button>
+                                </div>
+                            </div>
+
+                            <div class="formTrocarInformacoes">
+                                <h3>Confirmar senha</h3>
+                                <div class="formTrocarInfo">
+                                    <input id="inputConfirmarSenha" class="inputInformacoes" type="password"
+                                        placeholder="Confirme sua nova senha">
+                                    <button class="botaoPopup" onclick="trocarSenha()">Confirmar Senha</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- alteracao imagem perfil -->
+            <section id="alteracaoPerfil-imagem">
+                <div id="headerPopUpFoto">
+                    <!-- botao sair -->
+                    <div onclick="fecharPopupFoto()" class="opcao-icone" id="botaoSairPopupFoto">
+                        <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180  fa-2xl"></i>
+                        <p class="opcao-nome">Fechar</p>
+                    </div>
+                    <!-- titulo -->
+                    <h3>Alterar imagem</h3>
+                </div>
+
+                <!-- geracao de imagem -->
+                <div id="geracaoImagem">
+                    <div id="cameraImagem">
+                        <video id="camera" autoplay></video>
+
+                        <div id="botoesPopup">
+                            <button class="botaoPopup" onclick="abrirCamera()">Abrir câmera</button>
+                            <button class="botaoPopup" onclick="fecharCamera()">Fechar câmera</button>
+
+                            <button class="botaoPopup botaoPopupMaior" onclick="tirarFoto()">Tirar foto</button>
+                        </div>
+                    </div>
+
+                    <div id="areaFoto">
+                        <div id="foto"></div>
+                    </div>
+
+                </div>
+
+
+            </section>
 
             <!-- dashboard -->
             <section class="secao" id="dashboard">
@@ -125,7 +227,7 @@
                                 0%
                             </div>
                         </div>
-                        
+
                         <button class="botaoDashboard">Continuar</button>
 
                     </div>
@@ -145,7 +247,8 @@
             <!-- meus cursos -->
             <section class="secao" id="cursos" class="escondido">
 
-                <div onmouseover="extenderInformacoes(); informacoesInvestimento()" onmouseleave="retrairInformações()" class="curso" id="cursoInvestimentos">
+                <div onmouseover="extenderInformacoes(); informacoesInvestimento()" onmouseleave="retrairInformações()"
+                    class="curso" id="cursoInvestimentos">
                     <div class="informacoesCurso">
                         <h3>Investimento</h3>
 
@@ -155,7 +258,8 @@
                     </div>
                 </div>
 
-                <div onmouseover="informacoesTecnologia()" onmouseleave="retrairInformações()" class="curso" id="cursoTecnologia">
+                <div onmouseover="informacoesTecnologia()" onmouseleave="retrairInformações()" class="curso"
+                    id="cursoTecnologia">
                     <div class="informacoesCurso" id="infoTecnologia">
                         <h3>Tecnologia</h3>
 
@@ -165,7 +269,8 @@
                     </div>
                 </div>
 
-                <div onmouseover="extenderInformacoes(); informacoesMarkenting()" onmouseleave="retrairInformações()" class="curso" id="cursoMarketing">
+                <div onmouseover="extenderInformacoes(); informacoesMarkenting()" onmouseleave="retrairInformações()"
+                    class="curso" id="cursoMarketing">
                     <div class="informacoesCurso">
                         <h3>Marketing</h3>
 
