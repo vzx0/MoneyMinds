@@ -21,7 +21,7 @@
             <h2 id="titulo">MoneyMinds</h2>
 
             <!-- perfil -->
-            <div id="perfil">
+            <div onclick="exibirAlteracaoPerfil()" id="perfil">
                 <div id="perfil-img">
 
                 </div>
@@ -72,6 +72,58 @@
 
         <!-- corpo perfil -->
         <nav id="principal-perfil">
+
+            <!-- alteracao perfil -->
+            <section class="secao" id="alteracaoPerfil" class="escondido">
+                <div id="perfilInformacoesPrincipal">
+
+                    <div onclick="popupFoto()" id="imagemPerfil"></div>
+
+                    <h3 onmouseover="alteracaoNome()" id="alterarNome">Adicionar nome de usuário</h3>
+                </div>
+
+                <div id="alterarInformacoes">
+                    <h2>Alterar dados</h2>
+
+                    <input id="inputNome" class="inputInformacoes" type="text" placeholder="Insira seu novo nome de usuário">
+                    <button class="botaoPopup" onclick="trocarNome()">Trocar Nome</button>
+
+                </div>
+            </section>
+
+            <!-- alteracao imagem perfil -->
+            <section id="alteracaoPerfil-imagem">
+                <div id="headerPopUpFoto">
+                    <!-- botao sair -->
+                    <div onclick="fecharPopupFoto()" class="opcao-icone" id="botaoSairPopupFoto">
+                        <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180  fa-2xl"></i>
+                        <p class="opcao-nome">Sair</p>
+                    </div>
+                    <!-- titulo -->
+                    <h3>Alterar imagem</h3>
+                </div>
+
+                <!-- geracao de imagem -->
+                <div id="geracaoImagem">
+                    <div id="cameraImagem">
+                        <video id="camera" autoplay></video>
+
+                        <div id="botoesPopup">
+                            <button class="botaoPopup" onclick="abrirCamera()">Abrir câmera</button>
+                            <button class="botaoPopup" onclick="fecharCamera()">Fechar câmera</button>
+
+                            <button class="botaoPopup botaoPopupMaior" onclick="tirarFoto()">Tirar foto</button>
+                        </div>
+                    </div>
+
+                    <div id="areaFoto">
+                        <div id="foto"></div>
+                    </div>
+
+                </div>
+
+
+            </section>
 
             <!-- dashboard -->
             <section class="secao" id="dashboard">
@@ -125,7 +177,7 @@
                                 0%
                             </div>
                         </div>
-                        
+
                         <button class="botaoDashboard">Continuar</button>
 
                     </div>
@@ -145,7 +197,8 @@
             <!-- meus cursos -->
             <section class="secao" id="cursos" class="escondido">
 
-                <div onmouseover="extenderInformacoes(); informacoesInvestimento()" onmouseleave="retrairInformações()" class="curso" id="cursoInvestimentos">
+                <div onmouseover="extenderInformacoes(); informacoesInvestimento()" onmouseleave="retrairInformações()"
+                    class="curso" id="cursoInvestimentos">
                     <div class="informacoesCurso">
                         <h3>Investimento</h3>
 
@@ -155,7 +208,8 @@
                     </div>
                 </div>
 
-                <div onmouseover="informacoesTecnologia()" onmouseleave="retrairInformações()" class="curso" id="cursoTecnologia">
+                <div onmouseover="informacoesTecnologia()" onmouseleave="retrairInformações()" class="curso"
+                    id="cursoTecnologia">
                     <div class="informacoesCurso" id="infoTecnologia">
                         <h3>Tecnologia</h3>
 
@@ -165,7 +219,8 @@
                     </div>
                 </div>
 
-                <div onmouseover="extenderInformacoes(); informacoesMarkenting()" onmouseleave="retrairInformações()" class="curso" id="cursoMarketing">
+                <div onmouseover="extenderInformacoes(); informacoesMarkenting()" onmouseleave="retrairInformações()"
+                    class="curso" id="cursoMarketing">
                     <div class="informacoesCurso">
                         <h3>Marketing</h3>
 
