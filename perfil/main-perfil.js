@@ -92,6 +92,8 @@ function extenderInformacoes(event) {
     let informacoesCurso = event.currentTarget.querySelector('.informacoesCurso');
     if (informacoesCurso.style.height !== "300px") {
         informacoesCurso.style.height = "300px";
+
+
     }
 }
 
@@ -101,3 +103,19 @@ function retrairInformacoes(event) {
         informacoesCurso.style.height = "125px";
     }
 }
+
+cursos.forEach(curso => {
+    curso.addEventListener("mouseover", function(event) {
+        let informacoesTexto = event.currentTarget.querySelector('.informacoesTexto');
+        if (informacoesTexto) {
+            informacoesTexto.textContent = "Descubra o poder das finanças e transforme sua relação com o dinheiro neste curso abrangente sobre finanças.";
+        }
+    });
+
+    curso.addEventListener("mouseleave", function(event) {
+        let informacoesTexto = event.currentTarget.querySelector('.informacoesTexto');
+        if (informacoesTexto) {
+            informacoesTexto.textContent = "";
+        }
+    });
+});
