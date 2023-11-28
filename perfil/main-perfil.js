@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
     progressoInvestimento();
     progressoTecnologia()
     progressoMarketing()
+
+    trocarNome()
 })
 
 // progresso em cada curso
@@ -239,14 +241,74 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+// nome
+// function trocarNome() {
+//     const inputNome = document.getElementById('inputNome').value;
+//     const nomes = document.querySelectorAll('.nomeDeUsuario');
+//     let nomeArmazenado = localStorage.getItem('nomeUsuario');
+
+//     if (!nomeArmazenado) {
+//         nomeArmazenado = inputNome || 'Usuário'; // Nome padrão caso não haja valor no input
+//     }
+
+//     nomes.forEach(nome => {
+//         nome.textContent = nomeArmazenado;
+//     });
+
+//     // Armazenar o novo nome no localStorage
+//     localStorage.setItem('nomeUsuario', nomeArmazenado);
+// }
+
+// // Carregar o nome armazenado ao carregar a página
+// document.addEventListener('DOMContentLoaded', function() {
+//     trocarNome();
+// });
+
+// // Adiciona um evento para detectar mudanças no input
+// const inputNome = document.getElementById('inputNome');
+// inputNome.addEventListener('input', function() {
+//     trocarNome();
+// });
+
+// original
+// function trocarNome() {
+//     const inputNome = document.getElementById('inputNome').value;
+//     const nomes = document.querySelectorAll('.nomeDeUsuario');
+
+//     nomes.forEach(nome => {
+//         nome.textContent = inputNome;
+//     });
+
+//     // Armazenar o novo nome no localStorage
+//     localStorage.setItem('nomeUsuario', inputNome);
+// }
+
 function trocarNome() {
-    const inputNome = document.getElementById('inputNome').value;
+    const inputNome = document.getElementById('inputNome').value.trim() || 'Usuário'; // Valor padrão 'Usuário' se estiver vazio
     const nomes = document.querySelectorAll('.nomeDeUsuario');
 
     nomes.forEach(nome => {
         nome.textContent = inputNome;
     });
+
+    // Armazenar o novo nome no localStorage
+    localStorage.setItem('nomeUsuario', inputNome);
 }
+
+// Carregar o nome armazenado ao carregar a página
+document.addEventListener('DOMContentLoaded', function () {
+    const nomeArmazenado = localStorage.getItem('nomeUsuario');
+
+    if (nomeArmazenado) {
+        trocarNome(nomeArmazenado);
+    }
+});
+
+// Adiciona um evento para o botão
+const botaoTrocarNome = document.getElementById('botaoTrocarNome');
+botaoTrocarNome.addEventListener('click', function () {
+    trocarNome();
+});
 
 
 
