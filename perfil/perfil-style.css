@@ -61,7 +61,7 @@ main {
 
     margin: 20px 0px;
 
-    background-color: aqua;
+    background-color: var(--background-secundario);
 }
 
 /* opcoes */
@@ -315,7 +315,7 @@ circle:nth-child(2) {
 }
 
 #imagemPerfil {
-    background-color: #00FF66;
+    background-color: var(--background-secundario);
 
     width: 200px;
     height: 200px;
