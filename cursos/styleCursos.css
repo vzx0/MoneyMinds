@@ -146,8 +146,33 @@ main {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 10px;
+    overflow: hidden;
 }
+
+/* botaoCurso progresso do video */
+.textoBotaoVideo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 250px;
+    height: 100%;
+    font-size: 20px;
+}
+
+.progresso {
+    height: 100%;
+    width: 0;
+    background-color: var(--corBotaoDestaque);
+    border-radius: 30px;
+    transition: 250ms linear;
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 
 /* menu Capitulos do curso */
 .menuCapitulosCurso {
