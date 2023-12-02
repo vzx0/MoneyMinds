@@ -26,7 +26,7 @@ main {
     width: 100%;
     height: 100vh;
 
-    margin-right: 25px;
+    margin-right: 325px;
     margin-left: 25px;
 }
 
@@ -181,7 +181,11 @@ main {
     height: 75px;
     background-color: var(--background-secundario);
 
-    z-index: 1;
+    z-index: 0;
+
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 summary::before {
