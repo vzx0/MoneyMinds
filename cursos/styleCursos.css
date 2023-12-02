@@ -37,6 +37,8 @@ main {
 
 .secao {
     display: none;
+
+    flex-direction: column;
     
     margin: 0px 10px;
     width: 100%;
