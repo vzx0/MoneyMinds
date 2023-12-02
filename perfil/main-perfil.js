@@ -284,7 +284,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // }
 
 function trocarNome() {
-    const inputNome = document.getElementById('inputNome').value.trim() || 'Usuário'; // Valor padrão 'Usuário' se estiver vazio
+    const inputNome = document.getElementById('inputNome').value.trim() || 'Usuário';
     const nomes = document.querySelectorAll('.nomeDeUsuario');
 
     nomes.forEach(nome => {

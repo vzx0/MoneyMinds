@@ -1,0 +1,244 @@
+@import '../style.css';
+
+#perfil {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    height: 150px;
+
+    margin: 50px 0px;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+
+    background-color: var(--background-principal);
+    background-image: linear-gradient(to right, var(--cor-primaria), var(--background-principal));
+}
+
+/* corpo Curso */
+.principal {
+
+    width: 100%;
+    height: 100vh;
+
+    margin-right: 325px;
+    margin-left: 25px;
+}
+
+/* trocar paginas */
+.escondido {
+    display: none;
+}
+
+.secao {
+    display: none;
+
+    flex-direction: column;
+    
+    margin: 0px 10px;
+    width: 100%;
+    height: 100%;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.secaoVideo {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 650px;
+
+    justify-content: center;
+    align-items: center;
+}
+
+/* menu burger */
+#menuBurger {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    z-index: 1;
+
+    width: 300px;
+    height: 100vh;
+    background-color: var(--background-secundario);
+}
+
+.titulo {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 75px;
+}
+
+.barra-divisao {
+    width: 100%;
+    height: 5px;
+
+    background-color: #fff;
+}
+
+/* opcoes */
+.opcao-menuBurger {
+    display: flex;
+
+    align-items: center;
+
+    width: 300px;
+    height: 75px;
+
+    transition: 200ms ease;
+
+    cursor: pointer;
+}
+
+.opcao-icone {
+    display: flex;
+    width: 100px;
+    height: 75px;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.opcao-menuBurger:hover {
+    background-color: var(--cor-primaria);
+}
+
+#sair-menu {
+    display: flex;
+    position: absolute;
+
+    bottom: 20px;
+}
+
+/*---------- secao Curso ---------- */
+.tituloCurso {
+    display: flex;
+
+    width: 100%;
+    height: 75px;
+
+    align-items: center;
+}
+
+.botaoCurso {
+    width: 250px;
+    height: 50px;
+    background-color: #0a7133;
+
+    border-radius: 30px;
+
+    margin: 20px 0px;
+    color: #fff;
+    font-size: 20px;
+
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* botaoCurso progresso do video */
+.textoBotaoVideo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 250px;
+    height: 100%;
+    font-size: 20px;
+}
+
+.progresso {
+    height: 100%;
+    width: 0;
+    background-color: var(--corBotaoDestaque);
+    border-radius: 30px;
+    transition: 250ms linear;
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* menu Capitulos do curso */
+.menuCapitulosCurso {
+    display: flex;
+    width: 300px;
+    height: 75px;
+    background-color: var(--background-secundario);
+
+    z-index: 0;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+summary::before {
+    display: none;
+    content: '';
+  }
+
+.sumarioCapitulosCurso {
+    display: flex;
+
+    width: 300px;
+    height: 75px;
+
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    font: var(--fwBolder) 20px var(--font-principal);
+
+    transition: none;
+
+    background-color: var(--background-secundario);
+  }
+
+.capituloMenu {
+    display: flex;
+
+    width: 300px;
+    height: 75px;
+
+    background-color: var(--background-secundario);
+
+    align-items: center;
+
+    transition: 200ms ease;
+
+
+}
+
+.capituloMenu:hover {
+    background-color: var(--cor-primaria);
+}
+
+.marcadorConclusao {
+    display: flex;
+
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+
+    background-color: var(--background-principal);
+
+    margin: 25px;
+}
