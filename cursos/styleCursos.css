@@ -20,6 +20,16 @@ main {
     background-image: linear-gradient(to right, var(--cor-primaria), var(--background-principal));
 }
 
+/* corpo Curso */
+.principal {
+
+    width: 100%;
+    height: 100vh;
+
+    margin-right: 25px;
+    margin-left: 25px;
+}
+
 /* trocar paginas */
 .escondido {
     display: none;
@@ -99,4 +109,14 @@ main {
     position: absolute;
 
     bottom: 20px;
+}
+
+/*---------- secao Curso ---------- */
+.tituloCurso {
+    display: flex;
+
+    width: 100%;
+    height: 75px;
+
+    align-items: center;
 }
