@@ -8,6 +8,8 @@
     <title>Investimento - MoneyMinds</title>
 
     <link rel="stylesheet" href="investimentoStyle.css">
+
+    <link rel="stylesheet" href="styleCursos.css">
     <link rel="stylesheet" href="../style.css">
 
     <!-- scr FONTAWESOME -->
@@ -15,54 +17,64 @@
 </head>
 
 <body>
-    <section id="menuBurger">
-        <div class="titulo">
-            <h2>MoneyMinds</h2>
-        </div>
-        
-        <div class="barra-divisao"></div>
 
-        <!-- opcoes -->
-        <!-- //dashboard -->
-        <a onclick="exibirDashboard()" class="opcao-menuBurger">
-            <div class="opcao-icone">
-                <img src="icons-cursos/icon-videoCurso.svg">
-            </div>
-            <p class="opcao-nome">Assistir Vídeo</p>
-        </a>
+    <main>
 
-        <!-- //meus cursos -->
-        <a onclick="exibirCursos()" class="opcao-menuBurger">
-            <div class="opcao-icone">
-                <img src="icons-cursos/icon-graduacao.svg">
+        <section id="menuBurger">
+            <div class="titulo">
+                <h2>MoneyMinds</h2>
             </div>
-            <p class="opcao-nome">Mais Informações</p>
-        </a>
 
-        <!-- //ranking -->
-        <a onclick="exibirRanking()" class="opcao-menuBurger">
-            <div class="opcao-icone">
-                <img src="icons-cursos/icon-questoes.svg">
-            </div>
-            <p class="opcao-nome">Questionário</p>
-        </a>
+            <div class="barra-divisao"></div>
 
-        <!-- //atividades -->
-        <a onclick="exibirAtividades()" class="opcao-menuBurger">
-            <div class="opcao-icone">
-                <img src="icons-cursos/icon-pontos.svg"> 
-            </div>
-            <p class="opcao-nome">Pontuação</p>
-        </a>
+            <!-- opcoes -->
+            <!-- //dashboard -->
+            <a onclick="exibirDashboard()" class="opcao-menuBurger">
+                <div class="opcao-icone">
+                    <img src="icons-cursos/icon-videoCurso.svg">
+                </div>
+                <p class="opcao-nome">Assistir Vídeo</p>
+            </a>
 
-        <!-- //sair -->
-        <a href="../perfil/perfil.html" class="opcao-menuBurger" id="sair-menu">
-            <div class="opcao-icone">
-                <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180  fa-2xl"></i>
-            </div>
-            <p class="opcao-nome">Voltar</p>
-        </a>
-    </section>
+            <!-- //meus cursos -->
+            <a onclick="exibirCursos()" class="opcao-menuBurger">
+                <div class="opcao-icone">
+                    <img src="icons-cursos/icon-graduacao.svg">
+                </div>
+                <p class="opcao-nome">Mais Informações</p>
+            </a>
+
+            <!-- //ranking -->
+            <a onclick="exibirRanking()" class="opcao-menuBurger">
+                <div class="opcao-icone">
+                    <img src="icons-cursos/icon-questoes.svg">
+                </div>
+                <p class="opcao-nome">Questionário</p>
+            </a>
+
+            <!-- //atividades -->
+            <a onclick="exibirAtividades()" class="opcao-menuBurger">
+                <div class="opcao-icone">
+                    <img src="icons-cursos/icon-pontos.svg">
+                </div>
+                <p class="opcao-nome">Pontuação</p>
+            </a>
+
+            <!-- //sair -->
+            <a href="../perfil/perfil.html" class="opcao-menuBurger" id="sair-menu">
+                <div class="opcao-icone">
+                    <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180  fa-2xl"></i>
+                </div>
+                <p class="opcao-nome">Voltar</p>
+            </a>
+        </section>
+
+        <!-- corpo curso -->
+        <nav class="principal">
+
+        </nav>
+    </main>
+
 
     <!-- scriptJS -->
     <script src="investimentoMain.js"></script>

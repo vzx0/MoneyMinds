@@ -76,7 +76,7 @@ main {
     width: 300px;
     height: 75px;
 
-    transition: 100ms ease;
+    transition: 200ms ease;
 
     cursor: pointer;
 }
@@ -92,7 +92,6 @@ main {
 
 .opcao-menuBurger:hover {
     background-color: var(--cor-primaria);
-    /* <--------- mudar isso ------------ */
 }
 
 #sair-menu {
