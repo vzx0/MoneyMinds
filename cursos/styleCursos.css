@@ -119,4 +119,54 @@ main {
     height: 75px;
 
     align-items: center;
+    
+}
+
+/* menu Capitulos do curso */
+.menuCapitulosCurso {
+    display: flex;
+    width: 300px;
+    height: 75px;
+    background-color: var(--background-secundario);
+
+    z-index: 1;
+}
+
+summary::before {
+    display: none;
+    content: '';
+  }
+
+.sumarioCapitulosCurso {
+    display: flex;
+
+    width: 300px;
+    height: 75px;
+
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+.capituloMenu {
+    display: flex;
+
+    width: 300px;
+    height: 75px;
+
+    background-color: var(--background-secundario);
+
+    align-items: center;
+}
+
+.marcadorConclusao {
+    display: flex;
+
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+
+    background-color: var(--background-principal);
+
+    margin: 25px;
 }
