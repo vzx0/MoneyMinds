@@ -415,9 +415,14 @@ nav>a:hover {
   object-fit: cover;
 }
 
-.pacotes-card .card-conteudo { padding: 30px 20px; }
+.pacotes-card .card-conteudo { 
+  padding: 30px 20px; 
+}
 
-.pacotes-card .card-titulo { margin-bottom: 15px; }
+.pacotes-card .card-titulo { 
+  margin-bottom: 15px;
+  line-height: 27px;
+}
 
 .pacotes-card .card-texto {
   line-height: 1.6;
@@ -431,7 +436,7 @@ nav>a:hover {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 8px;
+  padding: 7px;
   box-shadow: 0 0 5px hsla(0, 0%, 0%, 0.15);
   border-radius: 50px;
 }
@@ -491,7 +496,9 @@ nav>a:hover {
   font-size: 14px;
 }
 
-.pacotes-card .card-avaliacao ion-icon:last-child { color: hsl(0, 0%, 80%); }
+.pacotes-card .card-avaliacao ion-icon:last-child { 
+  color: hsl(0, 0%, 80%);
+ }
 
 .pacotes-card .preco2 {
   font-size: 1.8vw;
@@ -533,7 +540,18 @@ section{
   display: flex;
 }
 
-.pacotes .btn { margin-inline: auto; }
+.pacotes-botao {
+   /* margin-inline: 10p;  */
+   border: 1px #fff solid;
+   color: #fff;
+    display: inline-flex;
+    font-weight: 600;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1rem;
+    border-radius: 2rem;
+    transition: 0.3s ease-in-out;
+  }
 
 
 /* Fim pacotes */
@@ -1142,7 +1160,7 @@ hr {
   transition: 0.3s ease-in-out;
 }
 
-.btn:hover {
+.pacotes-botao:hover {
   display: inline-flex;
   /* color: #ffffff; */
   align-items: center;
