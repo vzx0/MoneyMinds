@@ -21,23 +21,36 @@ for (let i = 1; i <= 3; i++) {
 
 
 // ---------- curso VIDEO 1 ----------
-const video1 = document.getElementById('investimentoVideo1');
-const botaoVideo1 = document.getElementById('investimentoVideoBotao1');
+const videos = [
+    document.getElementById('investimentoVideo1'),
+    document.getElementById('investimentoVideo2'),
+    document.getElementById('investimentoVideo3')
+];
 
-video1.addEventListener('ended', function () {
-    botaoVideo1.disabled = false;
-    botaoVideo1.style.backgroundColor = "#00FF66";
-});
+const botoes = [
+    document.getElementById('investimentoVideoBotao1'),
+    document.getElementById('investimentoVideoBotao2'),
+    document.getElementById('investimentoVideoBotao3')
+];
 
-botaoVideo1.addEventListener('click', () => {
+const barrasProgresso = [
+    document.getElementById('progresso1'),
+    document.getElementById('progresso2'),
+    document.getElementById('progresso3')
+];
 
-    console.log('Botão clicado após o vídeo!');
-});
+videos.forEach((video, index) => {
+    video.addEventListener('ended', function () {
+        botoes[index].disabled = false;
+        botoes[index].style.backgroundColor = "var(--corBotaoDestaque)";
+    });
 
-// barra de progresso do video no botao
-const barraProgresso = document.getElementById('progresso1');
+    botoes[index].addEventListener('click', () => {
+        console.log(`Botão ${index + 1} clicado após o vídeo!`);
+    });
 
-video1.addEventListener('timeupdate', () => {
-    const progresso = (video1.currentTime / video1.duration) * 100;
-    barraProgresso.style.width = progresso + '%';
+    video.addEventListener('timeupdate', () => {
+        const progresso = (video.currentTime / video.duration) * 100;
+        barrasProgresso[index].style.width = progresso + '%';
+    });
 });
