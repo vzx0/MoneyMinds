@@ -4,8 +4,10 @@ document.addEventListener("DOMContentLoaded", function () {
     secaoVideo.style.display = "flex"
     
     ocultarConteudos2;
+    secaoVideo2.style.display = "flex"
 
     ocultarConteudos3;
+    secaoVideo3.style.display = "flex"
 })
 
 // ---------- menu burger ----------
@@ -124,7 +126,7 @@ for (let i = 1; i <= 3; i++) {
 }
 
 
-// ---------- curso VIDEO 1 ----------
+// ---------- curso VIDEO ----------
 const videos = [
     document.getElementById('investimentoVideo1'),
     document.getElementById('investimentoVideo2'),
