@@ -149,6 +149,7 @@ videos.forEach((video, index) => {
     video.addEventListener('ended', function () {
         botoes[index].disabled = false;
         botoes[index].style.backgroundColor = "var(--corBotaoDestaque)";
+        botoes[index].style.cursor = "pointer";
     });
 
     botoes[index].addEventListener('click', () => {
