@@ -18,6 +18,9 @@ main {
 
     background-color: var(--background-principal);
     background-image: linear-gradient(to right, var(--cor-primaria), var(--background-principal));
+
+    background-size: cover;
+    background-repeat: repeat;
 }
 
 /* corpo Curso */
@@ -27,7 +30,7 @@ main {
     height: 100vh;
 
     margin-right: 325px;
-    margin-left: 25px;
+    margin-left: 325px;
 }
 
 /* trocar paginas */
@@ -67,6 +70,8 @@ main {
     align-items: center;
 
     z-index: 1;
+
+    position: fixed;
 
     width: 300px;
     height: 100vh;
@@ -132,12 +137,22 @@ main {
     height: 75px;
 
     align-items: center;
+    justify-content: center;
+}
+
+.videoCurso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .botaoCurso {
     width: 250px;
     height: 50px;
     background-color: #0a7133;
+
+    cursor: not-allowed;
 
     border-radius: 30px;
 
@@ -174,6 +189,19 @@ main {
     box-sizing: border-box;
 }
 
+/* ---------- SECAO TEXTO CURSO ---------- */
+.divTexto {
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--background-principal);
+
+    padding: 30px;
+    border-radius: 30px;
+    
+    margin-bottom: 15px;
+}
+
 
 
 /* menu Capitulos do curso */
@@ -185,7 +213,8 @@ main {
 
     z-index: 0;
 
-    position: absolute;
+    position: fixed;
+
     right: 0;
     top: 0;
 }
