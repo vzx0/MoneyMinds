@@ -1,15 +1,7 @@
 @import '../style.css';
 
-#perfil {
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-    justify-content: center;
-
-    height: 150px;
-
-    margin: 50px 0px;
+body {
+    height: 100%;
 }
 
 main {
@@ -19,8 +11,7 @@ main {
     background-color: var(--background-principal);
     background-image: linear-gradient(to right, var(--cor-primaria), var(--background-principal));
 
-    background-size: cover;
-    background-repeat: repeat;
+    height: 100%;
 }
 
 /* corpo Curso */
@@ -270,4 +261,9 @@ summary::before {
     background-color: var(--background-principal);
 
     margin: 25px;
+}
+
+/* ---------- SECAO TXTS ----------- */
+#secaoTexto {
+    margin-top: 350px;
 }
