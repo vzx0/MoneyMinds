@@ -116,8 +116,8 @@ function extenderInformacoes(event) {
 
 function retrairInformacoes(event) {
     let informacoesCurso = event.currentTarget.querySelector('.informacoesCurso');
-    if (informacoesCurso.style.height !== "125px") {
-        informacoesCurso.style.height = "125px";
+    if (informacoesCurso.style.height !== "175px") {
+        informacoesCurso.style.height = "175px";
     }
 }
 
