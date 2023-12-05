@@ -20,19 +20,24 @@ const secaoVideo = document.getElementById('secaoVideo');
 const secaoTexto = document.getElementById('secaoTexto');
 const secaoQuestoes = document.getElementById('secaoQuestoes');
 
+const principal = document.querySelector('.principal');
+
 opcaoVideo.addEventListener('click', () => {
     ocultarConteudos();
     secaoVideo.style.display = 'flex';
+    principal.style.height = '100vh';
 });
 
 opcaoTexto.addEventListener('click', () => {
     ocultarConteudos();
     secaoTexto.style.display = 'flex';
+    principal.style.height = '100%';
 });
 
 opcaoQuestoes.addEventListener('click', () => {
     ocultarConteudos();
     secaoQuestoes.style.display = 'flex';
+    principal.style.height = '100%';
 });
 
 // Função para ocultar todos os conteúdos
@@ -55,16 +60,19 @@ const secaoQuestoes2 = document.getElementById('secaoQuestoes2');
 opcaoVideo2.addEventListener('click', () => {
     ocultarConteudos2();
     secaoVideo2.style.display = 'flex';
+    principal.style.height = '100vh';
 });
 
 opcaoTexto2.addEventListener('click', () => {
     ocultarConteudos2();
     secaoTexto2.style.display = 'flex';
+    principal.style.height = '100%';
 });
 
 opcaoQuestoes2.addEventListener('click', () => {
     ocultarConteudos2();
     secaoQuestoes2.style.display = 'flex';
+    principal.style.height = '100%';
 });
 
 // Função para ocultar todos os conteúdos
