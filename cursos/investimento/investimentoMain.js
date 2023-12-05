@@ -182,10 +182,10 @@ function shuffleArray(array) {
 
 // Seu código para criar o array de IDs de respostas
 const respostasEmbaralhadas = [
-    { id: "resposta1", texto: "Pelé" },
-    { id: "resposta2", texto: "Neymar" },
-    { id: "resposta3", texto: "Pedro" },
-    { id: "resposta4", texto: "Gustavo" }
+    { id: "resposta1", texto: "1" },
+    { id: "resposta2", texto: "2" },
+    { id: "resposta3", texto: "3" },
+    { id: "resposta4", texto: "4" }
 ];
 
 function mostrarRespostas() {

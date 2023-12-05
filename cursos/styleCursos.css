@@ -236,6 +236,10 @@ main {
     align-items: center;
 }
 
+.correta {
+    background-color: var(--corBotaoDestaque);
+}
+
 /* menu Capitulos do curso */
 .menuCapitulosCurso {
     display: flex;
