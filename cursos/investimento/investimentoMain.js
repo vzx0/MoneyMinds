@@ -171,7 +171,30 @@ videos.forEach((video, index) => {
     });
 });
 
-// sorteio posicao respostas Questionario
+// criacao de perguntas e suas respostas
+const perguntas = [
+    {
+        pergunta: "Quanto é 1+1?",
+        respostas: [
+            { texto: "6", correta: false },
+            { texto: "2", correta: true },
+            { texto: "7", correta: false },
+            { texto: "8", correta: false }
+        ]
+    },
+    {
+        pergunta: "Quanto é 2+2",
+        respostas: [
+            { texto: "7", correta: false },
+            { texto: "5", correta: false },
+            { texto: "4", correta: true },
+            { texto: "9", correta: false }
+        ]
+    },
+    
+];
+
+// Função para embaralhar array
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -180,42 +203,68 @@ function shuffleArray(array) {
     return array;
 }
 
-// Seu código para criar o array de IDs de respostas
-const respostasEmbaralhadas = [
-    { id: "resposta1", texto: "1" },
-    { id: "resposta2", texto: "2" },
-    { id: "resposta3", texto: "3" },
-    { id: "resposta4", texto: "4" }
-];
+// Embaralhar a ordem das perguntas
+const perguntasEmbaralhadas = shuffleArray(perguntas);
 
-function mostrarRespostas() {
-    // Embaralha as respostas
-    const respostas = [...respostasEmbaralhadas].sort(() => Math.random() - 0.5);
+// Exibir perguntas e respostas na tela
+perguntasEmbaralhadas.forEach(pergunta => {
+    console.log(pergunta.pergunta);
+    const respostasEmbaralhadas = shuffleArray(pergunta.respostas);
+    respostasEmbaralhadas.forEach(resposta => {
+        console.log(resposta.texto);
+    });
+});
 
-    // Exibe as respostas na tela
+// Função para criar elementos HTML para as perguntas e respostas
+let perguntaAtual = 0;
+let respostasCorretas = 0;
+
+function exibirPergunta() {
     const secaoResposta = document.querySelector('.secaoResposta');
-    respostas.forEach(resposta => {
+    secaoResposta.innerHTML = '';
+
+    const pergunta = perguntas[perguntaAtual];
+
+    const divPergunta = document.createElement('div');
+    divPergunta.classList.add('pergunta');
+    divPergunta.textContent = pergunta.pergunta;
+
+    const divRespostas = document.createElement('div');
+    divRespostas.classList.add('respostas');
+
+    pergunta.respostas.forEach((resposta, index) => {
         const divResposta = document.createElement('div');
         divResposta.classList.add('resposta');
         divResposta.textContent = resposta.texto;
-        divResposta.dataset.id = resposta.id;
+        divResposta.dataset.correta = resposta.correta;
+        divResposta.dataset.indice = index;
+
         divResposta.addEventListener('click', conferirResposta);
-        secaoResposta.appendChild(divResposta);
+
+        divRespostas.appendChild(divResposta);
     });
+
+    divPergunta.appendChild(divRespostas);
+    secaoResposta.appendChild(divPergunta);
 }
 
 function conferirResposta(event) {
-    const respostaClicada = event.target.dataset.id;
-    const respostaCorreta = respostasEmbaralhadas.find(resposta => resposta.id === respostaClicada);
-    
-    const respostas = document.querySelectorAll('.resposta');
-    respostas.forEach(resposta => {
-        resposta.classList.remove('correta');
-        if (resposta.dataset.id === respostaCorreta.id) {
-            resposta.classList.add('correta');
-        }
-    });
+    const respostaClicada = event.target;
+    const respostaCorreta = respostaClicada.dataset.correta === 'true';
+
+    if (respostaCorreta) {
+        respostaClicada.classList.add('correta');
+        respostasCorretas++;
+    } else {
+        respostaClicada.classList.add('errada');
+        respostaClicada.style.backgroundColor = "red";
+    }
+
+    perguntaAtual++;
+    if (perguntaAtual < perguntas.length) {
+        setTimeout(exibirPergunta, 1000);
+    } else {
+        console.log(`Fim do quiz. Respostas corretas: ${respostasCorretas}`);
+    }
 }
-
-mostrarRespostas();
-
+exibirPergunta();

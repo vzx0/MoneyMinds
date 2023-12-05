@@ -198,14 +198,9 @@ main {
 }
 
 /* ---------- SECAO QUESTIONARIO ---------- */
-.secaoResposta {
+.respostas {
     display: flex;
-    flex-direction: row;
-
-    padding: 30px;
-    border-radius: 30px;
-    
-    margin: 10px;
+    flex-direction: column;
 
     width: 100%;
 
@@ -219,7 +214,6 @@ main {
 
 .resposta {
     display: flex;
-    flex-direction: row;
 
     background-color: var(--background-principal);
 
