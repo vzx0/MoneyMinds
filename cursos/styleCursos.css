@@ -234,6 +234,24 @@ main {
     background-color: var(--corBotaoDestaque);
 }
 
+/* fim questionario */
+.botaoContinuar {
+    display: none;
+    width: 250px;
+    height: 50px;
+    background-color: var(--corBotaoDestaque);
+
+    border-radius: 30px;
+
+    margin: 20px 0px;
+    color: #fff;
+    font-size: 20px;
+
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
 /* menu Capitulos do curso */
 .menuCapitulosCurso {
     display: flex;

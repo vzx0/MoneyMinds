@@ -268,8 +268,13 @@ function exibirPergunta() {
 function conferirResposta(event) {
     const respostaClicada = event.target;
     const respostaCorreta = respostaClicada.dataset.correta === 'true';
-    
+
     const conclusaoQuestoes = document.getElementById('conclusaoQuestoes');
+    const tituloFimQuestoes = document.getElementById('tituloFimQuestoes');
+    const textoFimQuestoes = document.getElementById('textoFimQuestoes');
+
+    const botaoFimQuestoesProsseguir = document.getElementById('botaoFimQuestoesProsseguir');
+    const botaoFimQuestoesTentarNovamente = document.getElementById('botaoFimQuestoesTentarNovamente');
 
     if (respostaCorreta) {
         respostaClicada.classList.add('correta');
@@ -284,14 +289,46 @@ function conferirResposta(event) {
         setTimeout(exibirPergunta, 1000);
     }
 
-
-
-    // final
-    else if (respostasCorretas >= 70) {
+    // se conseguiu
+    else if (respostasCorretas >= 75) {
         secaoQuestoes.style.display = "none";
-        console.log(`Parabéns, você conseguiu. Taxa de respostas corretas: ${respostasCorretas}%`);
-    } else {
-        console.log(`Você não atingiu as expectativas. Taxa de respostas corretas: ${respostasCorretas}%, o mínimo para aprovação é de 70%`);
+        conclusaoQuestoes.style.display = "flex";
+
+        tituloFimQuestoes.textContent = "Parabéns, você conseguiu!";
+        textoFimQuestoes.textContent = `Você acertou ${respostasCorretas}%, clique aqui para ir para a próxima fase: `
+        botaoFimQuestoesProsseguir.style.display = "flex";
+
+        botaoFimQuestoesProsseguir.addEventListener('click', () => {
+
+        });
+    }
+
+    else {
+        secaoQuestoes.style.display = "none";
+        conclusaoQuestoes.style.display = "flex";
+    
+        tituloFimQuestoes.textContent = "Tente novamente!"
+        textoFimQuestoes.textContent = `Você acertou ${respostasCorretas}%, clique aqui para tentar novamente: `
+        botaoFimQuestoesTentarNovamente.style.display = "flex";
+    
+        botaoFimQuestoesTentarNovamente.addEventListener('click', () => {
+            perguntaAtual = 0;
+            respostasCorretas = 0; // Reinicia as respostas corretas para zero
+            exibirPergunta(shuffleArray(perguntas)); // Chama a função para exibir a primeira pergunta
+
+            secaoQuestoes.style.display = "flex";
+            conclusaoQuestoes.style.display = "none";
+        });
     }
 }
+
+// function tentarNovamente(){
+//              perguntaAtual = 0;
+//              respostasCorretas = 0; // Reinicia as respostas corretas para zero
+//              exibirPergunta(); // Chama a função para exibir a primeira pergunta
+// }
+//     // se nao conseguiu
+
 exibirPergunta();
+
+
