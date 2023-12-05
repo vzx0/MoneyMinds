@@ -265,5 +265,20 @@ summary::before {
 
 /* ---------- SECAO TXTS ----------- */
 #secaoTexto {
-    margin-top: 350px;
+    display: flex;
+    position: relative;
+
+    top: 400px;
+}
+
+.tituloTexto {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 75px;
+
+    margin-bottom: 25px;
 }
