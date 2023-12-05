@@ -458,11 +458,11 @@ nav>a:hover {
   .bolinhas.topo{
     position: absolute;
     background: linear-gradient(179deg, rgb(56, 128, 255), rgb(56, 128, 255));
-    height: 389px;
+    height: 340px;
     top: -375px;
     left: 0;
     border-radius: 197px;
-    filter: blur(191px);
+    filter: blur(312px);
     align-items: center;
     display: flex;
     justify-content: center;
@@ -484,7 +484,7 @@ nav>a:hover {
   
 
   .topo{
-    width: 100vw;
+    width: 80vhvw;
   }
 
 /* fim bolinhas */
