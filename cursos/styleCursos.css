@@ -98,6 +98,10 @@ main {
     cursor: pointer;
 }
 
+.desativado:hover {
+    background-color: var(--background-principal);
+}
+
 .opcao-icone {
     display: flex;
     width: 100px;

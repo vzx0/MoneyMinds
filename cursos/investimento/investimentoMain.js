@@ -168,7 +168,12 @@ videos.forEach((video, index) => {
     });
 
     botoes[index].addEventListener('click', () => {
-        console.log(`Botão ${index + 1} clicado após o vídeo!`);
+        ocultarConteudos();
+        secaoTexto.style.display = 'flex';
+        principal.style.height = '100%';
+        opcaoTexto.disabled = "false"
+
+        opcaoTexto.classList.remove('desativado');
     });
 
     video.addEventListener('timeupdate', () => {
@@ -292,7 +297,7 @@ function conferirResposta(event) {
 
     perguntaAtual++;
     if (perguntaAtual < perguntas.length) {
-        setTimeout(exibirPergunta, 1000);
+        setTimeout(exibirPergunta, 250);
     }
 
     // se conseguiu
@@ -327,7 +332,6 @@ function conferirResposta(event) {
         });
     };
 };
-
 exibirPergunta();
 
 
