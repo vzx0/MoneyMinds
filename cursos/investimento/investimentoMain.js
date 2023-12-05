@@ -38,6 +38,8 @@ opcaoQuestoes.addEventListener('click', () => {
     ocultarConteudos();
     secaoQuestoes.style.display = 'flex';
     principal.style.height = '100vh';
+
+    exibirPergunta(shuffleArray(perguntas));
 });
 
 // Função para ocultar todos os conteúdos
@@ -73,6 +75,8 @@ opcaoQuestoes2.addEventListener('click', () => {
     ocultarConteudos2();
     secaoQuestoes2.style.display = 'flex';
     principal.style.height = '100vh';
+
+    exibirPergunta(shuffleArray(perguntas));
 });
 
 // Função para ocultar todos os conteúdos
@@ -107,6 +111,8 @@ opcaoQuestoes3.addEventListener('click', () => {
     ocultarConteudos3();
     secaoQuestoes3.style.display = 'flex';
     principal.style.height = '100vh';
+
+    exibirPergunta(shuffleArray(perguntas));
 });
 
 function ocultarConteudos3() {
@@ -295,7 +301,7 @@ function conferirResposta(event) {
         conclusaoQuestoes.style.display = "flex";
 
         tituloFimQuestoes.textContent = "Parabéns, você conseguiu!";
-        textoFimQuestoes.textContent = `Você acertou ${respostasCorretas}%, clique aqui para ir para a próxima fase: `
+        textoFimQuestoes.textContent = `Você acertou ${respostasCorretas}% das questões, clique aqui para ir para a próxima fase: `
         botaoFimQuestoesProsseguir.style.display = "flex";
 
         botaoFimQuestoesProsseguir.addEventListener('click', () => {
@@ -308,7 +314,7 @@ function conferirResposta(event) {
         conclusaoQuestoes.style.display = "flex";
     
         tituloFimQuestoes.textContent = "Tente novamente!"
-        textoFimQuestoes.textContent = `Você acertou ${respostasCorretas}%, clique aqui para tentar novamente: `
+        textoFimQuestoes.textContent = `Você acertou ${respostasCorretas}% das questões, clique aqui para tentar novamente: `
         botaoFimQuestoesTentarNovamente.style.display = "flex";
     
         botaoFimQuestoesTentarNovamente.addEventListener('click', () => {
@@ -319,15 +325,8 @@ function conferirResposta(event) {
             secaoQuestoes.style.display = "flex";
             conclusaoQuestoes.style.display = "none";
         });
-    }
-}
-
-// function tentarNovamente(){
-//              perguntaAtual = 0;
-//              respostasCorretas = 0; // Reinicia as respostas corretas para zero
-//              exibirPergunta(); // Chama a função para exibir a primeira pergunta
-// }
-//     // se nao conseguiu
+    };
+};
 
 exibirPergunta();
 
