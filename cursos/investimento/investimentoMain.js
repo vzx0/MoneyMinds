@@ -191,7 +191,24 @@ const perguntas = [
             { texto: "9", correta: false }
         ]
     },
-    
+    {
+        pergunta: "Quanto é 3+3",
+        respostas: [
+            { texto: "6", correta: true },
+            { texto: "5", correta: false },
+            { texto: "12", correta: false },
+            { texto: "9", correta: false }
+        ]
+    },
+    {
+        pergunta: "Quanto é 4+4",
+        respostas: [
+            { texto: "7", correta: false },
+            { texto: "5", correta: false },
+            { texto: "8", correta: true },
+            { texto: "9", correta: false }
+        ]
+    },
 ];
 
 // Função para embaralhar array
@@ -251,10 +268,12 @@ function exibirPergunta() {
 function conferirResposta(event) {
     const respostaClicada = event.target;
     const respostaCorreta = respostaClicada.dataset.correta === 'true';
+    
+    const conclusaoQuestoes = document.getElementById('conclusaoQuestoes');
 
     if (respostaCorreta) {
         respostaClicada.classList.add('correta');
-        respostasCorretas++;
+        respostasCorretas += 25;
     } else {
         respostaClicada.classList.add('errada');
         respostaClicada.style.backgroundColor = "red";
@@ -263,8 +282,16 @@ function conferirResposta(event) {
     perguntaAtual++;
     if (perguntaAtual < perguntas.length) {
         setTimeout(exibirPergunta, 1000);
+    }
+
+
+
+    // final
+    else if (respostasCorretas >= 70) {
+        secaoQuestoes.style.display = "none";
+        console.log(`Parabéns, você conseguiu. Taxa de respostas corretas: ${respostasCorretas}%`);
     } else {
-        console.log(`Fim do quiz. Respostas corretas: ${respostasCorretas}`);
+        console.log(`Você não atingiu as expectativas. Taxa de respostas corretas: ${respostasCorretas}%, o mínimo para aprovação é de 70%`);
     }
 }
 exibirPergunta();
