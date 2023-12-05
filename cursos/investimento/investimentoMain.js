@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     ocultarConteudos;
     secaoVideo.style.display = "flex"
-    
+
     ocultarConteudos2;
     secaoVideo2.style.display = "flex"
 
@@ -37,7 +37,7 @@ opcaoTexto.addEventListener('click', () => {
 opcaoQuestoes.addEventListener('click', () => {
     ocultarConteudos();
     secaoQuestoes.style.display = 'flex';
-    principal.style.height = '100%';
+    principal.style.height = '100vh';
 });
 
 // Função para ocultar todos os conteúdos
@@ -72,7 +72,7 @@ opcaoTexto2.addEventListener('click', () => {
 opcaoQuestoes2.addEventListener('click', () => {
     ocultarConteudos2();
     secaoQuestoes2.style.display = 'flex';
-    principal.style.height = '100%';
+    principal.style.height = '100vh';
 });
 
 // Função para ocultar todos os conteúdos
@@ -106,7 +106,7 @@ opcaoTexto3.addEventListener('click', () => {
 opcaoQuestoes3.addEventListener('click', () => {
     ocultarConteudos3();
     secaoQuestoes3.style.display = 'flex';
-    principal.style.height = '100%';
+    principal.style.height = '100vh';
 });
 
 function ocultarConteudos3() {
@@ -114,8 +114,6 @@ function ocultarConteudos3() {
     secaoTexto3.style.display = 'none';
     secaoQuestoes3.style.display = 'none';
 }
-
-
 
 // ---------- Capitulos ---------- 
 const botoesCapitulo = [];
@@ -172,3 +170,52 @@ videos.forEach((video, index) => {
         barrasProgresso[index].style.width = progresso + '%';
     });
 });
+
+// sorteio posicao respostas Questionario
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+// Seu código para criar o array de IDs de respostas
+const respostasEmbaralhadas = [
+    { id: "resposta1", texto: "Pelé" },
+    { id: "resposta2", texto: "Neymar" },
+    { id: "resposta3", texto: "Pedro" },
+    { id: "resposta4", texto: "Gustavo" }
+];
+
+function mostrarRespostas() {
+    // Embaralha as respostas
+    const respostas = [...respostasEmbaralhadas].sort(() => Math.random() - 0.5);
+
+    // Exibe as respostas na tela
+    const secaoResposta = document.querySelector('.secaoResposta');
+    respostas.forEach(resposta => {
+        const divResposta = document.createElement('div');
+        divResposta.classList.add('resposta');
+        divResposta.textContent = resposta.texto;
+        divResposta.dataset.id = resposta.id;
+        divResposta.addEventListener('click', conferirResposta);
+        secaoResposta.appendChild(divResposta);
+    });
+}
+
+function conferirResposta(event) {
+    const respostaClicada = event.target.dataset.id;
+    const respostaCorreta = respostasEmbaralhadas.find(resposta => resposta.id === respostaClicada);
+    
+    const respostas = document.querySelectorAll('.resposta');
+    respostas.forEach(resposta => {
+        resposta.classList.remove('correta');
+        if (resposta.dataset.id === respostaCorreta.id) {
+            resposta.classList.add('correta');
+        }
+    });
+}
+
+mostrarRespostas();
+
