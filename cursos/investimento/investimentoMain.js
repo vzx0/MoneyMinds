@@ -94,16 +94,19 @@ const secaoQuestoes3 = document.getElementById('secaoQuestoes3');
 opcaoVideo3.addEventListener('click', () => {
     ocultarConteudos3();
     secaoVideo3.style.display = 'flex';
+    principal.style.height = '100vh';
 });
 
 opcaoTexto3.addEventListener('click', () => {
     ocultarConteudos3();
     secaoTexto3.style.display = 'flex';
+    principal.style.height = '100%';
 });
 
 opcaoQuestoes3.addEventListener('click', () => {
     ocultarConteudos3();
     secaoQuestoes3.style.display = 'flex';
+    principal.style.height = '100%';
 });
 
 function ocultarConteudos3() {
