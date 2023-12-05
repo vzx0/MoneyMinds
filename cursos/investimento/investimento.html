@@ -36,14 +36,14 @@
             </a>
 
 
-            <a class="opcao-menuBurger" id="opcaoTexto">
+            <a class="opcao-menuBurger desativado" id="opcaoTexto">
                 <div class="opcao-icone">
                     <img src="../icons-cursos/icon-graduacao.svg">
                 </div>
                 <p class="opcao-nome">Mais Informações</p>
             </a>
 
-            <a class="opcao-menuBurger" id="opcaoQuestoes">
+            <a class="opcao-menuBurger desativado" id="opcaoQuestoes">
                 <div class="opcao-icone">
                     <img src="../icons-cursos/icon-questoes.svg">
                 </div>
@@ -80,6 +80,10 @@
             </section>
 
             <section class="secao" id="secaoTexto">
+                <div class="titulo">
+                    <h2>Investimento</h2>
+                </div>
+
                 <div class="divTexto">
                     <h3>Título 1.1</h3>
                     <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea non cumque, suscipit iusto eius
@@ -161,7 +165,20 @@
             </section>
 
             <section class="secao" id="secaoQuestoes">
+                <div class="titulo">
+                    <h2>Questionário</h2>
+                </div>
 
+                <div class="secaoResposta"></div>
+
+            </section>
+
+            <section class="secao" id="conclusaoQuestoes">
+                <h3 id="tituloFimQuestoes"></h3>
+                <p id="textoFimQuestoes"></p>
+
+                <button onclick="tentarNovamente()" class="botaoContinuar" id="botaoFimQuestoesTentarNovamente">Tentar Novamente</button>
+                <button class="botaoContinuar" id="botaoFimQuestoesProsseguir">Prosseguir</button>
             </section>
         </nav>
     </main>
