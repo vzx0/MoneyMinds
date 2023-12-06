@@ -39,7 +39,7 @@ opcaoQuestoes.addEventListener('click', () => {
     secaoQuestoes.style.display = 'flex';
     principal.style.height = '100vh';
 
-    exibirPergunta(shuffleArray(perguntas));
+    questionario1();
 });
 
 // Função para ocultar todos os conteúdos
@@ -182,171 +182,171 @@ videos.forEach((video, index) => {
     });
 });
 
+// QUIZ CAP 1
 // criacao de perguntas e suas respostas
-const perguntas = [
-    {
-        pergunta: "Quanto é 1+1?",
-        respostas: [
-            { texto: "6", correta: false },
-            { texto: "2", correta: true },
-            { texto: "7", correta: false },
-            { texto: "8", correta: false }
-        ]
-    },
-    {
-        pergunta: "Quanto é 2+2",
-        respostas: [
-            { texto: "7", correta: false },
-            { texto: "5", correta: false },
-            { texto: "4", correta: true },
-            { texto: "9", correta: false }
-        ]
-    },
-    {
-        pergunta: "Quanto é 3+3",
-        respostas: [
-            { texto: "6", correta: true },
-            { texto: "5", correta: false },
-            { texto: "12", correta: false },
-            { texto: "9", correta: false }
-        ]
-    },
-    {
-        pergunta: "Quanto é 4+4",
-        respostas: [
-            { texto: "7", correta: false },
-            { texto: "5", correta: false },
-            { texto: "8", correta: true },
-            { texto: "9", correta: false }
-        ]
-    },
-];
+function questionario1() {
+    const perguntas = [
+        {
+            pergunta: "Quanto é 1+1?",
+            respostas: [
+                { texto: "6", correta: false },
+                { texto: "2", correta: true },
+                { texto: "7", correta: false },
+                { texto: "8", correta: false }
+            ]
+        },
+        {
+            pergunta: "Quanto é 2+2",
+            respostas: [
+                { texto: "7", correta: false },
+                { texto: "5", correta: false },
+                { texto: "4", correta: true },
+                { texto: "9", correta: false }
+            ]
+        },
+        {
+            pergunta: "Quanto é 3+3",
+            respostas: [
+                { texto: "6", correta: true },
+                { texto: "5", correta: false },
+                { texto: "12", correta: false },
+                { texto: "9", correta: false }
+            ]
+        },
+        {
+            pergunta: "Quanto é 4+4",
+            respostas: [
+                { texto: "7", correta: false },
+                { texto: "5", correta: false },
+                { texto: "8", correta: true },
+                { texto: "9", correta: false }
+            ]
+        },
+    ];
 
-// Função para embaralhar array
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
+    // Função para embaralhar array
+    function shuffleArray(perguntas) {
+        for (let i = perguntas.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [perguntas[i], perguntas[j]] = [perguntas[j], perguntas[i]];
+        }
+        return perguntas;
     }
-    return array;
-}
 
-// Embaralhar a ordem das perguntas
-const perguntasEmbaralhadas = shuffleArray(perguntas);
+    // Embaralhar a ordem das perguntas
+    const perguntasEmbaralhadas = shuffleArray(perguntas);
 
-// Exibir perguntas e respostas na tela
-perguntasEmbaralhadas.forEach(pergunta => {
-    console.log(pergunta.pergunta);
-    const respostasEmbaralhadas = shuffleArray(pergunta.respostas);
-    respostasEmbaralhadas.forEach(resposta => {
-        console.log(resposta.texto);
-    });
-});
-
-// Função para criar elementos HTML para as perguntas e respostas
-let perguntaAtual = 0;
-let respostasCorretas = 0;
-
-function exibirPergunta() {
-    const secaoResposta = document.querySelector('.secaoResposta');
-    secaoResposta.innerHTML = '';
-
-    const pergunta = perguntas[perguntaAtual];
-
-    const divPergunta = document.createElement('div');
-    divPergunta.classList.add('pergunta');
-    divPergunta.textContent = pergunta.pergunta;
-
-    const divRespostas = document.createElement('div');
-    divRespostas.classList.add('respostas');
-
-    pergunta.respostas.forEach((resposta, index) => {
-        const divResposta = document.createElement('div');
-        divResposta.classList.add('resposta');
-        divResposta.textContent = resposta.texto;
-        divResposta.dataset.correta = resposta.correta;
-        divResposta.dataset.indice = index;
-
-        divResposta.addEventListener('click', conferirResposta);
-
-        divRespostas.appendChild(divResposta);
+    // Exibir perguntas e respostas na tela
+    perguntasEmbaralhadas.forEach(pergunta => {
+        shuffleArray(pergunta.respostas);
     });
 
-    divPergunta.appendChild(divRespostas);
-    secaoResposta.appendChild(divPergunta);
-}
+    // Função para criar elementos HTML para as perguntas e respostas
+    let perguntaAtual = 0;
+    let respostasCorretas = 0;
 
-function conferirResposta(event) {
-    const respostaClicada = event.target;
-    const respostaCorreta = respostaClicada.dataset.correta === 'true';
+    function exibirPergunta() {
+        const secaoResposta = document.querySelector('.secaoResposta');
+        secaoResposta.innerHTML = '';
 
-    const conclusaoQuestoes = document.getElementById('conclusaoQuestoes');
-    const tituloFimQuestoes = document.getElementById('tituloFimQuestoes');
-    const textoFimQuestoes = document.getElementById('textoFimQuestoes');
+        const pergunta = perguntas[perguntaAtual];
 
-    const botaoFimQuestoesProsseguir = document.getElementById('botaoFimQuestoesProsseguir');
-    const botaoFimQuestoesTentarNovamente = document.getElementById('botaoFimQuestoesTentarNovamente');
+        const divPergunta = document.createElement('div');
+        divPergunta.classList.add('pergunta');
+        divPergunta.textContent = pergunta.pergunta;
 
-    if (respostaCorreta) {
-        respostaClicada.classList.add('correta');
-        respostasCorretas += 25;
-    } else {
-        respostaClicada.classList.add('errada');
-        respostaClicada.style.backgroundColor = "red";
-    }
+        const divRespostas = document.createElement('div');
+        divRespostas.classList.add('respostas');
 
-    perguntaAtual++;
-    if (perguntaAtual < perguntas.length) {
-        setTimeout(exibirPergunta, 250);
-    }
+        pergunta.respostas.forEach((resposta, index) => {
+            const divResposta = document.createElement('div');
+            divResposta.classList.add('resposta');
+            divResposta.textContent = resposta.texto;
+            divResposta.dataset.correta = resposta.correta;
+            divResposta.dataset.indice = index;
 
-    // se conseguiu
-    else if (respostasCorretas >= 75) {
-        secaoQuestoes.style.display = "none";
-        conclusaoQuestoes.style.display = "flex";
+            divResposta.addEventListener('click', conferirResposta);
 
-        tituloFimQuestoes.textContent = "Parabéns, você conseguiu!";
-        textoFimQuestoes.textContent = `Você acertou ${respostasCorretas}% das questões, clique aqui para ir para a próxima fase: `
-        botaoFimQuestoesProsseguir.style.display = "flex";
-        botaoFimQuestoesTentarNovamente.style.display = "none";
-
-        // Adicione uma variável para rastrear o capítulo atual
-        let capituloAtual = 0;
-
-        // No evento de clique do botão "Prosseguir"
-        botaoFimQuestoesProsseguir.addEventListener('click', () => {
-            // Certifique-se de não ultrapassar o número total de capítulos
-            if (capituloAtual < capitulos.length - 1) {
-                // Oculta o capítulo atual e exibe o próximo capítulo
-                capitulos[capituloAtual].style.display = 'none';
-                capituloAtual++;
-                capitulos[capituloAtual].style.display = 'flex';
-            } else {
-                // Se atingir o último capítulo, você pode ocultar a seção de questões ou realizar outra ação
-                secaoQuestoes.style.display = 'none';
-            }
+            divRespostas.appendChild(divResposta);
         });
 
+        divPergunta.appendChild(divRespostas);
+        secaoResposta.appendChild(divPergunta);
     }
 
-    else {
-        secaoQuestoes.style.display = "none";
-        conclusaoQuestoes.style.display = "flex";
+    function conferirResposta(event) {
+        const respostaClicada = event.target;
+        const respostaCorreta = respostaClicada.dataset.correta === 'true';
 
-        tituloFimQuestoes.textContent = "Tente novamente!"
-        textoFimQuestoes.textContent = `Você acertou ${respostasCorretas}% das questões, clique aqui para tentar novamente: `
-        botaoFimQuestoesTentarNovamente.style.display = "flex";
+        const conclusaoQuestoes = document.getElementById('conclusaoQuestoes');
+        const tituloFimQuestoes = document.getElementById('tituloFimQuestoes');
+        const textoFimQuestoes = document.getElementById('textoFimQuestoes');
 
-        botaoFimQuestoesTentarNovamente.addEventListener('click', () => {
-            perguntaAtual = 0;
-            respostasCorretas = 0; // Reinicia as respostas corretas para zero
-            exibirPergunta(shuffleArray(perguntas)); // Chama a função para exibir a primeira pergunta
+        const botaoFimQuestoesProsseguir = document.getElementById('botaoFimQuestoesProsseguir');
+        const botaoFimQuestoesTentarNovamente = document.getElementById('botaoFimQuestoesTentarNovamente');
 
-            secaoQuestoes.style.display = "flex";
-            conclusaoQuestoes.style.display = "none";
-        });
+        if (respostaCorreta) {
+            respostaClicada.classList.add('correta');
+            respostasCorretas += 25;
+        } else {
+            respostaClicada.classList.add('errada');
+            respostaClicada.style.backgroundColor = "red";
+        }
+
+        perguntaAtual++;
+        if (perguntaAtual < perguntas.length) {
+            setTimeout(exibirPergunta, 250);
+        }
+
+        // se conseguiu
+        else if (respostasCorretas >= 75) {
+            secaoQuestoes.style.display = "none";
+            conclusaoQuestoes.style.display = "flex";
+
+            tituloFimQuestoes.textContent = "Parabéns, você conseguiu!";
+            textoFimQuestoes.textContent = `Você acertou ${respostasCorretas}% das questões, clique aqui para ir para a próxima fase: `
+            botaoFimQuestoesProsseguir.style.display = "flex";
+            botaoFimQuestoesTentarNovamente.style.display = "none";
+
+            // Adicione uma variável para rastrear o capítulo atual
+            let capituloAtual = 0;
+
+            // No evento de clique do botão "Prosseguir"
+            botaoFimQuestoesProsseguir.addEventListener('click', () => {
+                // Certifique-se de não ultrapassar o número total de capítulos
+                if (capituloAtual < capitulos.length - 1) {
+                    // Oculta o capítulo atual e exibe o próximo capítulo
+                    capitulos[capituloAtual].style.display = 'none';
+                    capituloAtual++;
+                    capitulos[capituloAtual].style.display = 'flex';
+                } else {
+                    // Se atingir o último capítulo, você pode ocultar a seção de questões ou realizar outra ação
+                    secaoQuestoes.style.display = 'none';
+                }
+            });
+
+        }
+
+        else {
+            secaoQuestoes.style.display = "none";
+            conclusaoQuestoes.style.display = "flex";
+
+            tituloFimQuestoes.textContent = "Tente novamente!"
+            textoFimQuestoes.textContent = `Você acertou ${respostasCorretas}% das questões, clique aqui para tentar novamente: `
+            botaoFimQuestoesTentarNovamente.style.display = "flex";
+
+            botaoFimQuestoesTentarNovamente.addEventListener('click', () => {
+                perguntaAtual = 0;
+                respostasCorretas = 0; // Reinicia as respostas corretas para zero
+                exibirPergunta(shuffleArray(perguntas)); // Chama a função para exibir a primeira pergunta
+
+                secaoQuestoes.style.display = "flex";
+                conclusaoQuestoes.style.display = "none";
+            });
+        };
     };
-};
-exibirPergunta();
+    exibirPergunta();
+}
+
 
 
