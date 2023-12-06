@@ -76,7 +76,7 @@ opcaoQuestoes2.addEventListener('click', () => {
     secaoQuestoes2.style.display = 'flex';
     principal.style.height = '100vh';
 
-    exibirPergunta(shuffleArray(perguntas));
+    questionario2();
 });
 
 // Função para ocultar todos os conteúdos
@@ -112,7 +112,7 @@ opcaoQuestoes3.addEventListener('click', () => {
     secaoQuestoes3.style.display = 'flex';
     principal.style.height = '100vh';
 
-    exibirPergunta(shuffleArray(perguntas));
+    questionario3();
 });
 
 function ocultarConteudos3() {
@@ -246,7 +246,7 @@ function questionario1() {
     let respostasCorretas = 0;
 
     function exibirPergunta() {
-        const secaoResposta = document.querySelector('.secaoResposta');
+        const secaoResposta = document.getElementById('secaoResposta');
         secaoResposta.innerHTML = '';
 
         const pergunta = perguntas[perguntaAtual];
@@ -346,6 +346,167 @@ function questionario1() {
         };
     };
     exibirPergunta();
+}
+
+// QUIZ CAP 2
+function questionario2(){
+    const perguntas2 = [
+        {
+            pergunta: "A vida faz sentido?",
+            respostas: [
+                { texto: "Não sei", correta: true },
+                { texto: "Neymar?", correta: false },
+                { texto: "Certamente que não", correta: false },
+                { texto: "Certamente que sim", correta: false }
+            ]
+        },
+        {
+            pergunta: "7*7",
+            respostas: [
+                { texto: "190", correta: false },
+                { texto: "27", correta: false },
+                { texto: "14", correta: false },
+                { texto: "49", correta: true }
+            ]
+        },
+        {
+            pergunta: "Você gosta de javascript",
+            respostas: [
+                { texto: "Depende do dia", correta: true },
+                { texto: "Claro", correta: false },
+                { texto: "Não", correta: false },
+                { texto: "Adoro fazer programa", correta: false }
+            ]
+        },
+        {
+            pergunta: "Por que esse site precisa de um coco para funcionar?",
+            respostas: [
+                { texto: "Coco?", correta: false },
+                { texto: "Team Fortress 2", correta: true },
+                { texto: "Sla fi", correta: false },
+                { texto: "Concordo plenamente", correta: false }
+            ]
+        },
+    ];
+
+    function shuffleArray(perguntas2) {
+        for (let i = perguntas2.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [perguntas2[i], perguntas2[j]] = [perguntas2[j], perguntas2[i]];
+        }
+        return perguntas2;
+    }
+
+    const perguntasEmbaralhadas2 = shuffleArray(perguntas2);
+
+    perguntasEmbaralhadas2.forEach(pergunta => {
+        shuffleArray(pergunta.respostas);
+    });
+
+    let perguntaAtual2 = 0;
+    let respostasCorretas2 = 0;
+
+    function exibirPergunta2() {
+        const secaoResposta2 = document.getElementById('secaoResposta2');
+        secaoResposta2.innerHTML = '';
+
+        const pergunta = perguntas2[perguntaAtual2];
+
+        const divPergunta = document.createElement('div');
+        divPergunta.classList.add('pergunta');
+        divPergunta.textContent = pergunta.pergunta;
+
+        const divRespostas = document.createElement('div');
+        divRespostas.classList.add('respostas');
+
+        pergunta.respostas.forEach((resposta, index) => {
+            const divResposta = document.createElement('div');
+            divResposta.classList.add('resposta');
+            divResposta.textContent = resposta.texto;
+            divResposta.dataset.correta = resposta.correta;
+            divResposta.dataset.indice = index;
+
+            divResposta.addEventListener('click', conferirResposta2);
+
+            divRespostas.appendChild(divResposta);
+        });
+
+        divPergunta.appendChild(divRespostas);
+        secaoResposta2.appendChild(divPergunta);
+    }
+
+    function conferirResposta2(event) {
+        const respostaClicada = event.target;
+        const respostaCorreta = respostaClicada.dataset.correta === 'true';
+
+        const conclusaoQuestoes2 = document.getElementById('conclusaoQuestoes2');
+        const tituloFimQuestoes2 = document.getElementById('tituloFimQuestoes2');
+        const textoFimQuestoes2 = document.getElementById('textoFimQuestoes2');
+
+        const botaoFimQuestoesProsseguir2 = document.getElementById('botaoFimQuestoesProsseguir2');
+        const botaoFimQuestoesTentarNovamente2 = document.getElementById('botaoFimQuestoesTentarNovamente2');
+
+        if (respostaCorreta) {
+            respostaClicada.classList.add('correta');
+            respostasCorretas2 += 25;
+        } else {
+            respostaClicada.classList.add('errada');
+            respostaClicada.style.backgroundColor = "red";
+        }
+
+        perguntaAtual2++;
+        if (perguntaAtual2 < perguntas2.length) {
+            setTimeout(exibirPergunta2, 250);
+        }
+
+        // se conseguiu
+        else if (respostasCorretas2 >= 75) {
+            secaoQuestoes2.style.display = "none";
+            conclusaoQuestoes2.style.display = "flex";
+
+            tituloFimQuestoes2.textContent = "Parabéns, você conseguiu!";
+            textoFimQuestoes2.textContent = `Você acertou ${respostasCorretas2}% das questões, clique aqui para ir para a próxima fase: `
+            botaoFimQuestoesProsseguir2.style.display = "flex";
+            botaoFimQuestoesTentarNovamente2.style.display = "none";
+
+            // Adicione uma variável para rastrear o capítulo atual
+            let capituloAtual = 1;
+
+            // No evento de clique do botão "Prosseguir"
+            botaoFimQuestoesProsseguir2.addEventListener('click', () => {
+                // Certifique-se de não ultrapassar o número total de capítulos
+                if (capituloAtual < capitulos.length - 1) {
+                    // Oculta o capítulo atual e exibe o próximo capítulo
+                    capitulos[capituloAtual].style.display = 'none';
+                    capituloAtual++;
+                    capitulos[capituloAtual].style.display = 'flex';
+                } else {
+                    // Se atingir o último capítulo, você pode ocultar a seção de questões ou realizar outra ação
+                    secaoQuestoes2.style.display = 'none';
+                }
+            });
+
+        }
+
+        else {
+            secaoQuestoes2.style.display = "none";
+            conclusaoQuestoes2.style.display = "flex";
+
+            tituloFimQuestoes2.textContent = "Tente novamente!"
+            textoFimQuestoes2.textContent = `Você acertou ${respostasCorretas2}% das questões, clique aqui para tentar novamente: `
+            botaoFimQuestoesTentarNovamente2.style.display = "flex";
+
+            botaoFimQuestoesTentarNovamente2.addEventListener('click', () => {
+                perguntaAtual2 = 0;
+                respostasCorretas2 = 0; // Reinicia as respostas corretas para zero
+                exibirPergunta2(shuffleArray(perguntas2)); // Chama a função para exibir a primeira pergunta
+
+                secaoQuestoes2.style.display = "flex";
+                conclusaoQuestoes2.style.display = "none";
+            });
+        };
+    };
+    exibirPergunta2();
 }
 
 
