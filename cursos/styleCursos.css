@@ -14,9 +14,8 @@ main {
 
 /* corpo Curso */
 .principal {
-
     width: 100%;
-    height: 100vh;
+    height: 100%;
 
     margin-right: 325px;
     margin-left: 325px;
@@ -40,15 +39,33 @@ main {
     justify-content: center;
 }
 
-.secaoVideo {
+.secoesVideos {
     display: flex;
     flex-direction: column;
 
     width: 100%;
-    height: 100%;
+    height: 100vh;
 
     justify-content: center;
     align-items: center;
+}
+
+.secoesQuestionarios {
+    flex-direction: column;
+
+    width: 100%;
+    height: 100vh;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.secoesTextos {
+    position: relative;
+
+    top: 0px;
+
+    height: auto;
 }
 
 /* menu burger */
@@ -193,12 +210,6 @@ main {
     border-radius: 30px;
     
     margin-bottom: 15px;
-}
-
-#secaoTexto {
-    position: relative;
-
-    top: 0px;
 }
 
 /* ---------- SECAO QUESTIONARIO ---------- */
