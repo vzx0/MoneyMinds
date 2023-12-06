@@ -209,50 +209,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// nome
-// function trocarNome() {
-//     const inputNome = document.getElementById('inputNome').value;
-//     const nomes = document.querySelectorAll('.nomeDeUsuario');
-//     let nomeArmazenado = localStorage.getItem('nomeUsuario');
-
-//     if (!nomeArmazenado) {
-//         nomeArmazenado = inputNome || 'Usuário'; // Nome padrão caso não haja valor no input
-//     }
-
-//     nomes.forEach(nome => {
-//         nome.textContent = nomeArmazenado;
-//     });
-
-//     // Armazenar o novo nome no localStorage
-//     localStorage.setItem('nomeUsuario', nomeArmazenado);
-// }
-
-// // Carregar o nome armazenado ao carregar a página
-// document.addEventListener('DOMContentLoaded', function() {
-//     trocarNome();
-// });
-
-// // Adiciona um evento para detectar mudanças no input
-// const inputNome = document.getElementById('inputNome');
-// inputNome.addEventListener('input', function() {
-//     trocarNome();
-// });
-
-// original
-// function trocarNome() {
-//     const inputNome = document.getElementById('inputNome').value;
-//     const nomes = document.querySelectorAll('.nomeDeUsuario');
-
-//     nomes.forEach(nome => {
-//         nome.textContent = inputNome;
-//     });
-
-//     // Armazenar o novo nome no localStorage
-//     localStorage.setItem('nomeUsuario', inputNome);
-// }
-
-function trocarNome() {
-    const inputNome = document.getElementById('inputNome').value.trim() || 'Usuário';
+function trocarNome(novoNome) {
+    const inputNome = novoNome.trim() || 'Usuário';
     const nomes = document.querySelectorAll('.nomeDeUsuario');
 
     nomes.forEach(nome => {
@@ -275,7 +233,8 @@ document.addEventListener('DOMContentLoaded', function () {
 // Adiciona um evento para o botão
 const botaoTrocarNome = document.getElementById('botaoTrocarNome');
 botaoTrocarNome.addEventListener('click', function () {
-    trocarNome();
+    const novoNome = document.getElementById('inputNome').value;
+    trocarNome(novoNome);
 });
 
 
