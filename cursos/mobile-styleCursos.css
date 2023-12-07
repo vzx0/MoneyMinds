@@ -28,7 +28,7 @@
 
         justify-content: space-around;
 
-        width: 60%;
+        width: 90%;
     }
 
     .opcao-menuBurger {
@@ -59,7 +59,7 @@
     }
 
     #sair-menu {
-        display: flex;
+        display: none;
 
         position: static;
     }
@@ -131,6 +131,16 @@
     
         right: 0;
         top: 0;
+    }
+    /* textos */
+    .secoesTextos {
+        position: relative;
+    
+        top: 0px;
+    
+        height: auto;
+        
+        margin: 10px;
     }
 
     summary::before {
