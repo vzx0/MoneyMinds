@@ -75,7 +75,8 @@ main {
 
     margin: 20px 0px;
 
-    background-color: var(--background-secundario);
+    background-image: url(imgUserSemFoto.png);
+    background-size: cover;
 }
 
 /* opcoes */
@@ -353,7 +354,8 @@ circle:nth-child(2) {
 }
 
 #imagemPerfil {
-    background-color: var(--background-secundario);
+    background-image: url(imgUserSemFoto.png);
+    background-size: cover;
 
     width: 200px;
     height: 200px;
@@ -491,7 +493,7 @@ circle:nth-child(2) {
 
     padding: 20px;
 
-    background-color: var(--background-secundario);
+    background-color: var(--background-principal);
 
     border-radius: 5px;
 
