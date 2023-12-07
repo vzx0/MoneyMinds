@@ -1,0 +1,160 @@
+@media screen and (max-width: 400px) {
+
+    /* ocultar elementos */
+    .ocultarResponsividade {
+        display: none;
+    }
+
+    #menuBurger {
+        display: flex;
+        flex-direction: row;
+
+        align-items: center;
+        justify-content: space-around;
+
+        z-index: 1;
+
+        position: fixed;
+        bottom: 0;
+
+        width: 100vw;
+        height: 50px;
+        background-color: var(--background-secundario);
+    }
+
+    .opcao-menuBurger {
+        display: flex;
+    
+        align-items: center;
+    
+        width: 40px;
+        height: 100%;
+    
+        transition: 200ms ease;
+    
+        cursor: pointer;
+    }
+
+    .opcao-icone {
+        display: flex;
+        width: 20px;
+        height: 20px;
+    
+        align-items: center;
+        justify-content: center;
+    }
+
+    .icone {
+        width: 35px;
+    }
+
+    #sair-menu {
+        display: flex;
+    }
+
+    .principal {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    /* video */
+    #video1,
+    #video2,
+    #video3 {
+        display: flex;
+        width: 80%;
+        height: auto;
+    }
+
+
+    /* botaoCurso progresso do video */
+    .videoCurso {
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    .botaoCurso {
+        width: 200px;
+        height: 40px;
+
+        margin: 10px 0px;
+        font-size: 20px;
+    }
+
+    .textoBotaoVideo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 200px;
+        height: 100%;
+        font-size: 20px;
+    }
+
+    .progresso {
+        height: 100%;
+        width: 0;
+        background-color: var(--corBotaoDestaque);
+        border-radius: 30px;
+        transition: 250ms linear;
+
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* sumario */
+    .menuCapitulosCurso {
+        display: none;
+        width: 300px;
+        height: 75px;
+        background-color: var(--background-secundario);
+    
+        z-index: 0;
+    
+        position: fixed;
+    
+        right: 0;
+        top: 0;
+    }
+
+    summary::before {
+        display: none;
+        content: '';
+    }
+
+    .sumarioCapitulosCurso {
+        display: none;
+
+        width: 300px;
+        height: 75px;
+
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+
+        font: var(--fwBolder) 20px var(--font-principal);
+
+        transition: none;
+
+        background-color: var(--background-secundario);
+    }
+
+    .capituloMenu {
+        display: none;
+
+        width: 300px;
+        height: 75px;
+
+        background-color: var(--background-secundario);
+
+        align-items: center;
+
+        transition: 200ms ease;
+    }
+
+
+}
