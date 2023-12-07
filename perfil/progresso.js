@@ -5,7 +5,7 @@ let porcentagemProgressoMarketing = 0;
 
 // função para ajustar as porcentagens para uma escala de 0 a 100
 function ajustarPara100(valor) {
-    return (valor / 4) * 100;
+    return Math.round((valor / 3) * 100);
 }
 
 // Funções de progresso definidas fora do bloco condicional
