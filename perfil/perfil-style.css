@@ -75,7 +75,7 @@ main {
 
     margin: 20px 0px;
 
-    background-image: url(imgUserSemFoto.png);
+    background-image: url(userSemFoto.svg);
     background-size: cover;
 }
 
@@ -354,7 +354,7 @@ circle:nth-child(2) {
 }
 
 #imagemPerfil {
-    background-image: url(imgUserSemFoto.png);
+    background-image: url(userSemFoto.svg);
     background-size: cover;
 
     width: 200px;

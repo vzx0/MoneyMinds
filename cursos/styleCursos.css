@@ -331,6 +331,7 @@ summary::before {
     border-radius: 50%;
 
     background-color: var(--background-principal);
+    background-size: cover;
 
     margin: 25px;
 }
