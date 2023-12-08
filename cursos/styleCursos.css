@@ -30,8 +30,7 @@ main {
     display: none;
 
     flex-direction: column;
-    
-    margin: 0px 10px;
+
     width: 100%;
     height: 100%;
 
@@ -48,6 +47,15 @@ main {
 
     justify-content: center;
     align-items: center;
+}
+
+/* video */
+#video1,
+#video2,
+#video3 {
+    display: flex;
+    width: 854px;
+    height: 480px;
 }
 
 .secoesQuestionarios {
@@ -150,7 +158,9 @@ main {
     justify-content: center;
 }
 
-#video1, #video2, #video3 {
+#video1,
+#video2,
+#video3 {
     display: flex;
     width: 100%;
     height: auto;
@@ -214,7 +224,9 @@ main {
 
     padding: 30px;
     border-radius: 30px;
-    
+
+    width: 90%;
+
     margin-bottom: 15px;
 }
 
@@ -243,7 +255,7 @@ main {
 
     width: 800px;
     height: 90px;
-    
+
     margin: 10px;
 
     border: #fff 2px solid;
@@ -291,7 +303,7 @@ main {
 summary::before {
     display: none;
     content: '';
-  }
+}
 
 .sumarioCapitulosCurso {
     display: flex;
@@ -308,7 +320,7 @@ summary::before {
     transition: none;
 
     background-color: var(--background-secundario);
-  }
+}
 
 .capituloMenu {
     display: flex;
