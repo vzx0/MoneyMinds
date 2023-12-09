@@ -183,18 +183,7 @@
         height: auto;
     }
 
-    .capituloMenu {
-        display: none;
 
-        width: 300px;
-        height: 75px;
-
-        background-color: var(--background-secundario);
-
-        align-items: center;
-
-        transition: 200ms ease;
-    }
 
     /* questionario */
     .secoesQuestionarios {
@@ -247,4 +236,50 @@
     }
 
     /* menuMobile */
+    #escurecimentoFundo {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9;
+
+        opacity: 0;
+
+        transition: opacity 0.5s ease;
+    }
+
+    #menuMobile {
+        display: none;
+        flex-direction: column;
+
+        width: 300px;
+        height: 100vh;
+
+        z-index: 10;
+
+        position: fixed;
+        top: 0;
+        right: -300px;
+
+        background-color: var(--background-secundario);
+
+        border-left: 2px #fff solid;
+
+        transition: right 0.5s ease ;
+    }
+    
+    .capituloMenu {
+
+        width: 300px;
+        height: 75px;
+
+        background-color: var(--background-secundario);
+
+        align-items: center;
+
+        transition: 200ms ease;
+    }
 }

@@ -24,34 +24,44 @@ const secaoQuestoes = document.getElementById('secaoQuestoes');
 const principal = document.querySelector('.principal');
 
 // abrir menu mobile
-// const opcaoMenuMobile = document.getElementById('opcaoMenuMobile');
-// const fecharMenuMobile = document.getElementById('fecharMenuMobile');
+const opcaoMenuMobile = document.getElementById('opcaoMenuMobile');
+const fecharMenuMobile = document.getElementById('fecharMenuMobile');
 
-// const capituloMenus = document.querySelectorAll('.capituloMenu');
-// const menuMobile = document.getElementById('menuMobile');
-
-
-// opcaoMenuMobile.addEventListener('click', () => {
-//     menuMobile.style.display = 'flex';
-// });
-
-// fecharMenuMobile.addEventListener('click', () => {
-//     menuMobile.style.display = 'none';
-// })
+const capituloMenus = document.querySelectorAll('.capituloMenu');
+const menuMobile = document.getElementById('menuMobile');
+const escurecimentoFundo = document.getElementById('escurecimentoFundo');
 
 
+opcaoMenuMobile.addEventListener('click', () => {
+    escurecimentoFundo.style.display = 'flex';
+    setTimeout(() => {
+        escurecimentoFundo.style.opacity = '1';
+        menuMobile.style.right = '0';
+    }, 50);
+    menuMobile.style.display = 'flex';
+});
 
-// Seleciona o menu mobile como o novo local
+fecharMenuMobile.addEventListener('click', () => {
+    escurecimentoFundo.style.opacity = '0';
+    setTimeout(() => {
+        escurecimentoFundo.style.display = 'none';
+        menuMobile.style.right = '-300px';
+    }, 500);
+    setTimeout(() => {
+        menuMobile.style.display = 'none';
+    }, 1500);
+});
+
 
 // Verifica se está no modo mobile
-// const isMobile = window.matchMedia('(max-width: 400px)').matches;
+const mobile = window.matchMedia('(max-width: 400px)').matches;
 
-// if (isMobile) {
-//     capituloMenus.forEach(capituloMenu => {
-//         // Move cada elemento capituloMenu para o menuMobile
-//         menuMobile.appendChild(capituloMenu);
-//     });
-// }
+if (mobile) {
+    capituloMenus.forEach(capituloMenu => {
+        // Move cada elemento capituloMenu para o menuMobile
+        menuMobile.appendChild(capituloMenu);
+    });
+}
 
 
 opcaoVideo.addEventListener('click', () => {
