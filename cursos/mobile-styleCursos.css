@@ -183,26 +183,9 @@
         height: auto;
     }
 
-    summary::before {
-        content: '';
-    }
-
-    .sumarioCapitulosCurso {
-        width: 300px;
-        height: 75px;
-
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-
-        font: var(--fwBolder) 20px var(--font-principal);
-
-        transition: none;
-
-        background-color: var(--background-secundario);
-    }
-
     .capituloMenu {
+        display: none;
+
         width: 300px;
         height: 75px;
 
@@ -261,6 +244,7 @@
         margin: 10px 0px;
     
         border: #fff 2px solid;
-    
     }
+
+    /* menuMobile */
 }

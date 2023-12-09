@@ -24,18 +24,34 @@ const secaoQuestoes = document.getElementById('secaoQuestoes');
 const principal = document.querySelector('.principal');
 
 // abrir menu mobile
-const opcaoMenuMobile = document.getElementById('opcaoMenuMobile');
-const fecharMenuMobile = document.getElementById('fecharMenuMobile');
+// const opcaoMenuMobile = document.getElementById('opcaoMenuMobile');
+// const fecharMenuMobile = document.getElementById('fecharMenuMobile');
 
-const menuCapitulos = document.querySelector('.menuCapitulosCurso');
+// const capituloMenus = document.querySelectorAll('.capituloMenu');
+// const menuMobile = document.getElementById('menuMobile');
 
-opcaoMenuMobile.addEventListener('click', () => {
-    menuCapitulos.style.display = 'flex';
-});
 
-fecharMenuMobile.addEventListener('click', () => {
-    menuCapitulos.style.display = 'none';
-})
+// opcaoMenuMobile.addEventListener('click', () => {
+//     menuMobile.style.display = 'flex';
+// });
+
+// fecharMenuMobile.addEventListener('click', () => {
+//     menuMobile.style.display = 'none';
+// })
+
+
+
+// Seleciona o menu mobile como o novo local
+
+// Verifica se está no modo mobile
+// const isMobile = window.matchMedia('(max-width: 400px)').matches;
+
+// if (isMobile) {
+//     capituloMenus.forEach(capituloMenu => {
+//         // Move cada elemento capituloMenu para o menuMobile
+//         menuMobile.appendChild(capituloMenu);
+//     });
+// }
 
 
 opcaoVideo.addEventListener('click', () => {
