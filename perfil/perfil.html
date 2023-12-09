@@ -28,7 +28,7 @@
             <!-- //dashboard -->
             <a onclick="exibirDashboard()" class="opcao-menuBurger">
                 <div class="opcao-icone">
-                    <i class="fa-solid fa-chart-line fa-2xl"></i>
+                    <img src="assets-perfil/icon-dashboard.svg">
                 </div>
                 <p class="opcao-nome">Dashboard</p>
             </a>
@@ -36,7 +36,7 @@
             <!-- //meus cursos -->
             <a onclick="exibirCursos()" class="opcao-menuBurger">
                 <div class="opcao-icone">
-                    <i class="fa-regular fa-pen-to-square fa-2xl"></i>
+                    <img src="assets-perfil/icon-cursos.svg">
                 </div>
                 <p class="opcao-nome">Meus Cursos</p>
             </a>
@@ -44,7 +44,7 @@
             <!-- //ranking -->
             <a onclick="exibirRanking()" class="opcao-menuBurger">
                 <div class="opcao-icone">
-                    <i class="fa-solid fa-ranking-star fa-2xl"></i>
+                    <img src="assets-perfil/icon-ranking.svg">
                 </div>
                 <p class="opcao-nome">Ranking</p>
             </a>
@@ -60,7 +60,7 @@
             <!-- //sair -->
             <a href="../index.html" class="opcao-menuBurger" id="sair-menu">
                 <div class="opcao-icone">
-                    <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180  fa-2xl"></i>
+                    <img src="assets-perfil/sair.svg">
                 </div>
                 <p class="opcao-nome">Sair</p>
             </a>
@@ -83,7 +83,7 @@
 
                     <div onclick="popupFoto()" id="imagemPerfil"></div>
 
-                    <h3 class="nomeDeUsuario" id="alterarNome">Usuário</h3>
+                    <h1 class="nomeDeUsuario" id="alterarNome">Usuário</h1>
                 </div>
 
 
@@ -96,17 +96,20 @@
                                 <div class="formTrocarInfo">
                                     <input id="inputNome" class="inputInformacoes" type="text"
                                         placeholder="Insira seu novo nome de usuário" maxlength="32">
-                                    <button id="botaoTrocarNome" class="botaoPopup" onclick="trocarNome()">Trocar
-                                        Nome</button>
+                                    <button id="botaoTrocarNome" class="botaoTrocar" onclick="trocarNome()">
+                                        <img src="assets-perfil/icon-escrever.svg">
+                                    </button>
                                 </div>
                             </div>
 
                             <div class="formTrocarInformacoes">
-                                <h3>Descrição</h3>
+                                <h3>Telefone</h3>
                                 <div class="formTrocarInfo">
-                                    <input id="inputDescrição" class="inputInformacoes" type="text"
-                                        placeholder="Insira sua nova descrição" maxlength="128">
-                                    <button class="botaoPopup" onclick="trocarDescricao()">Trocar descrição</button>
+                                    <input id="inputDescrição" class="inputInformacoes" type="tel"
+                                        placeholder="Insira seu novo número de telefone">
+                                    <button class="botaoTrocar" onclick="trocarTelefone()">
+                                        <img src="assets-perfil/icon-escrever.svg">
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -117,7 +120,9 @@
                                 <h3>E-mail</h3>
                                 <div class="formTrocarInfo">
                                     <input id="inputEmail" class="inputInformacoes" type="email" placeholder="Insira seu novo e-mail">
-                                    <button class="botaoPopup" onclick="trocarEmail()">Trocar e-mail</button>
+                                    <button class="botaoTrocar" onclick="trocarEmail()">
+                                        <img src="assets-perfil/icon-escrever.svg">
+                                    </button>
                                 </div>
                             </div>
 
@@ -126,16 +131,9 @@
                                 <div class="formTrocarInfo">
                                     <input id="inputSenha" class="inputInformacoes" type="password"
                                         placeholder="Insira sua nova senha">
-                                    <button class="botaoPopup" onclick="trocarSenha()">Trocar senha</button>
-                                </div>
-                            </div>
-
-                            <div class="formTrocarInformacoes">
-                                <h3>Confirmar senha</h3>
-                                <div class="formTrocarInfo">
-                                    <input id="inputConfirmarSenha" class="inputInformacoes" type="password"
-                                        placeholder="Confirme sua nova senha">
-                                    <button class="botaoPopup" onclick="trocarSenha()">Confirmar Senha</button>
+                                    <button class="botaoTrocar" onclick="trocarSenha()">
+                                        <img src="assets-perfil/icon-escrever.svg">
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -150,7 +148,7 @@
                 <div id="headerPopUpFoto">
                     <!-- botao sair -->
                     <div onclick="fecharPopupFoto()" class="opcao-icone" id="botaoSairPopupFoto">
-                        <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180  fa-2xl"></i>
+                        <img src="assets-perfil/sair.svg">
                         <p class="opcao-nome">Fechar</p>
                     </div>
                     <!-- titulo -->

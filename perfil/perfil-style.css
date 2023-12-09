@@ -75,7 +75,7 @@ main {
 
     margin: 20px 0px;
 
-    background-image: url(userSemFoto.svg);
+    background-image: url(assets-perfil/userSemFoto.svg);
     background-size: cover;
 }
 
@@ -266,6 +266,7 @@ circle:nth-child(2) {
     height: 100%;
 }
 
+/* banners curso */
 .curso {
     flex-direction: column;
 
@@ -283,6 +284,21 @@ circle:nth-child(2) {
     border-radius: 15px;
 
     margin: 5px;
+}
+
+#cursoInvestimentos {
+  background-image: url(assets-perfil/imgCursoInvestimento.jpg);
+  background-size: cover;
+}
+
+#cursoTecnologia {
+  background-image: url(assets-perfil/imgCursoTecnologia.jpg);
+  background-size: cover;
+}
+
+#cursoMarketing {
+  background-image: url(assets-perfil/imgCursoMarketing.jpg);
+  background-size: cover;
 }
 
 .informacoesCurso {
@@ -354,7 +370,7 @@ circle:nth-child(2) {
 }
 
 #imagemPerfil {
-    background-image: url(userSemFoto.svg);
+    background-image: url(assets-perfil/userSemFoto.svg);
     background-size: cover;
 
     width: 200px;
@@ -410,6 +426,10 @@ circle:nth-child(2) {
 #botoesPopup {
     display: flex;
     flex-direction: row;
+}
+
+.botaoTrocar {
+  margin: 0px 10px;
 }
 
 .botaoPopup {
