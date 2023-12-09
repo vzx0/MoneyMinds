@@ -23,26 +23,22 @@ const secaoQuestoes = document.getElementById('secaoQuestoes');
 
 const principal = document.querySelector('.principal');
 
-// abrir menu mobile
-const opcaoMenuMobile = document.getElementById('opcaoMenuMobile');
-const fecharMenuMobile = document.getElementById('fecharMenuMobile');
-
+// abrir e fechar menu mobile
 const capituloMenus = document.querySelectorAll('.capituloMenu');
 const menuMobile = document.getElementById('menuMobile');
 const escurecimentoFundo = document.getElementById('escurecimentoFundo');
 
-
-opcaoMenuMobile.addEventListener('click', () => {
+function abrirMenuMobile() {
     escurecimentoFundo.style.display = 'flex';
     setTimeout(() => {
         escurecimentoFundo.style.opacity = '1';
         menuMobile.style.right = '0';
     }, 50);
     menuMobile.style.display = 'flex';
-});
+}
 
-fecharMenuMobile.addEventListener('click', () => {
-    escurecimentoFundo.style.opacity = '0';
+function fecharMenuMobile(){
+        escurecimentoFundo.style.opacity = '0';
     setTimeout(() => {
         escurecimentoFundo.style.display = 'none';
         menuMobile.style.right = '-300px';
@@ -50,7 +46,8 @@ fecharMenuMobile.addEventListener('click', () => {
     setTimeout(() => {
         menuMobile.style.display = 'none';
     }, 1500);
-});
+}
+
 
 
 // Verifica se está no modo mobile

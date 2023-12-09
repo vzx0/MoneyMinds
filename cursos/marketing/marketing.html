@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="../styleCursos.css">
     <link rel="stylesheet" href="../../style.css">
-    
+
     <!-- responsividade -->
     <link rel="stylesheet" href="../mobile-styleCursos.css">
 
@@ -32,32 +32,40 @@
             </div>
 
             <!-- opcoes -->
-            <a class="opcao-menuBurger" id="opcaoVideo">
-                <div class="opcao-icone">
-                    <img src="../icons-cursos/icon-videoCurso.svg">
-                </div>
-                <p class="opcao-nome ocultarResponsividade">Assistir Vídeo</p>
-            </a>
+            <div class="opcoes-menuBurger">
+                <a class="opcao-menuBurger" id="opcaoVideo">
+                    <div class="opcao-icone">
+                        <img class="icone" src="../icons-cursos/icon-videoCurso.svg">
+                    </div>
+                    <p class="opcao-nome ocultarResponsividade">Assistir Vídeo</p>
+                </a>
 
 
-            <a class="opcao-menuBurger desativado" id="opcaoTexto">
-                <div class="opcao-icone">
-                    <img src="../icons-cursos/icon-graduacao.svg">
-                </div>
-                <p class="opcao-nome ocultarResponsividade">Mais Informações</p>
-            </a>
+                <a class="opcao-menuBurger desativado" id="opcaoTexto">
+                    <div class="opcao-icone">
+                        <img class="icone" src="../icons-cursos/icon-graduacao.svg">
+                    </div>
+                    <p class="opcao-nome ocultarResponsividade">Mais Informações</p>
+                </a>
 
-            <a class="opcao-menuBurger desativado" id="opcaoQuestoes">
-                <div class="opcao-icone">
-                    <img src="../icons-cursos/icon-questoes.svg">
-                </div>
-                <p class="opcao-nome ocultarResponsividade">Questionário</p>
-            </a>
+                <a class="opcao-menuBurger desativado" id="opcaoQuestoes">
+                    <div class="opcao-icone">
+                        <img class="icone" src="../icons-cursos/icon-questoes.svg">
+                    </div>
+                    <p class="opcao-nome ocultarResponsividade">Questionário</p>
+                </a>
+
+                <a class="ocultarOriginal opcao-menuBurger">
+                    <div class="opcao-icone ocultarOriginal" onclick="abrirMenuMobile()">
+                        <img class="icone" class="ocultarOriginal" src="../icons-cursos/icon-menu.svg">
+                    </div>
+                </a>
+            </div>
 
             <!-- //sair -->
             <a href="../../perfil/perfil.html" class="opcao-menuBurger" id="sair-menu">
                 <div class="opcao-icone">
-                    <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180  fa-2xl"></i>
+                    <img class="icone" src="../icons-cursos/sair.svg">
                 </div>
                 <p class="opcao-nome ocultarResponsividade">Voltar</p>
             </a>
@@ -202,31 +210,39 @@
             </div>
 
             <!-- opcoes -->
-            <a class="opcao-menuBurger" id="opcaoVideo2">
-                <div class="opcao-icone">
-                    <img src="../icons-cursos/icon-videoCurso.svg">
-                </div>
-                <p class="opcao-nome ocultarResponsividade">Assistir Vídeo</p>
-            </a>
+            <div class="opcoes-menuBurger">
+                <a class="opcao-menuBurger" id="opcaoVideo2">
+                    <div class="opcao-icone">
+                        <img class="icone" src="../icons-cursos/icon-videoCurso.svg">
+                    </div>
+                    <p class="opcao-nome ocultarResponsividade">Assistir Vídeo</p>
+                </a>
 
-            <a class="opcao-menuBurger" id="opcaoTexto2">
-                <div class="opcao-icone">
-                    <img src="../icons-cursos/icon-graduacao.svg">
-                </div>
-                <p class="opcao-nome ocultarResponsividade">Mais Informações</p>
-            </a>
+                <a class="opcao-menuBurger" id="opcaoTexto2">
+                    <div class="opcao-icone">
+                        <img class="icone" src="../icons-cursos/icon-graduacao.svg">
+                    </div>
+                    <p class="opcao-nome ocultarResponsividade">Mais Informações</p>
+                </a>
 
-            <a class="opcao-menuBurger" id="opcaoQuestoes2">
-                <div class="opcao-icone">
-                    <img src="../icons-cursos/icon-questoes.svg">
-                </div>
-                <p class="opcao-nome ocultarResponsividade">Questionário</p>
-            </a>
+                <a class="opcao-menuBurger" id="opcaoQuestoes2">
+                    <div class="opcao-icone">
+                        <img class="icone" src="../icons-cursos/icon-questoes.svg">
+                    </div>
+                    <p class="opcao-nome ocultarResponsividade">Questionário</p>
+                </a>
+
+                <a class="ocultarOriginal opcao-menuBurger">
+                    <div class="opcao-icone ocultarOriginal" onclick="abrirMenuMobile()">
+                        <img class="ocultarOriginal icone" src="../icons-cursos/icon-menu.svg">
+                    </div>
+                </a>
+            </div>
 
             <!-- //sair -->
             <a href="../../perfil/perfil.html" class="opcao-menuBurger" id="sair-menu">
                 <div class="opcao-icone">
-                    <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180  fa-2xl"></i>
+                    <img class="icone" src="../icons-cursos/sair.svg">
                 </div>
                 <p class="opcao-nome ocultarResponsividade">Voltar</p>
             </a>
@@ -353,7 +369,8 @@
 
                 <button class="botaoContinuar" id="botaoFimQuestoesTentarNovamente2">Tentar
                     Novamente</button>
-                <button class="botaoContinuar btnProgressoMarketing" id="botaoFimQuestoesProsseguir2">Prosseguir</button>
+                <button class="botaoContinuar btnProgressoMarketing"
+                    id="botaoFimQuestoesProsseguir2">Prosseguir</button>
             </section>
         </nav>
     </main>
@@ -372,31 +389,39 @@
             </div>
 
             <!-- opcoes -->
-            <a class="opcao-menuBurger" id="opcaoVideo3">
-                <div class="opcao-icone">
-                    <img src="../icons-cursos/icon-videoCurso.svg">
-                </div>
-                <p class="opcao-nome ocultarResponsividade">Assistir Vídeo</p>
-            </a>
+            <div class="opcoes-menuBurger">
+                <a class="opcao-menuBurger" id="opcaoVideo3">
+                    <div class="opcao-icone">
+                        <img class="icone" src="../icons-cursos/icon-videoCurso.svg">
+                    </div>
+                    <p class="opcao-nome ocultarResponsividade">Assistir Vídeo</p>
+                </a>
 
-            <a class="opcao-menuBurger" id="opcaoTexto3">
-                <div class="opcao-icone">
-                    <img src="../icons-cursos/icon-graduacao.svg">
-                </div>
-                <p class="opcao-nome ocultarResponsividade">Mais Informações</p>
-            </a>
+                <a class="opcao-menuBurger" id="opcaoTexto3">
+                    <div class="opcao-icone">
+                        <img class="icone" src="../icons-cursos/icon-graduacao.svg">
+                    </div>
+                    <p class="opcao-nome ocultarResponsividade">Mais Informações</p>
+                </a>
 
-            <a class="opcao-menuBurger" id="opcaoQuestoes3">
-                <div class="opcao-icone">
-                    <img src="../icons-cursos/icon-questoes.svg">
-                </div>
-                <p class="opcao-nome ocultarResponsividade">Questionário</p>
-            </a>
+                <a class="opcao-menuBurger" id="opcaoQuestoes3">
+                    <div class="opcao-icone">
+                        <img class="icone" src="../icons-cursos/icon-questoes.svg">
+                    </div>
+                    <p class="opcao-nome ocultarResponsividade">Questionário</p>
+                </a>
+
+                <a class="ocultarOriginal opcao-menuBurger">
+                    <div class="opcao-icone ocultarOriginal" onclick="abrirMenuMobile()">
+                        <img class="icone" class="ocultarOriginal" src="../icons-cursos/icon-menu.svg">
+                    </div>
+                </a>
+            </div>
 
             <!-- //sair -->
             <a href="../../perfil/perfil.html" class="opcao-menuBurger" id="sair-menu">
                 <div class="opcao-icone">
-                    <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180  fa-2xl"></i>
+                    <img class="icone" src="../icons-cursos/sair.svg">
                 </div>
                 <p class="opcao-nome ocultarResponsividade">Voltar</p>
             </a>
@@ -428,7 +453,7 @@
 
             <!-- questionario 3 -->
             <section class="secao secoesQuestionarios" id="secaoQuestoes3">
-               <div class="titulo">
+                <div class="titulo">
                     <h2>Questionário</h2>
                 </div>
 
@@ -441,7 +466,8 @@
 
                 <button class="botaoContinuar" id="botaoFimQuestoesTentarNovamente3">Tentar
                     Novamente</button>
-                <button class="botaoContinuar btnProgressoMarketing" id="botaoFimQuestoesProsseguir3">Prosseguir</button>
+                <button class="botaoContinuar btnProgressoMarketing"
+                    id="botaoFimQuestoesProsseguir3">Prosseguir</button>
             </section>
 
         </nav>
@@ -472,7 +498,33 @@
         </details>
     </nav>
 
+    <div class="ocultarOriginal'" id="escurecimentoFundo"></div>
 
+    <!-- menuMobile -->
+    <nav id="menuMobile" class="ocultarOriginal">
+        <section class="headerMenuMobile">
+            <div class="ocultarOriginal">
+                <img class="ocultarOriginal opcao-menuBurger btnFecharMenuMobile" onclick="fecharMenuMobile()"
+                    src="../icons-cursos/icon-fechar.svg">
+            </div>
+
+            <h2 class="titulo">Investimento</h2>
+
+
+        </section>
+
+        <div class="barra-divisao"></div>
+
+        <h3 class="titulo">Capítulos</h3>
+
+        <!-- botao sair mobile -->
+        <a href="../../perfil/perfil.html" class="capituloMenu ocultarOriginal" id="btnSairMobile">
+            <div class="opcao-icone ocultarOriginal marcadorConclusao">
+                <img class="icone ocultarOriginal" src="../icons-cursos/sair.svg">
+            </div>
+            <p class="opcao-nome ocultarOriginal">Voltar</p>
+        </a>
+    </nav>
 
     <!-- scriptJS -->
     <script src="../mainCursos.js"></script>
