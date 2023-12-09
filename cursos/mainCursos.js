@@ -16,11 +16,27 @@ const opcaoVideo = document.getElementById('opcaoVideo');
 const opcaoTexto = document.getElementById('opcaoTexto');
 const opcaoQuestoes = document.getElementById('opcaoQuestoes');
 
+
 const secaoVideo = document.getElementById('secaoVideo');
 const secaoTexto = document.getElementById('secaoTexto');
 const secaoQuestoes = document.getElementById('secaoQuestoes');
 
 const principal = document.querySelector('.principal');
+
+// abrir menu mobile
+const opcaoMenuMobile = document.getElementById('opcaoMenuMobile');
+const fecharMenuMobile = document.getElementById('fecharMenuMobile');
+
+const menuCapitulos = document.querySelector('.menuCapitulosCurso');
+
+opcaoMenuMobile.addEventListener('click', () => {
+    menuCapitulos.style.display = 'flex';
+});
+
+fecharMenuMobile.addEventListener('click', () => {
+    menuCapitulos.style.display = 'none';
+})
+
 
 opcaoVideo.addEventListener('click', () => {
     ocultarConteudos();

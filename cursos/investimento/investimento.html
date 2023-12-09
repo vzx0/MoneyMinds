@@ -54,6 +54,13 @@
                     </div>
                     <p class="opcao-nome ocultarResponsividade">Questionário</p>
                 </a>
+
+                <!-- opc Mobile -->
+                <a class="ocultarOriginal opcao-menuBurger">
+                    <div class="opcao-icone ocultarOriginal" id="opcaoMenuMobile">
+                        <img class="ocultarOriginal" src="../icons-cursos/icon-menu.svg">
+                    </div>
+                </a>
             </div>
 
 
@@ -66,6 +73,7 @@
             </a>
         </section>
 
+
         <!-- corpo curso -->
         <nav class="principal">
             <section class="secao secoesVideos" id="secaoVideo">
@@ -73,7 +81,7 @@
                     <h2>Vídeo: O básico que você precisa saber</h2>
                 </div>
                 <div class="videoCurso">
-                    
+
                     <video id="video1" controls src="../icons-cursos/videoTestApagar.mp4"></video>
 
                     <button id="videoBotao1" disabled class="botaoCurso">
@@ -195,12 +203,13 @@
     <!-- ////////// CAPITULO 2 ////////// -->
     <main id="capitulo2" style="display: none;">
         <section id="menuBurger">
-            <div class="titulo">
+            <div class="titulo ocultarResponsividade">
                 <h2>Investimento</h2>
             </div>
 
-            <div class="barra-divisao"></div>
-            <div class="titulo">
+            <div class="barra-divisao ocultarResponsividade"></div>
+
+            <div class="titulo ocultarResponsividade">
                 <h3>Capítulo 2</h3>
             </div>
 
@@ -209,21 +218,21 @@
                 <div class="opcao-icone">
                     <img class="icone" src="../icons-cursos/icon-videoCurso.svg">
                 </div>
-                <p class="opcao-nome">Assistir Vídeo</p>
+                <p class="opcao-nome ocultarResponsividade">Assistir Vídeo</p>
             </a>
 
             <a class="opcao-menuBurger" id="opcaoTexto2">
                 <div class="opcao-icone">
                     <img class="icone" src="../icons-cursos/icon-graduacao.svg">
                 </div>
-                <p class="opcao-nome">Mais Informações</p>
+                <p class="opcao-nome ocultarResponsividade">Mais Informações</p>
             </a>
 
             <a class="opcao-menuBurger" id="opcaoQuestoes2">
                 <div class="opcao-icone">
                     <img class="icone" src="../icons-cursos/icon-questoes.svg">
                 </div>
-                <p class="opcao-nome">Questionário</p>
+                <p class="opcao-nome ocultarResponsividade">Questionário</p>
             </a>
 
             <!-- //sair -->
@@ -231,7 +240,7 @@
                 <div class="opcao-icone">
                     <img class="icone" src="../icons-cursos/sair.svg">
                 </div>
-                <p class="opcao-nome">Voltar</p>
+                <p class="opcao-nome ocultarResponsividade">Voltar</p>
             </a>
         </section>
 
@@ -244,8 +253,7 @@
                     <div class="tituloCurso">
                         <h2>Vídeo: Recursos intermediários</h2>
                     </div>
-                    <video id="video2" controls
-                        src="../icons-cursos/videoTestApagar.mp4"></video>
+                    <video id="video2" controls src="../icons-cursos/videoTestApagar.mp4"></video>
 
                     <button id="videoBotao2" disabled class="botaoCurso">
                         <div class="progresso" id="progresso2">
@@ -365,12 +373,13 @@
     <!-- ////////// CAPITULO 3 ////////// -->
     <main id="capitulo3" style="display: none;">
         <section id="menuBurger">
-            <div class="titulo">
+            <div class="titulo ocultarResponsividade">
                 <h2>Investimento</h2>
             </div>
 
-            <div class="barra-divisao"></div>
-            <div class="titulo">
+            <div class="barra-divisao ocultarResponsividade"></div>
+
+            <div class="titulo ocultarResponsividade">
                 <h3>Capítulo 3</h3>
             </div>
 
@@ -379,21 +388,21 @@
                 <div class="opcao-icone">
                     <img class="icone" src="../icons-cursos/icon-videoCurso.svg">
                 </div>
-                <p class="opcao-nome">Assistir Vídeo</p>
+                <p class="opcao-nome ocultarResponsividade">Assistir Vídeo</p>
             </a>
 
             <a class="opcao-menuBurger" id="opcaoTexto3">
                 <div class="opcao-icone">
                     <img class="icone" src="../icons-cursos/icon-graduacao.svg">
                 </div>
-                <p class="opcao-nome">Mais Informações</p>
+                <p class="opcao-nome ocultarResponsividade">Mais Informações</p>
             </a>
 
             <a class="opcao-menuBurger" id="opcaoQuestoes3">
                 <div class="opcao-icone">
                     <img class="icone" src="../icons-cursos/icon-questoes.svg">
                 </div>
-                <p class="opcao-nome">Questionário</p>
+                <p class="opcao-nome ocultarResponsividade">Questionário</p>
             </a>
 
             <!-- //sair -->
@@ -401,7 +410,7 @@
                 <div class="opcao-icone">
                     <img class="icone" src="../icons-cursos/sair.svg">
                 </div>
-                <p class="opcao-nome">Voltar</p>
+                <p class="opcao-nome ocultarResponsividade">Voltar</p>
             </a>
         </section>
 
@@ -454,7 +463,12 @@
     <!-- ////////// MENU CAPITULOS ////////// -->
     <nav class="menuCapitulosCurso">
         <details>
-            <summary class="sumarioCapitulosCurso">Visualizar capítulos</summary>
+            <summary class="sumarioCapitulosCurso">
+                <div class="opcao-menuBurger ocultarOriginal" id="fecharMenuMobile">
+                    <img class="icone ocultarOriginal" src="../icons-cursos/icon-fechar.svg">
+                </div>
+                Visualizar capítulos
+            </summary>
 
             <div class="barra-divisao"></div>
 
@@ -472,10 +486,16 @@
                 <div class="marcadorConclusao" id="marcadorConclusaoI3"></div>
                 <p>3: O avançado</p>
             </div>
+
+            <!-- botao sair mobile -->
+            <a href="../../perfil/perfil.html" class="capituloMenu ocultarOriginal">
+                <div class="opcao-icone ocultarOriginal">
+                    <img class="icone ocultarOriginal" src="../icons-cursos/sair.svg">
+                </div>
+                <p class="opcao-nome ocultarOriginal">Voltar</p>
+            </a>
         </details>
     </nav>
-
-
 
     <!-- scriptJS -->
     <script src="../mainCursos.js"></script>

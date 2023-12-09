@@ -12,6 +12,10 @@ main {
     background-size: cover;
 }
 
+.ocultarOriginal {
+    display: none;
+}
+
 /* corpo Curso */
 .principal {
     width: 100%;
