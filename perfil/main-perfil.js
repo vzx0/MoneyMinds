@@ -253,34 +253,34 @@ botaoTrocarNome.addEventListener('click', function () {
     trocarNome(novoNome);
 });
 
+// grafico dashboard
 function registrarTempoNoSite() {
     const agora = new Date();
     const dataAtual = `${agora.getFullYear()}-${(agora.getMonth() + 1).toString().padStart(2, '0')}-${agora.getDate().toString().padStart(2, '0')}`;
 
     let tempoNoSite = parseInt(localStorage.getItem(dataAtual)) || 0;
 
-    // Não é mais necessário limitar o tempo total a 1 hora aqui
-
     localStorage.setItem(dataAtual, tempoNoSite);
 }
 
+// Função para registrar o momento em que o usuário entra no site
+function registrarEntradaNoSite() {
+    const agora = new Date();
+    localStorage.setItem('entradaSite', agora.getTime());
+}
+
+// Função para calcular o tempo gasto desde a entrada no site
 function calcularTempoGasto() {
-    let tempoGasto = parseInt(localStorage.getItem('tempoGasto')) || 0;
+    const entradaSite = parseInt(localStorage.getItem('entradaSite')) || new Date().getTime();
+    const agora = new Date().getTime();
+    const tempoGasto = (agora - entradaSite) / 1000; // Calcula o tempo em segundos
 
-    const timer = setInterval(() => {
-        tempoGasto++;
-
-        localStorage.setItem('tempoGasto', tempoGasto);
-
-    }, 1000); // Incremento a cada 1 segundo
-
-    return timer; // Retorna o timer para ser usado na atualização do gráfico
+    return tempoGasto;
 }
 
 let graficoSemanal = null; // Variável para armazenar o gráfico
 
 function atualizarGrafico(dias, tempos) {
-    // Verifica se há um gráfico existente e o destroi
     if (!graficoSemanal) {
         const ctx = document.getElementById('chartCanvas');
         graficoSemanal = new Chart(ctx, {
@@ -288,8 +288,8 @@ function atualizarGrafico(dias, tempos) {
             data: {
                 labels: dias,
                 datasets: [{
-                    label: 'Tempo no Site (segundos)',
-                    data: tempos,
+                    label: 'Tempo no Site (minutos)',
+                    data: tempos.map(segundos => Math.floor(segundos / 60)), // Converter para minutos
                     backgroundColor: '#36a2eb',
                     borderColor: '#36a2eb',
                     borderWidth: 1
@@ -299,25 +299,23 @@ function atualizarGrafico(dias, tempos) {
                 scales: {
                     y: {
                         beginAtZero: true,
-                        // Removido o limite máximo do eixo Y para refletir o tempo real
+                        max: 60, // Limite máximo do eixo Y em minutos (1 hora)
                         ticks: {
-                            stepSize: 300, // Intervalo das marcações do eixo Y em segundos (5 minutos)
+                            stepSize: 5, // Intervalo das marcações do eixo Y em minutos
                             callback: function (value) {
-                                // Converte os segundos para minutos para exibição
-                                const minutes = Math.floor(value / 60);
-                                return minutes + 'm';
+                                return value + 'm';
                             },
-                            color: 'white', // Cor das marcações do eixo Y
+                            color: 'white',
                             font: {
-                                size: 14 // Tamanho da fonte das marcações do eixo Y
+                                size: 14
                             }
                         }
                     },
                     x: {
                         ticks: {
-                            color: 'white', // Cor das marcações do eixo X
+                            color: 'white',
                             font: {
-                                size: 14 // Tamanho da fonte das marcações do eixo X
+                                size: 14
                             }
                         }
                     }
@@ -330,21 +328,20 @@ function atualizarGrafico(dias, tempos) {
                         titleFont: {
                             size: 16,
                             weight: 'bold',
-                            color: 'white' // Cor do título do tooltip
+                            color: 'white'
                         },
                         bodyFont: {
                             size: 14,
                             weight: 'normal',
-                            color: 'white' // Cor do corpo do tooltip
+                            color: 'white'
                         }
                     }
                 }
             }
         });
     } else {
-        // Atualizar os dados do gráfico existente
         graficoSemanal.data.labels = dias;
-        graficoSemanal.data.datasets[0].data = tempos;
+        graficoSemanal.data.datasets[0].data = tempos.map(segundos => Math.floor(segundos / 60));
         graficoSemanal.update();
     }
 }
@@ -369,18 +366,28 @@ function obterDadosGrafico() {
 }
 
 function renderizarGraficoSemanal() {
+    registrarEntradaNoSite(); // Registra a entrada do usuário no site
+
     const { dias, tempos } = obterDadosGrafico();
     atualizarGrafico(dias, tempos);
 
-    const timer = calcularTempoGasto(); // Iniciar o timer para calcular o tempo gasto
-
     setInterval(() => {
-        registrarTempoNoSite(); // Atualizar o tempo no site no localStorage
+        const tempoNoSite = calcularTempoGasto(); // Calcula o tempo gasto desde a entrada
+
+        registrarTempoNoSite(tempoNoSite); // Atualiza o tempo no site no localStorage
+
         const { dias: novosDias, tempos: novosTempos } = obterDadosGrafico();
         atualizarGrafico(novosDias, novosTempos);
 
         console.log('Atualizando gráfico');
     }, 5000); // Atualiza a cada 5 segundos (5000 milissegundos)
+}
+
+function registrarTempoNoSite(tempoNoSite) {
+    const agora = new Date();
+    const dataAtual = `${agora.getFullYear()}-${(agora.getMonth() + 1).toString().padStart(2, '0')}-${agora.getDate().toString().padStart(2, '0')}`;
+
+    localStorage.setItem(dataAtual, tempoNoSite);
 }
 
 window.addEventListener('load', renderizarGraficoSemanal);
