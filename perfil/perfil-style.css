@@ -388,7 +388,7 @@ circle:nth-child(2) {
 
     width: 800px;
     height: 600px;
-    background-color: var(--background-principal);
+    background-color: var(--background-secundario);
 
     border-radius: 30px;
     border: #fff 2px solid;
@@ -478,9 +478,11 @@ circle:nth-child(2) {
 
     border-radius: 15px;
 
-    background-color: #000;
+    background-image: url(assets-perfil/cameraIcon.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
 
-    border-radius: 2px #fff solid;
+    border: 2px #fff solid;
 }
 
 #geracaoImagem {

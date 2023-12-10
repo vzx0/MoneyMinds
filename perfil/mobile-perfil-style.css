@@ -26,7 +26,6 @@
 
     .principal {
         margin: 0;
-        display: none;
     }
 
     /* menu inferior */
@@ -71,20 +70,6 @@
         cursor: pointer;
     }
 
-    #perfil {
-        width: 50px;
-        height: 50px;
-
-        margin: 0px;
-    }
-
-    #perfil-img {
-        width: 35px;
-        height: 35px;
-
-        margin: 0px;
-    }
-
     .opcao-icone {
         display: flex;
         width: 20px;
@@ -101,4 +86,149 @@
     #sair-menu {
         position: static;
     }
+
+
+    #perfil {
+        width: 50px;
+        height: 50px;
+
+        margin: 0px;
+    }
+
+    #perfil-img {
+        width: 35px;
+        height: 35px;
+
+        margin: 0px;
+    }
+
+    /* perfil */
+    #alteracaoPerfil {
+        z-index: 0;
+
+        width: 100vw;
+        height: 100%;
+
+        margin: 0;
+    }
+
+    #perfilInformacoesPrincipal {
+        display: flex;
+        flex-direction: row;
+
+        align-items: center;
+
+        width: 100%;
+
+        margin-bottom: 25px;
+    }
+
+    #imagemPerfil { 
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    
+        margin-right: 20px;
+    }
+
+    .secaoTrocarInfo {
+        margin: 0px;
+    }
+
+    .formTrocarInformacoes {
+        display: flex;
+        flex-direction: column;
+    
+        margin: 10px 0px;
+        
+        justify-content: center;
+    }
+
+    .inputInformacoes {
+        display: flex;
+    
+        width: 300px;
+        height: 35px;
+    
+        padding: 0px 20px;
+    }
+
+    #alterarInfo {
+        display: flex;
+        flex-direction: column;
+    
+        width: 100%;
+    }
+
+/* popup alterar foto */
+#alteracaoPerfil-imagem {
+    width: 350px;
+    height: 550px;
+
+    align-items: start;
+    justify-content: center;
+
+    position: absolute;
+
+    transform: translate(6%, -110%);
+}
+
+#geracaoImagem {
+    flex-direction: column;
+
+    margin: 70px 0px;
+}
+
+#camera {
+    width: 300px;
+    height: 225px;
+    margin: 10px;
+
+    border-radius: 15px;
+}
+
+#headerPopUpFoto {
+    flex-direction: column;
+
+    width: 350px;
+    height: 150px;
+
+    justify-content: start;
+    align-items: center;
+
+    position: absolute;
+    top: 30px;
+}
+
+#botaoSairPopupFoto {
+    position: absolute;
+    left: 30px;
+
+    margin: 0px 10px;
+}
+
+#botoesPopup {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0px;
+}
+
+.botaoPopup {
+    display: flex;
+
+    width: 300px;
+    height: 50px;
+    
+    margin: 10px;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.botaoPopupMaior {
+    margin-top: 20px;
+}
 }

@@ -95,7 +95,7 @@
                                     <input id="inputNome" class="inputInformacoes" type="text"
                                         placeholder="Insira seu novo nome de usuário" maxlength="32">
                                     <button id="botaoTrocarNome" class="botaoTrocar" onclick="trocarNome()">
-                                        <img src="assets-perfil/icon-escrever.svg">
+                                        <img class="icone" src="assets-perfil/icon-escrever.svg">
                                     </button>
                                 </div>
                             </div>
@@ -106,7 +106,7 @@
                                     <input id="inputDescrição" class="inputInformacoes" type="tel"
                                         placeholder="Insira seu novo número de telefone">
                                     <button class="botaoTrocar" onclick="trocarTelefone()">
-                                        <img src="assets-perfil/icon-escrever.svg">
+                                        <img class="icone" src="assets-perfil/icon-escrever.svg">
                                     </button>
                                 </div>
                             </div>
@@ -120,7 +120,7 @@
                                     <input id="inputEmail" class="inputInformacoes" type="email"
                                         placeholder="Insira seu novo e-mail">
                                     <button class="botaoTrocar" onclick="trocarEmail()">
-                                        <img src="assets-perfil/icon-escrever.svg">
+                                        <img class="icone" src="assets-perfil/icon-escrever.svg">
                                     </button>
                                 </div>
                             </div>
@@ -131,7 +131,7 @@
                                     <input id="inputSenha" class="inputInformacoes" type="password"
                                         placeholder="Insira sua nova senha">
                                     <button class="botaoTrocar" onclick="trocarSenha()">
-                                        <img src="assets-perfil/icon-escrever.svg">
+                                        <img class="icone" src="assets-perfil/icon-escrever.svg">
                                     </button>
                                 </div>
                             </div>
@@ -148,10 +148,10 @@
                     <!-- botao sair -->
                     <div onclick="fecharPopupFoto()" class="opcao-icone" id="botaoSairPopupFoto">
                         <img src="assets-perfil/sair.svg">
-                        <p class="opcao-nome">Fechar</p>
+                        <p class="opcao-nome ocultarResponsividade">Fechar</p>
                     </div>
                     <!-- titulo -->
-                    <h3>Alterar imagem</h3>
+                    <h3 id="tituloPopup">Alterar imagem</h3>
                 </div>
 
                 <!-- geracao de imagem -->
@@ -167,8 +167,8 @@
                         </div>
                     </div>
 
-                    <div id="areaFoto">
-                        <div id="foto"></div>
+                    <div class="ocultarResponsividade" id="areaFoto">
+                        <div class="ocultarResponsividade" id="foto"></div>
                     </div>
 
                 </div>
