@@ -52,11 +52,22 @@ function fecharMenuMobile(){
 
 // Verifica se está no modo mobile
 const mobile = window.matchMedia('(max-width: 400px)').matches;
+const original = window.matchMedia('min-width: 401px').matches;
 
 if (mobile) {
     capituloMenus.forEach(capituloMenu => {
         // Move cada elemento capituloMenu para o menuMobile
         menuMobile.appendChild(capituloMenu);
+    });
+}
+
+// caso seja a versão original
+const menuDesktop = document.getElementById('menuDesktop');
+
+if (original) {
+    capituloMenus.forEach(capituloMenu => {
+        // Move cada elemento capituloMenu para o menuMobile
+        menuDesktop.appendChild(capituloMenu);
     });
 }
 
@@ -220,3 +231,4 @@ videos.forEach((video, index) => {
         barrasProgresso[index].style.width = progresso + '%';
     });
 });
+

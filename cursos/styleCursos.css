@@ -14,6 +14,11 @@ main {
 
 .ocultarOriginal {
     display: none;
+    cursor: alias;
+}
+.ocultarOriginal:hover {
+    display: none;
+    cursor: alias
 }
 
 /* corpo Curso */
