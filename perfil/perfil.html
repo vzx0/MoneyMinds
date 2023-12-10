@@ -178,58 +178,61 @@
             <!-- dashboard -->
             <section class="secao" id="dashboard">
                 <div id="container-progresso">
-                    <!-- progresso-investimentos -->
-                    <div class="box-progresso" id="progresso-investimentos">
-                        <div>
-                            <h3>Investimento</h3>
-                            <p>Seu progresso atual:</p>
+                    <div>
+                        <!-- progresso-investimentos -->
+                        <div class="box-progresso" id="progresso-investimentos">
+                            <div>
+                                <h3>Investimento</h3>
+                                <p>Seu progresso atual:</p>
+                            </div>
+                            <div class="box-grafico-circulo">
+                                <svg class="circulo">
+                                    <circle cx="70" cy="70" r="70"></circle>
+                                    <circle id="circuloProgressoInvestimento" cx="70" cy="70" r="70"></circle>
+                                </svg>
+                                <div class="porcentagem" id="porcentagemProgressoInvestimento">
+                                    0%
+                                </div>
+                            </div>
                         </div>
-                        <div class="box-grafico-circulo">
-                            <svg class="circulo">
-                                <circle cx="70" cy="70" r="70"></circle>
-                                <circle id="circuloProgressoInvestimento" cx="70" cy="70" r="70"></circle>
-                            </svg>
-                            <div class="porcentagem" id="porcentagemProgressoInvestimento">
-                                0%
+
+                        <!-- progresso tecnologia -->
+                        <div class="box-progresso" id="progresso-tecnologia">
+                            <div>
+                                <h3>Tecnologia</h3>
+                                <p>Seu progresso atual:</p>
+                            </div>
+                            <div class="box-grafico-circulo">
+                                <svg class="circulo">
+                                    <circle cx="70" cy="70" r="70"></circle>
+                                    <circle id="circuloProgressoTecnologia" cx="70" cy="70" r="70"></circle>
+                                </svg>
+                                <div class="porcentagem" id="porcentagemProgressoTecnologia">
+                                    0%
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- progresso marketing -->
+                        <div class="box-progresso" id="progresso-marketing">
+                            <div>
+                                <h3>Marketing</h3>
+                                <p>Seu progresso atual:</p>
+                            </div>
+
+
+                            <div class="box-grafico-circulo">
+                                <svg class="circulo">
+                                    <circle cx="70" cy="70" r="70"></circle>
+                                    <circle id="circuloProgressoMarketing" cx="70" cy="70" r="70"></circle>
+                                </svg>
+                                <div class="porcentagem" id="porcentagemProgressoMarketing">
+                                    0%
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- progresso tecnologia -->
-                    <div class="box-progresso" id="progresso-tecnologia">
-                        <div>
-                            <h3>Tecnologia</h3>
-                            <p>Seu progresso atual:</p>
-                        </div>
-                        <div class="box-grafico-circulo">
-                            <svg class="circulo">
-                                <circle cx="70" cy="70" r="70"></circle>
-                                <circle id="circuloProgressoTecnologia" cx="70" cy="70" r="70"></circle>
-                            </svg>
-                            <div class="porcentagem" id="porcentagemProgressoTecnologia">
-                                0%
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- progresso marketing -->
-                    <div class="box-progresso" id="progresso-marketing">
-                        <div>
-                            <h3>Marketing</h3>
-                            <p>Seu progresso atual:</p>
-                        </div>
-
-
-                        <div class="box-grafico-circulo">
-                            <svg class="circulo">
-                                <circle cx="70" cy="70" r="70"></circle>
-                                <circle id="circuloProgressoMarketing" cx="70" cy="70" r="70"></circle>
-                            </svg>
-                            <div class="porcentagem" id="porcentagemProgressoMarketing">
-                                0%
-                            </div>
-                        </div>
-                    </div>
 
                     <!-- grafico -->
                     <div class="box-progresso" id="grafico-dashboard">
@@ -240,10 +243,7 @@
                     </div>
 
 
-                    <!-- atividades -->
-                    <div class="box-progresso" id="tarefas">
-
-                    </div>
+                    
                 </div>
             </section>
 
@@ -288,11 +288,6 @@
             <!-- ranking -->
             <section class="secao" id="ranking" class="escondido">
                 2
-            </section>
-
-            <!-- atividades -->
-            <section class="secao" id="atividades" class="escondido">
-                3
             </section>
         </nav>
 
