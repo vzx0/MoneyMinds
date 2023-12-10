@@ -231,4 +231,8 @@
 .botaoPopupMaior {
     margin-top: 20px;
 }
+
+#apagarBotao {
+    display: none;
+}
 }

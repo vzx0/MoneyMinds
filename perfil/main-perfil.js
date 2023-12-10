@@ -203,7 +203,8 @@ document.addEventListener("DOMContentLoaded", function () {
         downloadLink.href = fotoSalva;
         downloadLink.download = 'foto.png';
         downloadLink.textContent = 'Clique para salvar';
-        downloadLink.className = 'botaoPopup botaoPopupMaior ocultarResponsividade'
+        downloadLink.className = 'botaoPopup botaoPopupMaior ocultarResponsividade';
+        downloadLink.id = 'apagarBotao'
 
         document.querySelector('#areaFoto').appendChild(downloadLink);
     }
