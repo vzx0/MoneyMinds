@@ -11,6 +11,8 @@ ranking = document.getElementById('ranking');
 
 principal = document.querySelector('.principal');
 
+const mobile = window.matchMedia('(max-width: 400px)').matches;
+
 function exibirAlteracaoPerfil() {
     if (alteracaoPerfil.style.display === "flex") {
         return
@@ -33,7 +35,11 @@ function exibirDashboard() {
         cursosDashboard.style.display = "none";
         ranking.style.display = "none";
 
-        principal.style.height = "100%"
+        principal.style.height = "auto"
+
+        if (mobile){
+            principal.style.height = "100%";
+        }
     }
 }
 function exibirCursos() {
