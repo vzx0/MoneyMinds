@@ -14,8 +14,9 @@
     <!-- responsividade -->
     <link rel="stylesheet" href="mobile-perfil-style.css">
 
-    <!-- scr FONTAWESOME -->
+    <!-- scr externos -->
     <script src="https://kit.fontawesome.com/78f0f143f5.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -233,8 +234,11 @@
 
                     <!-- grafico -->
                     <div class="box-progresso" id="grafico-dashboard">
+                        <canvas id="chartCanvas">
 
+                        </canvas>
                     </div>
+
 
                     <!-- atividades -->
                     <div class="box-progresso" id="tarefas">
@@ -247,8 +251,7 @@
             <section class="secao" id="cursos" class="escondido">
                 <h2 class="ocultarOriginal tituloMobile">Meus Cursos</h2>
 
-                <div class="curso"
-                    id="cursoInvestimentos">
+                <div class="curso" id="cursoInvestimentos">
                     <div class="informacoesCurso">
                         <h3 class="informacoesTitulo">Investimento</h3>
 
@@ -259,8 +262,7 @@
                     </div>
                 </div>
 
-                <div class="curso"
-                    id="cursoTecnologia">
+                <div class="curso" id="cursoTecnologia">
                     <div class="informacoesCurso" id="infoTecnologia">
                         <h3 class="informacoesTitulo">Tecnologia</h3>
 
@@ -271,8 +273,7 @@
                     </div>
                 </div>
 
-                <div class="curso"
-                    id="cursoMarketing">
+                <div class="curso" id="cursoMarketing">
                     <div class="informacoesCurso">
                         <h3 class="informacoesTitulo">Marketing</h3>
 

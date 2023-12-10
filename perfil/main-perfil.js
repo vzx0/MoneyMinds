@@ -251,5 +251,110 @@ botaoTrocarNome.addEventListener('click', function () {
     trocarNome(novoNome);
 });
 
+// grafico dashboard
+function registrarTempoNoSite() {
+    const agora = new Date();
+    const dataAtual = `${agora.getFullYear()}-${agora.getMonth() + 1}-${agora.getDate()}`;
 
+    let tempoNoSite = parseInt(localStorage.getItem(dataAtual)) || 0;
+
+    const tempoGasto = calcularTempoGasto();
+    tempoNoSite += tempoGasto;
+
+    // Limitar o tempo total a 6 horas (21600 segundos)
+    tempoNoSite = Math.min(tempoNoSite, 21600);
+
+    localStorage.setItem(dataAtual, tempoNoSite);
+}
+
+function calcularTempoGasto() {
+    let tempoGasto = parseInt(localStorage.getItem('tempoGasto')) || 0;
+
+    const timer = setInterval(() => {
+        tempoGasto++;
+
+        // Verificar se o tempo gasto excedeu 6 horas
+        if (tempoGasto > 21600) {
+            clearInterval(timer); // Parar o timer quando exceder 6 horas
+        }
+
+        localStorage.setItem('tempoGasto', tempoGasto);
+    }, 1000);
+
+    return tempoGasto;
+}
+
+calcularTempoGasto();
+
+// Chamar a função para calcular o tempo gasto
+calcularTempoGasto();
+
+function renderizarGraficoSemanal() {
+    setTimeout(() => {
+        const diasDaSemana = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
+        const dias = [];
+        const tempos = [];
+
+        // Obter os dados do localStorage e prepará-los para o gráfico
+        for (let i = 0; i < 7; i++) {
+            const data = new Date();
+            data.setDate(data.getDate() - i); // Obter as datas dos últimos 7 dias
+
+            const dataFormatada = `${data.getFullYear()}-${data.getMonth() + 1}-${data.getDate()}`;
+            const tempoNoSite = parseInt(localStorage.getItem(dataFormatada)) || 0;
+
+            dias.unshift(diasDaSemana[data.getDay()]); // Adicionar o dia da semana
+            tempos.unshift(tempoNoSite); // Adicionar o tempo gasto no site
+        }
+
+        // Use Chart.js para renderizar o gráfico dentro da div específica
+        const ctx = document.getElementById('chartCanvas');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: dias,
+                datasets: [{
+                    label: 'Tempo no Site (segundos)',
+                    data: tempos,
+                    backgroundColor: '#36a2eb',
+                    borderColor: '#36a2eb',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                layout: {
+                    padding: 10
+                },
+                plugins: {
+                    tooltip: {
+                        titleFont: {
+                            size: 16,
+                            weight: 'bold',
+                            color: '#ffffff'
+                        },
+                        bodyFont: {
+                            size: 14,
+                            weight: 'normal',
+                            color: '#ffffff'
+                        }
+                    }
+                }
+            }
+        });
+    }, 500); // Aguarda 1 segundo para garantir que os dados estejam prontos
+}
+
+// Chamar a função para renderizar o gráfico ao carregar a página
+window.addEventListener('load', renderizarGraficoSemanal);
 

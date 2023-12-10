@@ -260,6 +260,7 @@ circle:nth-child(2) {
 
 /* ---caixa grafico dashboard */
 #grafico-dashboard {
+    display: flex;
     width: 610px;
 }
 
