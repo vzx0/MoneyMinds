@@ -154,20 +154,23 @@ main {
 
     align-items: center;
     justify-content: center;
+
+    height: 100%;
+    width: 100%;
 }
 
 /* ---caixa padrao dashboard */
 .box-progresso {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 
     justify-content: center;
     align-items: center;
 
-    width: 300px;
-    height: 300px;
+    width: 375px;
+    height: 200px;
 
-    margin: 10px 5px;
+    margin: 5px;
     border-radius: 25px;
 
     background-color: var(--background-secundario);
@@ -182,7 +185,7 @@ main {
 
     position: relative;
 
-    margin: 10px 0px;
+    margin-left: 15px;
 }
 
 /* --- --- grafico circulo */
@@ -261,7 +264,19 @@ circle:nth-child(2) {
 /* ---caixa grafico dashboard */
 #grafico-dashboard {
     display: flex;
-    width: 610px;
+    flex-direction: column;
+
+    align-items: start;
+
+    width: 760px;
+    height: 450px;
+    padding: 20px;
+
+    transition: 200ms ease;
+}
+
+#chartCanvas {
+    margin-top: 15px;
 }
 
 /* ---------- CURSOS ---------- */

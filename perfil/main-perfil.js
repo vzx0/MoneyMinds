@@ -325,28 +325,44 @@ function renderizarGraficoSemanal() {
             options: {
                 scales: {
                     y: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        max: 21600, // Limite máximo do eixo Y em segundos (6 horas)
+                        ticks: {
+                            stepSize: 3600, // Intervalo das marcações do eixo Y em segundos (1 hora)
+                            callback: function (value) {
+                                // Converte os segundos para horas e minutos para exibição
+                                const hours = Math.floor(value / 3600);
+                                const minutes = Math.floor((value % 3600) / 60);
+                                return hours + 'h ' + minutes + 'm';
+                            },
+                            font: {
+                                size: 14, // Tamanho da fonte das marcações do eixo Y
+                                color: 'white' // Cor da fonte das marcações do eixo Y
+                            },
+                            legend: {
+                                labels: {
+                                    font: {
+                                        color: '#ffffff'
+                                    }
+                                }
+                            }
+                        }
                     }
                 },
                 plugins: {
                     legend: {
                         display: false
-                    }
-                },
-                layout: {
-                    padding: 10
-                },
-                plugins: {
+                    },
                     tooltip: {
                         titleFont: {
                             size: 16,
                             weight: 'bold',
-                            color: '#ffffff'
+                            color: 'white' // Cor do título do tooltip
                         },
                         bodyFont: {
                             size: 14,
                             weight: 'normal',
-                            color: '#ffffff'
+                            color: 'white' // Cor do corpo do tooltip
                         }
                     }
                 }
@@ -354,7 +370,6 @@ function renderizarGraficoSemanal() {
         });
     }, 500); // Aguarda 1 segundo para garantir que os dados estejam prontos
 }
-
 // Chamar a função para renderizar o gráfico ao carregar a página
 window.addEventListener('load', renderizarGraficoSemanal);
 

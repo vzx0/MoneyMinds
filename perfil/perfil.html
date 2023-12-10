@@ -179,9 +179,11 @@
             <section class="secao" id="dashboard">
                 <div id="container-progresso">
                     <!-- progresso-investimentos -->
-                    <div onclick="progressoInvestimento()" class="box-progresso" id="progresso-investimentos">
-                        <h3>Investimento</h3>
-
+                    <div class="box-progresso" id="progresso-investimentos">
+                        <div>
+                            <h3>Investimento</h3>
+                            <p>Seu progresso atual:</p>
+                        </div>
                         <div class="box-grafico-circulo">
                             <svg class="circulo">
                                 <circle cx="70" cy="70" r="70"></circle>
@@ -191,15 +193,14 @@
                                 0%
                             </div>
                         </div>
-
-                        <a href="../cursos/investimento/investimento.html" class="botaoDashboard">Continuar</a>
-
                     </div>
 
                     <!-- progresso tecnologia -->
                     <div class="box-progresso" id="progresso-tecnologia">
-                        <h3>Tecnologia</h3>
-
+                        <div>
+                            <h3>Tecnologia</h3>
+                            <p>Seu progresso atual:</p>
+                        </div>
                         <div class="box-grafico-circulo">
                             <svg class="circulo">
                                 <circle cx="70" cy="70" r="70"></circle>
@@ -209,14 +210,15 @@
                                 0%
                             </div>
                         </div>
-
-                        <a href="../cursos/tecnologia/tecnologia.html" class="botaoDashboard">Continuar</a>
-
                     </div>
 
                     <!-- progresso marketing -->
                     <div class="box-progresso" id="progresso-marketing">
-                        <h3>Marketing</h3>
+                        <div>
+                            <h3>Marketing</h3>
+                            <p>Seu progresso atual:</p>
+                        </div>
+
 
                         <div class="box-grafico-circulo">
                             <svg class="circulo">
@@ -227,13 +229,11 @@
                                 0%
                             </div>
                         </div>
-
-                        <a href="../cursos/marketing/marketing.html" class="botaoDashboard">Continuar</a>
-
                     </div>
 
                     <!-- grafico -->
                     <div class="box-progresso" id="grafico-dashboard">
+                        <h3>Atividade Semanal</h3>
                         <canvas id="chartCanvas">
 
                         </canvas>
