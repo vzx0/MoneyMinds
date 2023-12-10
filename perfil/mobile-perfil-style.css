@@ -273,6 +273,7 @@
     margin-bottom: 10px;
 }
 
+/* dashboard */
 .botaoDashboard {
     width: 200px;
     height: 40px;
@@ -295,6 +296,7 @@
     background-color: var(--background-secundario);
 }
 
+
 #grafico-dashboard {
     width: 375px;
     height: 300px;
@@ -311,7 +313,7 @@
 
     align-items: center;
 
-    margin-bottom: 60px;
+    margin-bottom: 50px;
 }
 
 }
