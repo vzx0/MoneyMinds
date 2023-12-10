@@ -8,8 +8,16 @@ main {
     background-image: linear-gradient(to right, var(--cor-primaria), var(--background-principal));
 }
 
+.ocultarOriginal {
+    display: none;
+}
+
 /* trocar paginas */
 .escondido {
+    display: none;
+}
+
+.titulosMobile {
     display: none;
 }
 
@@ -263,7 +271,7 @@ circle:nth-child(2) {
     justify-content: center;
 
     width: 100%;
-    height: 100%;
+    height: 100vh;
 }
 
 /* banners curso */
@@ -334,6 +342,8 @@ circle:nth-child(2) {
 
     position: absolute;
     top: 60px;
+
+    transition: 600ms ease;
 }
 
 .btnDashboardFixado {

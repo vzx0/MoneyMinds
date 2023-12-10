@@ -8,7 +8,8 @@ alteracaoPerfil = document.getElementById('alteracaoPerfil')
 dashboard = document.getElementById('dashboard');
 cursosDashboard = document.getElementById('cursos');
 ranking = document.getElementById('ranking');
-atividades = document.getElementById('atividades');
+
+principal = document.querySelector('.principal');
 
 function exibirAlteracaoPerfil() {
     if (alteracaoPerfil.style.display === "flex") {
@@ -19,6 +20,8 @@ function exibirAlteracaoPerfil() {
         cursosDashboard.style.display = "none";
         ranking.style.display = "none";
         atividades.style.display = "none";
+
+        principal.style.height = "100vh"
     }
 }
 
@@ -31,6 +34,8 @@ function exibirDashboard() {
         cursosDashboard.style.display = "none";
         ranking.style.display = "none";
         atividades.style.display = "none";
+
+        principal.style.height = "100vh"
     }
 }
 function exibirCursos() {
@@ -42,6 +47,8 @@ function exibirCursos() {
         cursosDashboard.style.display = "flex";
         ranking.style.display = "none";
         atividades.style.display = "none";
+
+        principal.style.height = "100%"
     }
 }
 function exibirRanking() {
@@ -53,57 +60,63 @@ function exibirRanking() {
         cursosDashboard.style.display = "none";
         ranking.style.display = "flex";
         atividades.style.display = "none";
+
+        principal.style.height = "100vh"
     }
 }
-function exibirAtividades() {
-    if (atividades.style.display === "flex") {
-        return
-    } else {
-        alteracaoPerfil.style.display = "none"
-        dashboard.style.display = "none";
-        cursosDashboard.style.display = "none";
-        ranking.style.display = "none";
-        atividades.style.display = "flex";
-    }
-}
+
 
 // ---------- CURSOS ----------
 let cursos = document.querySelectorAll('.curso');
 
-cursos.forEach(curso => {
-    curso.addEventListener("mouseover", extenderInformacoes);
-    curso.addEventListener("mouseleave", retrairInformacoes);
-});
-
-function extenderInformacoes(event) {
+function mostrarTexto(event) {
     let informacoesCurso = event.currentTarget.querySelector('.informacoesCurso');
-    if (informacoesCurso.style.height !== "300px") {
-        informacoesCurso.style.height = "300px";
+    if (informacoesCurso.style.height !== "250px") {
+        informacoesCurso.style.height = "250px";
+    }
+
+    let informacoesTexto = event.currentTarget.querySelector('.informacoesTexto');
+
+
+    if (informacoesTexto) {
+        // Definir um texto diferente para cada curso
+        let texto = "";
+        if (event.currentTarget.id === "cursoInvestimentos") {
+            texto = "Descubra o poder das finanças e transforme sua relação com o dinheiro neste curso abrangente sobre finanças.";
+        } else if (event.currentTarget.id === "cursoTecnologia") {
+            texto = "Explore o mundo da tecnologia e descubra as mais recentes inovações neste curso emocionante.";
+        } else if (event.currentTarget.id === "cursoMarketing") {
+            texto = "Aprenda estratégias de marketing eficazes e melhore suas habilidades neste curso dinâmico.";
+        }
+
+        informacoesTexto.textContent = texto;
+        informacoesTexto.style.opacity = '1';
+        informacoesTexto.style.transform = 'translateY(0)';
     }
 }
 
-function retrairInformacoes(event) {
+// Definir a função para esconder o texto ao retirar o cursor
+function esconderTexto(event) {
     let informacoesCurso = event.currentTarget.querySelector('.informacoesCurso');
     if (informacoesCurso.style.height !== "175px") {
         informacoesCurso.style.height = "175px";
     }
+
+    let informacoesTexto = event.currentTarget.querySelector('.informacoesTexto');
+
+    if (informacoesTexto) {
+        informacoesTexto.textContent = "";
+        informacoesTexto.style.opacity = '0';
+        informacoesTexto.style.transform = 'translateY(-20px)';
+    }
 }
 
+// Adicionar os eventos de mouseover e mouseleave a cada curso
 cursos.forEach(curso => {
-    curso.addEventListener("mouseover", function (event) {
-        let informacoesTexto = event.currentTarget.querySelector('.informacoesTexto');
-        if (informacoesTexto) {
-            informacoesTexto.textContent = "Descubra o poder das finanças e transforme sua relação com o dinheiro neste curso abrangente sobre finanças.";
-        }
-    });
-
-    curso.addEventListener("mouseleave", function (event) {
-        let informacoesTexto = event.currentTarget.querySelector('.informacoesTexto');
-        if (informacoesTexto) {
-            informacoesTexto.textContent = "";
-        }
-    });
+    curso.addEventListener("mouseover", mostrarTexto);
+    curso.addEventListener("mouseleave", esconderTexto);
 });
+
 
 // ---------- PERFIL ----------
 // popup imagem

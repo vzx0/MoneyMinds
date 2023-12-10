@@ -9,7 +9,13 @@
         display: none;
     }
 
-
+    .tituloMobile {
+        justify-content: center;
+        align-items: center;
+    
+        width: 100%;
+        height: 75px;
+    }
 
     /* geral */
     .secao {
@@ -19,6 +25,8 @@
 
         width: 100vw;
         height: 100%;
+
+        margin: 0;
 
         align-items: center;
         justify-content: center;
@@ -234,5 +242,41 @@
 
 #apagarBotao {
     display: none;
+}
+
+/* cursos */
+#cursos {
+    width: 100vw;
+    height: 100%;
+
+    flex-direction: column;
+}
+
+.curso {
+    flex-direction: column;
+
+    position: relative;
+
+    width: 350px;
+    height: 500px;
+
+    background-color: var(--background-secundario);
+    background-image: url(../Assets/technology.jpg);
+
+    border-radius: 15px;
+
+    margin-bottom: 10px;
+}
+
+.botaoDashboard {
+    width: 200px;
+    height: 40px;
+    background-color: var(--corBotaoDestaque);
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    padding: 5px;
 }
 }
