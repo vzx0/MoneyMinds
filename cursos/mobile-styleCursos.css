@@ -1,4 +1,7 @@
 @media screen and (max-width: 400px) {
+    p {
+        font-size: 15px;
+    }
 
     /* ocultar elementos */
     .ocultarOriginal {

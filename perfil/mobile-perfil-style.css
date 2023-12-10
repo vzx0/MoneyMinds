@@ -1,4 +1,7 @@
 @media screen and (max-width: 400px) {
+    p {
+        font-size: 15px;
+    }
 
     /* ocultar elementos */
     .ocultarOriginal {
@@ -26,7 +29,8 @@
         width: 100vw;
         height: 100%;
 
-        margin: 0;
+        margin: 0px;
+        margin-bottom: 50px;
 
         align-items: center;
         justify-content: center;
@@ -34,6 +38,7 @@
 
     .principal {
         margin: 0;
+        height: 100%;
     }
 
     /* menu inferior */
@@ -279,4 +284,34 @@
 
     padding: 5px;
 }
+
+.box-progresso {
+    width: 375px;
+    height: 175px;
+
+    margin-bottom: 0px;
+    border-radius: 25px;
+
+    background-color: var(--background-secundario);
+}
+
+#grafico-dashboard {
+    width: 375px;
+    height: 300px;
+    padding: 25px;
+
+    transition: 200ms ease;
+}
+
+#dashboard {
+    display: flex;
+    margin: 10px 0px;
+    width: 100%;
+    height: 100%;
+
+    align-items: center;
+
+    margin-bottom: 60px;
+}
+
 }

@@ -19,7 +19,6 @@ function exibirAlteracaoPerfil() {
         dashboard.style.display = "none";
         cursosDashboard.style.display = "none";
         ranking.style.display = "none";
-        atividades.style.display = "none";
 
         principal.style.height = "100vh"
     }
@@ -33,9 +32,8 @@ function exibirDashboard() {
         dashboard.style.display = "flex";
         cursosDashboard.style.display = "none";
         ranking.style.display = "none";
-        atividades.style.display = "none";
 
-        principal.style.height = "100vh"
+        principal.style.height = "100%"
     }
 }
 function exibirCursos() {
@@ -46,7 +44,6 @@ function exibirCursos() {
         dashboard.style.display = "none";
         cursosDashboard.style.display = "flex";
         ranking.style.display = "none";
-        atividades.style.display = "none";
 
         principal.style.height = "100%"
     }
@@ -59,7 +56,6 @@ function exibirRanking() {
         dashboard.style.display = "none";
         cursosDashboard.style.display = "none";
         ranking.style.display = "flex";
-        atividades.style.display = "none";
 
         principal.style.height = "100vh"
     }
