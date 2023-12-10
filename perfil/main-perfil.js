@@ -279,98 +279,126 @@ function calcularTempoGasto() {
         }
 
         localStorage.setItem('tempoGasto', tempoGasto);
+
+        // Após atualizar os dados, chame a função para atualizar o gráfico
+        atualizarGrafico();
     }, 1000);
 
     return tempoGasto;
 }
 
-calcularTempoGasto();
+let graficoSemanal = null; // Variável para armazenar o gráfico
 
-// Chamar a função para calcular o tempo gasto
-calcularTempoGasto();
+function atualizarGrafico(dias, tempos) {
+    // Verifica se há um gráfico existente e o destroi
+    if (graficoSemanal) {
+        graficoSemanal.destroy();
+    }
 
-function renderizarGraficoSemanal() {
-    setTimeout(() => {
-        const diasDaSemana = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
-        const dias = [];
-        const tempos = [];
+    // Use Chart.js para renderizar o gráfico dentro da div específica
+    const ctx = document.getElementById('chartCanvas');
 
-        // Obter os dados do localStorage e prepará-los para o gráfico
-        for (let i = 0; i < 7; i++) {
-            const data = new Date();
-            data.setDate(data.getDate() - i); // Obter as datas dos últimos 7 dias
-
-            const dataFormatada = `${data.getFullYear()}-${data.getMonth() + 1}-${data.getDate()}`;
-            const tempoNoSite = parseInt(localStorage.getItem(dataFormatada)) || 0;
-
-            dias.unshift(diasDaSemana[data.getDay()]); // Adicionar o dia da semana
-            tempos.unshift(tempoNoSite); // Adicionar o tempo gasto no site
-        }
-
-        // Use Chart.js para renderizar o gráfico dentro da div específica
-        const ctx = document.getElementById('chartCanvas');
-
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: dias,
-                datasets: [{
-                    label: 'Tempo no Site (segundos)',
-                    data: tempos,
-                    backgroundColor: '#36a2eb',
-                    borderColor: '#36a2eb',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        max: 21600, // Limite máximo do eixo Y em segundos (6 horas)
-                        ticks: {
-                            stepSize: 3600, // Intervalo das marcações do eixo Y em segundos (1 hora)
-                            callback: function (value) {
-                                // Converte os segundos para horas e minutos para exibição
-                                const hours = Math.floor(value / 3600);
-                                const minutes = Math.floor((value % 3600) / 60);
-                                return hours + 'h ' + minutes + 'm';
-                            },
-                            color: 'white', // Cor das marcações do eixo Y
-                            font: {
-                                size: 14 // Tamanho da fonte das marcações do eixo Y
-                            }
-                        }
-                    },
-                    x: {
-                        ticks: {
-                            color: 'white', // Cor das marcações do eixo X
-                            font: {
-                                size: 14 // Tamanho da fonte das marcações do eixo X
-                            }
+    graficoSemanal = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: dias,
+            datasets: [{
+                label: 'Tempo no Site (segundos)',
+                data: tempos,
+                backgroundColor: '#36a2eb',
+                borderColor: '#36a2eb',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 21600, // Limite máximo do eixo Y em segundos (6 horas)
+                    ticks: {
+                        stepSize: 3600, // Intervalo das marcações do eixo Y em segundos (1 hora)
+                        callback: function (value) {
+                            // Converte os segundos para horas e minutos para exibição
+                            const hours = Math.floor(value / 3600);
+                            const minutes = Math.floor((value % 3600) / 60);
+                            return hours + 'h ' + minutes + 'm';
+                        },
+                        color: 'white', // Cor das marcações do eixo Y
+                        font: {
+                            size: 14 // Tamanho da fonte das marcações do eixo Y
                         }
                     }
                 },
-                plugins: {
-                    legend: {
-                        display: false
-                    },
-                    tooltip: {
-                        titleFont: {
-                            size: 16,
-                            weight: 'bold',
-                            color: 'white' // Cor do título do tooltip
-                        },
-                        bodyFont: {
-                            size: 14,
-                            weight: 'normal',
-                            color: 'white' // Cor do corpo do tooltip
+                x: {
+                    ticks: {
+                        color: 'white', // Cor das marcações do eixo X
+                        font: {
+                            size: 14 // Tamanho da fonte das marcações do eixo X
                         }
                     }
                 }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    titleFont: {
+                        size: 16,
+                        weight: 'bold',
+                        color: 'white' // Cor do título do tooltip
+                    },
+                    bodyFont: {
+                        size: 14,
+                        weight: 'normal',
+                        color: 'white' // Cor do corpo do tooltip
+                    }
+                }
             }
-        });
-    }, 500); // Aguarda 1 segundo para garantir que os dados estejam prontos
+        }
+    });
 }
-// Chamar a função para renderizar o gráfico ao carregar a página
-window.addEventListener('load', renderizarGraficoSemanal);
 
+// Chame a função para calcular o tempo gasto
+calcularTempoGasto();
+
+function renderizarGraficoSemanal() {
+    const diasDaSemana = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
+    const dias = [];
+    const tempos = [];
+
+    for (let i = 0; i < 7; i++) {
+        const data = new Date();
+        data.setDate(data.getDate() - i);
+
+        const dataFormatada = `${data.getFullYear()}-${(data.getMonth() + 1).toString().padStart(2, '0')}-${data.getDate().toString().padStart(2, '0')}`;
+        const tempoNoSite = parseInt(localStorage.getItem(dataFormatada)) || 0;
+
+        dias.unshift(diasDaSemana[data.getDay()]);
+        tempos.unshift(tempoNoSite);
+    }
+
+    atualizarGrafico(dias, tempos);
+
+    setInterval(() => {
+
+        
+        const newData = [];
+        const newLabels = [];
+
+        for (let i = 0; i < 7; i++) {
+            const data = new Date();
+            data.setDate(data.getDate() - i);
+
+            const dataFormatada = `${data.getFullYear()}-${(data.getMonth() + 1).toString().padStart(2, '0')}-${data.getDate().toString().padStart(2, '0')}`;
+            const tempoNoSite = parseInt(localStorage.getItem(dataFormatada)) || 0;
+
+            newLabels.unshift(diasDaSemana[data.getDay()]);
+            newData.unshift(tempoNoSite);
+        }
+
+        atualizarGrafico(newLabels, newData);
+    }, 1000);
+}
+
+window.addEventListener('load', renderizarGraficoSemanal);
