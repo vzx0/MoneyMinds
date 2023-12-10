@@ -335,16 +335,17 @@ function renderizarGraficoSemanal() {
                                 const minutes = Math.floor((value % 3600) / 60);
                                 return hours + 'h ' + minutes + 'm';
                             },
+                            color: 'white', // Cor das marcações do eixo Y
                             font: {
-                                size: 14, // Tamanho da fonte das marcações do eixo Y
-                                color: 'white' // Cor da fonte das marcações do eixo Y
-                            },
-                            legend: {
-                                labels: {
-                                    font: {
-                                        color: '#ffffff'
-                                    }
-                                }
+                                size: 14 // Tamanho da fonte das marcações do eixo Y
+                            }
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color: 'white', // Cor das marcações do eixo X
+                            font: {
+                                size: 14 // Tamanho da fonte das marcações do eixo X
                             }
                         }
                     }
