@@ -214,6 +214,7 @@ button {
   box-shadow: 0 3px 12px hsla(233, 77%, 10%, 0.06);
   border-radius: 4px;
   transition: 0.35s ease;
+  margin: 25px;
   background-color: rgba(43, 43, 43, 0.59);
 }
 
@@ -286,8 +287,39 @@ button {
     margin-inline: auto;
     margin-bottom: 80px;
   }
-
 }
+
+@media (max-width: 500px){
+
+  .about-content{
+    margin: 20px;
+    text-align: center;
+  }
+
+  .sobre .secao-texto {
+    margin-bottom: 20px !important;
+    text-align: center;
+  }
+
+  .faq-conteudo{
+    font-size: 1.7rem !important;
+    max-width: 800px;
+  }
+}
+
+  .porque-text {
+    color: #c9c9c9;
+    font-weight: 500;
+    line-height: 1.8;
+    font-size: 14px;
+    margin-bottom: 20px;
+  } 
+
+  .slide-empresa{
+    margin-top: 0px;
+    margin-block: 60px;
+  }
+
 
 .animacao-escrevendo {
   display: inline-block;
@@ -394,6 +426,7 @@ button {
   margin-bottom: 15px;
   padding-top: 30px;
   font-weight: 285;
+  margin: 0 435px;
 }
 
 .paragraph {
@@ -402,7 +435,6 @@ button {
   font-weight: 500;
   line-height: 1.6;
 }
-
 
 
 .p-margin-top {
@@ -1528,7 +1560,7 @@ p {
   }
 }
 .slide-empresa {
-  height: 100px;
+  height: 120px;
   padding-bottom: 0px;
   width: 1100px;
   justify-content: center;
@@ -1539,11 +1571,12 @@ p {
   position: relative;
   margin-top: 320px;
 }
+
 .slide-empresa::before, .slide-empresa::after {
   background: -webkit-gradient(linear, left top, right top, from(white), to(rgba(255, 255, 255, 0)));
   background: linear-gradient(to right, #0c0c0c 0%, rgba(255, 255, 255, 0) 100%);
   content: "";
-  height: 100px;
+  height: 200px;
   position: absolute;
   width: 200px;
   z-index: 2;
@@ -1551,6 +1584,7 @@ p {
 .slide-empresa::after {
   right: 0;
   top: 0;
+  left: 904px;
   -webkit-transform: rotateZ(180deg);
           transform: rotateZ(180deg);
 }
@@ -1629,6 +1663,11 @@ hr {
   padding: 1rem 1rem;
   border-radius: 2rem;
   transition: 0.3s ease-in-out;
+}
+
+.empresa-logo img{
+  width: 130px;
+  height: 100px;
 }
 
 
@@ -1753,6 +1792,10 @@ details[open] summary {
 @media (max-width: 375px) {
   #titulo-mob {
     font-size: 4rem;
+  }
+
+  .texto-destaque{
+    /* font-size: 3.7rem; */
   }
 }
 
@@ -2118,6 +2161,7 @@ h1 {
   #descricao-pc {
     font-size: 15px;
     color: #fff;
+    margin: 0 30px;
     text-align: center;
     margin-bottom: 15px;
     padding-top: 30px;
@@ -2125,10 +2169,104 @@ h1 {
   }
 }
 
+@media (max-width: 600px) {
+  #titulo-pc {
+    font-size: 65px;
+    line-height: 65px;
+  }
+
+  .texto-destaque {
+    color: var(--cor-primaria) !important;
+    font-size: 65px;
+    font-weight: 600;
+    text-shadow: 0 0 25px rgb(0, 140, 255);
+  }
+
+  #descricao-pc {
+    font-size: 15px;
+    color: #fff;
+    margin: 0 30px;
+    text-align: center;
+    margin-bottom: 15px;
+    padding-top: 30px;
+    margin: 0 100px;
+    font-weight: 285;
+  }
+}
+
+
+@media (max-width: 1440px){
+}
+
+@media (max-width: 500px) {
+  #titulo-pc {
+    font-size: 55px;
+    line-height: 55px;
+  }
+
+  .slide-empresa img {
+    width: 127px;
+    height: auto;
+  }
+
+  .slide-empresa .empresa-logo {
+    height: 100px;
+    width: 175px;
+}
+
+  .slide-empresa::after{
+    left: 303px;
+  }
+
+  .texto-destaque {
+    color: var(--cor-primaria) !important;
+    font-size: 55px;
+    font-weight: 600;
+    text-shadow: 0 0 25px rgb(0, 140, 255);
+  }
+
+  #descricao-pc {
+    font-size: 15px;
+    color: #fff;
+    margin: 0 30px;
+    text-align: center;
+    margin-bottom: 15px;
+    padding-top: 30px;
+    margin: 0 53px;
+    font-weight: 285;
+  }
+}
+
+@media (max-width: 420px) {
+  #titulo-pc {
+    font-size: 55px;
+    line-height: 55px;
+  }
+
+  .texto-destaque {
+    color: var(--cor-primaria) !important;
+    font-size: 55px;
+    font-weight: 600;
+    text-shadow: 0 0 25px rgb(0, 140, 255);
+  }
+
+  #descricao-pc {
+    font-size: 15px;
+    color: #fff;
+    margin: 0 30px;
+    text-align: center;
+    margin-bottom: 15px;
+    padding-top: 30px;
+    margin: 0 25px;
+    font-weight: 285;
+  }
+}
+
+
 @media (max-width: 375px) {
   .texto-destaque {
     color: var(--cor-primaria) !important;
-    font-size: 3.7rem;
+    /* font-size: 3.7rem; */
     font-weight: 650;
   }
 }
@@ -2150,6 +2288,10 @@ h1 {
     justify-content: space-between;
     align-items: center;
     height: 70rem;
+  }
+
+  .imagem-de-fundo{
+    max-width: 90%;
   }
 
   
