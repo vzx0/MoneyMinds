@@ -106,12 +106,13 @@ b {
 
 p {
   font-family: var(--font-secundary);
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   color: var(--text);
 }
 
 a {
   transition-duration: 0.3s;
+  font-size: 1.8rem;
 }
 
 button {

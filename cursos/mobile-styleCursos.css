@@ -288,9 +288,11 @@
         top: 0;
         right: -300px;
 
-        background-color: var(--background-secundario);
 
         transition: right 0.5s ease ;
+
+        background-color: rgb(0, 0, 0, 0.1);
+        backdrop-filter: blur(20px);
     }
     
     .headerMenuMobile {
@@ -301,7 +303,7 @@
         width: 300px;
         height: 75px;
 
-        background-color: var(--background-secundario);
+        background-color: rgb(0, 0, 0, 0);
 
         align-items: center;
 
