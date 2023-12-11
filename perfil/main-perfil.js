@@ -339,7 +339,7 @@ function atualizarGrafico(dias, tempos) {
                 }
             }
         });
-    } else {
+    }  else {
         graficoSemanal.data.labels = dias;
         graficoSemanal.data.datasets[0].data = tempos.map(segundos => Math.floor(segundos / 60));
         graficoSemanal.update();
@@ -351,15 +351,20 @@ function obterDadosGrafico() {
     const dias = [];
     const tempos = [];
 
+    // Encontrar o domingo mais próximo
+    const dataAtual = new Date();
+    const diaSemana = dataAtual.getDay();
+    dataAtual.setDate(dataAtual.getDate() - diaSemana);
+
     for (let i = 0; i < 7; i++) {
-        const data = new Date();
-        data.setDate(data.getDate() - i);
+        const data = new Date(dataAtual);
+        data.setDate(data.getDate() + i);
 
         const dataFormatada = `${data.getFullYear()}-${(data.getMonth() + 1).toString().padStart(2, '0')}-${data.getDate().toString().padStart(2, '0')}`;
         const tempoNoSite = parseInt(localStorage.getItem(dataFormatada)) || 0;
 
-        dias.unshift(diasDaSemana[data.getDay()]);
-        tempos.unshift(tempoNoSite);
+        dias.push(diasDaSemana[data.getDay()]);
+        tempos.push(tempoNoSite);
     }
 
     return { dias, tempos };
