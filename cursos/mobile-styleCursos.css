@@ -1,0 +1,327 @@
+@media screen and (max-width: 400px) {
+    p {
+        font-size: 15px;
+    }
+
+    /* ocultar elementos */
+    .ocultarOriginal {
+        display: flex;
+    }
+
+    .ocultarResponsividade {
+        display: none;
+    }
+
+    .ocultarOriginal:hover {
+        display: flex;
+        cursor: default;
+    }
+
+    /* geral */
+    .secao {
+        display: none;
+    
+        flex-direction: column;
+        
+        width: 100vw;
+        height: 100%;
+    
+        align-items: center;
+        justify-content: center;
+    }
+
+    .principal {
+        margin: 0;
+    }
+
+    /* menu inferior */
+    #menuBurger {
+        display: flex;
+        flex-direction: row-reverse;
+
+        align-items: center;
+        justify-content: space-around;
+
+        z-index: 8;
+
+        position: fixed;
+        bottom: 0;
+
+        width: 100vw;
+        height: 50px;
+        background-color: var(--background-secundario);
+    }
+
+    .opcoes-menuBurger {
+        display: flex;
+        flex-direction: row;
+
+        justify-content: space-around;
+
+        width: 100%;
+    }
+
+    .opcao-menuBurger {
+        display: flex;
+    
+        align-items: center;
+        justify-content: center;
+    
+        width: 75px;
+        height: 50px;
+    
+        transition: 200ms ease;
+    
+        cursor: pointer;
+    }
+
+    .opcao-icone {
+        display: flex;
+        width: 20px;
+        height: 20px;
+    
+        align-items: center;
+        justify-content: center;
+    }
+
+    .icone {
+        width: 35px;
+    }
+
+    #sair-menu {
+        display: none;
+
+        position: static;
+    }
+
+
+
+    /* video */
+    #video1,
+    #video2,
+    #video3 {
+        display: flex;
+        width: 90%;
+        height: auto;
+    }
+
+
+    /*video */
+    .tituloCurso {
+        display: flex;
+    
+        width: 90%;
+        height: auto;
+    
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .videoCurso {
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    .secoesVideos {
+        display: flex;
+        flex-direction: column;
+    
+        width: 100%;
+        height: 100vh;
+    
+        justify-content: center;
+        align-items: center;
+    }
+
+    .botaoCurso {
+        width: 200px;
+        height: 40px;
+
+        margin: 10px 0px;
+        font-size: 20px;
+    }
+
+    .textoBotaoVideo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 200px;
+        height: 100%;
+        font-size: 20px;
+    }
+
+    .progresso {
+        height: 100%;
+        width: 0;
+        background-color: var(--corBotaoDestaque);
+        border-radius: 30px;
+        transition: 250ms linear;
+
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    /* secao textos */
+    .divTexto {
+        width: 90%;
+    }
+
+    /* sumario */
+    .menuCapitulosCurso {
+        display: none;
+        width: 300px;
+        height: 75px;
+        background-color: var(--background-secundario);
+    
+        z-index: 10;
+    
+        position: fixed;
+    
+        right: 0;
+        top: 0;
+    }
+    /* textos */
+    .secoesTextos {
+        position: relative;
+    
+        top: 0px;
+    
+        height: auto;
+    }
+
+
+
+    /* questionario */
+    .secoesQuestionarios {
+        flex-direction: column;
+    
+        width: 100%;
+        height: 100vh;
+    
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pergunta {
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .respostas {
+        display: flex;
+        flex-direction: column;
+    
+        width: 100vw;
+    
+        height: auto;
+    
+        flex-wrap: wrap;
+    
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .resposta {
+        display: flex;
+    
+        background-color: var(--background-principal);
+    
+        padding: 30px;
+        border-radius: 30px;
+    
+        width: 90%;
+        height: 90px;
+        
+        margin: 10px 0px;
+    
+        border: #fff 2px solid;
+    }
+
+    .botaoContinuar {
+        width: 200px;
+        height: 40px;
+
+        margin: 10px 0px;
+        font-size: 1.4em;
+    }
+
+    #textoFimQuestoes, #textoFimQuestoes2, #textoFimQuestoes3 {
+        width: 90%;
+    }
+
+    /* menuMobile */
+    #escurecimentoFundo {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9;
+
+        opacity: 0;
+
+        transition: opacity 0.5s ease;
+    }
+
+    #menuMobile {
+        display: none;
+        flex-direction: column;
+
+        width: 300px;
+        height: 100vh;
+
+        z-index: 10;
+
+        position: fixed;
+        top: 0;
+        right: -300px;
+
+        background-color: var(--background-secundario);
+
+        transition: right 0.5s ease ;
+    }
+    
+    .headerMenuMobile {
+        align-items: center;
+    }
+
+    .capituloMenu {
+        width: 300px;
+        height: 75px;
+
+        background-color: var(--background-secundario);
+
+        align-items: center;
+
+        transition: 200ms ease;
+    }
+
+    .btnFecharMenuMobile:hover {
+        background-color: var(--background-secundario);
+        transition: none;
+    }
+
+    #btnSairMobile {
+        position: absolute;
+        bottom: 20px;
+
+        display: flex;
+        flex-direction: row;
+
+        width: 100%;
+
+        align-items: center;
+    }
+}

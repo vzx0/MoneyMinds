@@ -8,8 +8,16 @@ main {
     background-image: linear-gradient(to right, var(--cor-primaria), var(--background-principal));
 }
 
+.ocultarOriginal {
+    display: none;
+}
+
 /* trocar paginas */
 .escondido {
+    display: none;
+}
+
+.titulosMobile {
     display: none;
 }
 
@@ -65,7 +73,7 @@ main {
 
     height: 150px;
 
-    margin: 50px 0px;
+    margin: 100px 0px;
 }
 
 #perfil-img {
@@ -75,7 +83,8 @@ main {
 
     margin: 20px 0px;
 
-    background-color: var(--background-secundario);
+    background-image: url(assets-perfil/userSemFoto.svg);
+    background-size: cover;
 }
 
 /* opcoes */
@@ -145,20 +154,23 @@ main {
 
     align-items: center;
     justify-content: center;
+
+    height: 100%;
+    width: 100%;
 }
 
 /* ---caixa padrao dashboard */
 .box-progresso {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 
     justify-content: center;
     align-items: center;
 
-    width: 300px;
-    height: 300px;
+    width: 375px;
+    height: 175px;
 
-    margin: 10px 5px;
+    margin: 5px;
     border-radius: 25px;
 
     background-color: var(--background-secundario);
@@ -173,7 +185,7 @@ main {
 
     position: relative;
 
-    margin: 10px 0px;
+    margin-left: 15px;
 }
 
 /* --- --- grafico circulo */
@@ -251,7 +263,20 @@ circle:nth-child(2) {
 
 /* ---caixa grafico dashboard */
 #grafico-dashboard {
-    width: 610px;
+    display: flex;
+    flex-direction: column;
+
+    align-items: start;
+
+    width: 750px;
+    height: 535px;
+    padding: 25px;
+
+    transition: 200ms ease;
+}
+
+#chartCanvas {
+    margin-top: 15px;
 }
 
 /* ---------- CURSOS ---------- */
@@ -262,9 +287,10 @@ circle:nth-child(2) {
     justify-content: center;
 
     width: 100%;
-    height: 100%;
+    height: 100vh;
 }
 
+/* banners curso */
 .curso {
     flex-direction: column;
 
@@ -282,6 +308,21 @@ circle:nth-child(2) {
     border-radius: 15px;
 
     margin: 5px;
+}
+
+#cursoInvestimentos {
+  background-image: url(assets-perfil/imgCursoInvestimento.jpg);
+  background-size: cover;
+}
+
+#cursoTecnologia {
+  background-image: url(assets-perfil/imgCursoTecnologia.jpg);
+  background-size: cover;
+}
+
+#cursoMarketing {
+  background-image: url(assets-perfil/imgCursoMarketing.jpg);
+  background-size: cover;
 }
 
 .informacoesCurso {
@@ -317,6 +358,8 @@ circle:nth-child(2) {
 
     position: absolute;
     top: 60px;
+
+    transition: 600ms ease;
 }
 
 .btnDashboardFixado {
@@ -353,7 +396,8 @@ circle:nth-child(2) {
 }
 
 #imagemPerfil {
-    background-color: var(--background-secundario);
+    background-image: url(assets-perfil/userSemFoto.svg);
+    background-size: cover;
 
     width: 200px;
     height: 200px;
@@ -370,7 +414,7 @@ circle:nth-child(2) {
 
     width: 800px;
     height: 600px;
-    background-color: var(--background-principal);
+    background-color: var(--background-secundario);
 
     border-radius: 30px;
     border: #fff 2px solid;
@@ -408,6 +452,10 @@ circle:nth-child(2) {
 #botoesPopup {
     display: flex;
     flex-direction: row;
+}
+
+.botaoTrocar {
+  margin: 0px 10px;
 }
 
 .botaoPopup {
@@ -456,9 +504,11 @@ circle:nth-child(2) {
 
     border-radius: 15px;
 
-    background-color: #000;
+    background-image: url(assets-perfil/cameraIcon.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
 
-    border-radius: 2px #fff solid;
+    border: 2px #fff solid;
 }
 
 #geracaoImagem {
@@ -491,7 +541,7 @@ circle:nth-child(2) {
 
     padding: 20px;
 
-    background-color: var(--background-secundario);
+    background-color: var(--background-principal);
 
     border-radius: 5px;
 
@@ -523,195 +573,3 @@ circle:nth-child(2) {
     width: 100%;
 }
 
-/* Import Google font - Poppins */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-body {
-  min-height: 100vh;
-  background: #eef5fe;
-}
-/* Pre css */
-.flex {
-  display: flex;
-  align-items: center;
-}
-.nav_image {
-  display: flex;
-  min-width: 55px;
-  justify-content: center;
-}
-.nav_image img {
-  height: 35px;
-  width: 35px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-/* Sidebar */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 270px;
-  background: #fff;
-  padding: 15px 10px;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
-  transition: all 0.4s ease;
-}
-.sidebar.close {
-  width: calc(55px + 20px);
-}
-.logo_items {
-  gap: 8px;
-}
-.logo_name {
-  font-size: 22px;
-  color: #333;
-  font-weight: 500px;
-  transition: all 0.3s ease;
-}
-.sidebar.close .logo_name,
-.sidebar.close #lock-icon,
-.sidebar.close #sidebar-close {
-  opacity: 0;
-  pointer-events: none;
-}
-#lock-icon,
-#sidebar-close {
-  padding: 10px;
-  color: #4070f4;
-  font-size: 25px;
-  cursor: pointer;
-  margin-left: -4px;
-  transition: all 0.3s ease;
-}
-#sidebar-close {
-  display: none;
-  color: #333;
-}
-.menu_container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-top: 40px;
-  overflow-y: auto;
-  height: calc(100% - 82px);
-}
-.menu_container::-webkit-scrollbar {
-  display: none;
-}
-.menu_title {
-  position: relative;
-  height: 50px;
-  width: 55px;
-}
-.menu_title .title {
-  margin-left: 15px;
-  transition: all 0.3s ease;
-}
-.sidebar.close .title {
-  opacity: 0;
-}
-.menu_title .line {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 3px;
-  width: 20px;
-  border-radius: 25px;
-  background: #aaa;
-  transition: all 0.3s ease;
-}
-.menu_title .line {
-  opacity: 0;
-}
-.sidebar.close .line {
-  opacity: 1;
-}
-.item {
-  list-style: none;
-}
-.link {
-  text-decoration: none;
-  border-radius: 8px;
-  margin-bottom: 8px;
-  color: #707070;
-}
-.link:hover {
-  color: #fff;
-  background-color: #4070f4;
-}
-.link span {
-  white-space: nowrap;
-}
-.link i {
-  height: 50px;
-  min-width: 55px;
-  display: flex;
-  font-size: 22px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-}
-
-.sidebar_profile {
-  padding-top: 15px;
-  margin-top: 15px;
-  gap: 15px;
-  border-top: 2px solid rgba(0, 0, 0, 0.1);
-}
-.sidebar_profile .name {
-  font-size: 18px;
-  color: #333;
-}
-.sidebar_profile .email {
-  font-size: 15px;
-  color: #333;
-}
-
-/* Navbar */
-.navbar {
-  max-width: 500px;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 60%;
-  transform: translateX(-50%);
-  background: #fff;
-  padding: 10px 20px;
-  border-radius: 0 0 8px 8px;
-  justify-content: space-between;
-}
-
-.navbar img {
-  height: 40px;
-  width: 40px;
-  margin-left: 20px;
-}
-
-/* Responsive */
-@media screen and (max-width: 1100px) {
-  .navbar {
-    left: 65%;
-  }
-}
-@media screen and (max-width: 800px) {
-  .sidebar {
-    left: 0;
-    z-index: 1000;
-  }
-  .navbar {
-    left: 0;
-    max-width: 100%;
-    transform: translateX(0%);
-  }
-  #sidebar-open {
-    display: block;
-  }
-}

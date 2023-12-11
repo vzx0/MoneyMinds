@@ -1,46 +1,17 @@
 // executar funcoes quando a página carrega
 document.addEventListener("DOMContentLoaded", function () {
-    progressoInvestimento();
-    progressoTecnologia()
-    progressoMarketing()
-
     trocarNome()
 })
-
-// progresso em cada curso
-porcentagemProgressoInvestimento = 100;
-porcentagemProgressoTecnologia = 75;
-porcentagemProgressoMarketing = 75;
-
-// funcoes para exibir o progresso em cada curso
-function progressoInvestimento() {
-    let circuloInvestimento = document.querySelector('#circuloProgressoInvestimento');
-
-    document.getElementById("porcentagemProgressoInvestimento").innerHTML = porcentagemProgressoInvestimento + "%";
-
-    circuloInvestimento.style.strokeDashoffset = 440 - (440 * porcentagemProgressoInvestimento) / 100;
-}
-function progressoTecnologia() {
-    let circuloInvestimento = document.querySelector('#circuloProgressoTecnologia');
-
-    document.getElementById("porcentagemProgressoTecnologia").innerHTML = porcentagemProgressoTecnologia + "%";
-
-    circuloInvestimento.style.strokeDashoffset = 440 - (440 * porcentagemProgressoTecnologia) / 100;
-}
-function progressoMarketing() {
-    let circuloInvestimento = document.querySelector('#circuloProgressoMarketing');
-
-    document.getElementById("porcentagemProgressoMarketing").innerHTML = porcentagemProgressoMarketing + "%";
-
-    circuloInvestimento.style.strokeDashoffset = 440 - (440 * porcentagemProgressoMarketing) / 100;
-}
 
 // funcoes trocar pagina
 alteracaoPerfil = document.getElementById('alteracaoPerfil')
 dashboard = document.getElementById('dashboard');
 cursosDashboard = document.getElementById('cursos');
 ranking = document.getElementById('ranking');
-atividades = document.getElementById('atividades');
+
+principal = document.querySelector('.principal');
+
+const mobile = window.matchMedia('(max-width: 400px)').matches;
 
 function exibirAlteracaoPerfil() {
     if (alteracaoPerfil.style.display === "flex") {
@@ -50,7 +21,8 @@ function exibirAlteracaoPerfil() {
         dashboard.style.display = "none";
         cursosDashboard.style.display = "none";
         ranking.style.display = "none";
-        atividades.style.display = "none";
+
+        principal.style.height = "100vh"
     }
 }
 
@@ -62,7 +34,12 @@ function exibirDashboard() {
         dashboard.style.display = "flex";
         cursosDashboard.style.display = "none";
         ranking.style.display = "none";
-        atividades.style.display = "none";
+
+        principal.style.height = "auto"
+
+        if (mobile){
+            principal.style.height = "100%";
+        }
     }
 }
 function exibirCursos() {
@@ -73,7 +50,8 @@ function exibirCursos() {
         dashboard.style.display = "none";
         cursosDashboard.style.display = "flex";
         ranking.style.display = "none";
-        atividades.style.display = "none";
+
+        principal.style.height = "100%"
     }
 }
 function exibirRanking() {
@@ -84,58 +62,63 @@ function exibirRanking() {
         dashboard.style.display = "none";
         cursosDashboard.style.display = "none";
         ranking.style.display = "flex";
-        atividades.style.display = "none";
+
+        principal.style.height = "100vh"
     }
 }
-function exibirAtividades() {
-    if (atividades.style.display === "flex") {
-        return
-    } else {
-        alteracaoPerfil.style.display = "none"
-        dashboard.style.display = "none";
-        cursosDashboard.style.display = "none";
-        ranking.style.display = "none";
-        atividades.style.display = "flex";
-    }
-}
+
 
 // ---------- CURSOS ----------
 let cursos = document.querySelectorAll('.curso');
 
-cursos.forEach(curso => {
-    curso.addEventListener("mouseover", extenderInformacoes);
-    curso.addEventListener("mouseleave", retrairInformacoes);
-});
-
-function extenderInformacoes(event) {
+function mostrarTexto(event) {
     let informacoesCurso = event.currentTarget.querySelector('.informacoesCurso');
-    if (informacoesCurso.style.height !== "300px") {
-        informacoesCurso.style.height = "300px";
+    if (informacoesCurso.style.height !== "250px") {
+        informacoesCurso.style.height = "250px";
+    }
+
+    let informacoesTexto = event.currentTarget.querySelector('.informacoesTexto');
+
+
+    if (informacoesTexto) {
+        // Definir um texto diferente para cada curso
+        let texto = "";
+        if (event.currentTarget.id === "cursoInvestimentos") {
+            texto = "Descubra o poder das finanças e transforme sua relação com o dinheiro neste curso abrangente sobre finanças.";
+        } else if (event.currentTarget.id === "cursoTecnologia") {
+            texto = "Explore o mundo da tecnologia e descubra as mais recentes inovações neste curso emocionante.";
+        } else if (event.currentTarget.id === "cursoMarketing") {
+            texto = "Aprenda estratégias de marketing eficazes e melhore suas habilidades neste curso dinâmico.";
+        }
+
+        informacoesTexto.textContent = texto;
+        informacoesTexto.style.opacity = '1';
+        informacoesTexto.style.transform = 'translateY(0)';
     }
 }
 
-function retrairInformacoes(event) {
+// Definir a função para esconder o texto ao retirar o cursor
+function esconderTexto(event) {
     let informacoesCurso = event.currentTarget.querySelector('.informacoesCurso');
     if (informacoesCurso.style.height !== "175px") {
         informacoesCurso.style.height = "175px";
     }
+
+    let informacoesTexto = event.currentTarget.querySelector('.informacoesTexto');
+
+    if (informacoesTexto) {
+        informacoesTexto.textContent = "";
+        informacoesTexto.style.opacity = '0';
+        informacoesTexto.style.transform = 'translateY(-20px)';
+    }
 }
 
+// Adicionar os eventos de mouseover e mouseleave a cada curso
 cursos.forEach(curso => {
-    curso.addEventListener("mouseover", function (event) {
-        let informacoesTexto = event.currentTarget.querySelector('.informacoesTexto');
-        if (informacoesTexto) {
-            informacoesTexto.textContent = "Descubra o poder das finanças e transforme sua relação com o dinheiro neste curso abrangente sobre finanças.";
-        }
-    });
-
-    curso.addEventListener("mouseleave", function (event) {
-        let informacoesTexto = event.currentTarget.querySelector('.informacoesTexto');
-        if (informacoesTexto) {
-            informacoesTexto.textContent = "";
-        }
-    });
+    curso.addEventListener("mouseover", mostrarTexto);
+    curso.addEventListener("mouseleave", esconderTexto);
 });
+
 
 // ---------- PERFIL ----------
 // popup imagem
@@ -235,56 +218,15 @@ document.addEventListener("DOMContentLoaded", function () {
         downloadLink.href = fotoSalva;
         downloadLink.download = 'foto.png';
         downloadLink.textContent = 'Clique para salvar';
-        downloadLink.className = 'botaoPopup botaoPopupMaior';
+        downloadLink.className = 'botaoPopup botaoPopupMaior ocultarResponsividade';
+        downloadLink.id = 'apagarBotao'
 
         document.querySelector('#areaFoto').appendChild(downloadLink);
     }
 });
 
-// nome
-// function trocarNome() {
-//     const inputNome = document.getElementById('inputNome').value;
-//     const nomes = document.querySelectorAll('.nomeDeUsuario');
-//     let nomeArmazenado = localStorage.getItem('nomeUsuario');
-
-//     if (!nomeArmazenado) {
-//         nomeArmazenado = inputNome || 'Usuário'; // Nome padrão caso não haja valor no input
-//     }
-
-//     nomes.forEach(nome => {
-//         nome.textContent = nomeArmazenado;
-//     });
-
-//     // Armazenar o novo nome no localStorage
-//     localStorage.setItem('nomeUsuario', nomeArmazenado);
-// }
-
-// // Carregar o nome armazenado ao carregar a página
-// document.addEventListener('DOMContentLoaded', function() {
-//     trocarNome();
-// });
-
-// // Adiciona um evento para detectar mudanças no input
-// const inputNome = document.getElementById('inputNome');
-// inputNome.addEventListener('input', function() {
-//     trocarNome();
-// });
-
-// original
-// function trocarNome() {
-//     const inputNome = document.getElementById('inputNome').value;
-//     const nomes = document.querySelectorAll('.nomeDeUsuario');
-
-//     nomes.forEach(nome => {
-//         nome.textContent = inputNome;
-//     });
-
-//     // Armazenar o novo nome no localStorage
-//     localStorage.setItem('nomeUsuario', inputNome);
-// }
-
-function trocarNome() {
-    const inputNome = document.getElementById('inputNome').value.trim() || 'Usuário';
+function trocarNome(novoNome) {
+    const inputNome = novoNome.trim() || 'Usuário';
     const nomes = document.querySelectorAll('.nomeDeUsuario');
 
     nomes.forEach(nome => {
@@ -307,8 +249,145 @@ document.addEventListener('DOMContentLoaded', function () {
 // Adiciona um evento para o botão
 const botaoTrocarNome = document.getElementById('botaoTrocarNome');
 botaoTrocarNome.addEventListener('click', function () {
-    trocarNome();
+    const novoNome = document.getElementById('inputNome').value;
+    trocarNome(novoNome);
 });
 
+// grafico dashboard
+function registrarTempoNoSite() {
+    const agora = new Date();
+    const dataAtual = `${agora.getFullYear()}-${(agora.getMonth() + 1).toString().padStart(2, '0')}-${agora.getDate().toString().padStart(2, '0')}`;
 
+    let tempoNoSite = parseInt(localStorage.getItem(dataAtual)) || 0;
 
+    localStorage.setItem(dataAtual, tempoNoSite);
+}
+
+// Função para registrar o momento em que o usuário entra no site
+function registrarEntradaNoSite() {
+    const agora = new Date();
+    localStorage.setItem('entradaSite', agora.getTime());
+}
+
+// Função para calcular o tempo gasto desde a entrada no site
+function calcularTempoGasto() {
+    const entradaSite = parseInt(localStorage.getItem('entradaSite')) || new Date().getTime();
+    const agora = new Date().getTime();
+    const tempoGasto = (agora - entradaSite) / 1000; // Calcula o tempo em segundos
+
+    return tempoGasto;
+}
+
+let graficoSemanal = null; // Variável para armazenar o gráfico
+
+function atualizarGrafico(dias, tempos) {
+    if (!graficoSemanal) {
+        const ctx = document.getElementById('chartCanvas');
+        graficoSemanal = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: dias,
+                datasets: [{
+                    label: 'Tempo no Site (minutos)',
+                    data: tempos.map(segundos => Math.floor(segundos / 60)), // Converter para minutos
+                    backgroundColor: '#36a2eb',
+                    borderColor: '#36a2eb',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 60, // Limite máximo do eixo Y em minutos (1 hora)
+                        ticks: {
+                            stepSize: 5, // Intervalo das marcações do eixo Y em minutos
+                            callback: function (value) {
+                                return value + 'm';
+                            },
+                            color: 'white',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color: 'white',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        titleFont: {
+                            size: 16,
+                            weight: 'bold',
+                            color: 'white'
+                        },
+                        bodyFont: {
+                            size: 14,
+                            weight: 'normal',
+                            color: 'white'
+                        }
+                    }
+                }
+            }
+        });
+    } else {
+        graficoSemanal.data.labels = dias;
+        graficoSemanal.data.datasets[0].data = tempos.map(segundos => Math.floor(segundos / 60));
+        graficoSemanal.update();
+    }
+}
+
+function obterDadosGrafico() {
+    const diasDaSemana = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
+    const dias = [];
+    const tempos = [];
+
+    for (let i = 0; i < 7; i++) {
+        const data = new Date();
+        data.setDate(data.getDate() - i);
+
+        const dataFormatada = `${data.getFullYear()}-${(data.getMonth() + 1).toString().padStart(2, '0')}-${data.getDate().toString().padStart(2, '0')}`;
+        const tempoNoSite = parseInt(localStorage.getItem(dataFormatada)) || 0;
+
+        dias.unshift(diasDaSemana[data.getDay()]);
+        tempos.unshift(tempoNoSite);
+    }
+
+    return { dias, tempos };
+}
+
+function renderizarGraficoSemanal() {
+    registrarEntradaNoSite(); // Registra a entrada do usuário no site
+
+    const { dias, tempos } = obterDadosGrafico();
+    atualizarGrafico(dias, tempos);
+
+    setInterval(() => {
+        const tempoNoSite = calcularTempoGasto(); // Calcula o tempo gasto desde a entrada
+
+        registrarTempoNoSite(tempoNoSite); // Atualiza o tempo no site no localStorage
+
+        const { dias: novosDias, tempos: novosTempos } = obterDadosGrafico();
+        atualizarGrafico(novosDias, novosTempos);
+
+        console.log('Atualizando gráfico');
+    }, 5000); // Atualiza a cada 5 segundos (5000 milissegundos)
+}
+
+function registrarTempoNoSite(tempoNoSite) {
+    const agora = new Date();
+    const dataAtual = `${agora.getFullYear()}-${(agora.getMonth() + 1).toString().padStart(2, '0')}-${agora.getDate().toString().padStart(2, '0')}`;
+
+    localStorage.setItem(dataAtual, tempoNoSite);
+}
+
+window.addEventListener('load', renderizarGraficoSemanal);

@@ -11,67 +11,66 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="perfil-style.css">
 
-    <!-- scr FONTAWESOME -->
+    <!-- responsividade -->
+    <link rel="stylesheet" href="mobile-perfil-style.css">
+
+    <!-- scr externos -->
     <script src="https://kit.fontawesome.com/78f0f143f5.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
     <main>
         <section id="menuBurger">
-            <div class="titulo">
+            <div class="titulo ocultarResponsividade">
                 <h2>MoneyMinds</h2>
             </div>
 
-            <div class="barra-divisao"></div>
+            <div class="barra-divisao ocultarResponsividade"></div>
 
             <!-- opcoes -->
             <!-- //dashboard -->
-            <a onclick="exibirDashboard()" class="opcao-menuBurger">
-                <div class="opcao-icone">
-                    <i class="fa-solid fa-chart-line fa-2xl"></i>
-                </div>
-                <p class="opcao-nome">Dashboard</p>
-            </a>
+            <div class="opcoes-menuBurger">
+                <a onclick="exibirDashboard()" class="opcao-menuBurger">
+                    <div class="opcao-icone">
+                        <img class="icone" src="assets-perfil/icon-dashboard.svg">
+                    </div>
+                    <p class="opcao-nome ocultarResponsividade">Dashboard</p>
+                </a>
 
-            <!-- //meus cursos -->
-            <a onclick="exibirCursos()" class="opcao-menuBurger">
-                <div class="opcao-icone">
-                    <i class="fa-regular fa-pen-to-square fa-2xl"></i>
-                </div>
-                <p class="opcao-nome">Meus Cursos</p>
-            </a>
+                <!-- //meus cursos -->
+                <a onclick="exibirCursos()" class="opcao-menuBurger">
+                    <div class="opcao-icone">
+                        <img class="icone" src="assets-perfil/icon-cursos.svg">
+                    </div>
+                    <p class="opcao-nome ocultarResponsividade">Meus Cursos</p>
+                </a>
 
-            <!-- //ranking -->
-            <a onclick="exibirRanking()" class="opcao-menuBurger">
-                <div class="opcao-icone">
-                    <i class="fa-solid fa-ranking-star fa-2xl"></i>
-                </div>
-                <p class="opcao-nome">Ranking</p>
-            </a>
+                <!-- //ranking -->
+                <a onclick="exibirRanking()" class="opcao-menuBurger">
+                    <div class="opcao-icone">
+                        <img class="icone" src="assets-perfil/icon-ranking.svg">
+                    </div>
+                    <p class="opcao-nome ocultarResponsividade">Ranking</p>
+                </a>
 
-            <!-- //atividades -->
-            <a onclick="exibirAtividades()" class="opcao-menuBurger">
-                <div class="opcao-icone">
-                    <i class="fa-solid fa-list fa-2xl"></i>
+                <!-- perfil -->
+                <div onclick="exibirAlteracaoPerfil()" id="perfil">
+                    <div class="opcao-icone icone" id="perfil-img">
+
+                    </div>
+                    <p class="nomeDeUsuario ocultarResponsividade">Usuário</p>
                 </div>
-                <p class="opcao-nome">Atividades pendentes</p>
-            </a>
+            </div>
 
             <!-- //sair -->
             <a href="../index.html" class="opcao-menuBurger" id="sair-menu">
                 <div class="opcao-icone">
-                    <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180  fa-2xl"></i>
+                    <img class="icone" src="assets-perfil/sair.svg">
                 </div>
-                <p class="opcao-nome">Sair</p>
+                <p class="opcao-nome ocultarResponsividade">Sair da conta</p>
             </a>
 
-            <!-- perfil -->
-            <div onclick="exibirAlteracaoPerfil()" id="perfil">
-                <div id="perfil-img">
-
-                </div>
-                <p class="nomeDeUsuario">Usuário</p>
-            </div>
         </section>
 
         <!-- corpo perfil -->
@@ -83,7 +82,7 @@
 
                     <div onclick="popupFoto()" id="imagemPerfil"></div>
 
-                    <h3 onmouseover="alteracaoNome()" class="nomeDeUsuario" id="alterarNome">Usuário</h3>
+                    <h1 class="nomeDeUsuario" id="alterarNome">Usuário</h1>
                 </div>
 
 
@@ -96,16 +95,20 @@
                                 <div class="formTrocarInfo">
                                     <input id="inputNome" class="inputInformacoes" type="text"
                                         placeholder="Insira seu novo nome de usuário" maxlength="32">
-                                    <button id="botaoTrocarNome" class="botaoPopup" onclick="trocarNome()">Trocar Nome</button>
+                                    <button id="botaoTrocarNome" class="botaoTrocar" onclick="trocarNome()">
+                                        <img class="icone" src="assets-perfil/icon-escrever.svg">
+                                    </button>
                                 </div>
                             </div>
 
                             <div class="formTrocarInformacoes">
-                                <h3>Descrição</h3>
+                                <h3>Telefone</h3>
                                 <div class="formTrocarInfo">
-                                    <input id="inputDescrição" class="inputInformacoes" type="text"
-                                        placeholder="Insira sua nova descrição" maxlength="128">
-                                    <button class="botaoPopup" onclick="trocarDescricao()">Trocar descrição</button>
+                                    <input id="inputDescrição" class="inputInformacoes" type="tel"
+                                        placeholder="Insira seu novo número de telefone">
+                                    <button class="botaoTrocar" onclick="trocarTelefone()">
+                                        <img class="icone" src="assets-perfil/icon-escrever.svg">
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -117,7 +120,9 @@
                                 <div class="formTrocarInfo">
                                     <input id="inputEmail" class="inputInformacoes" type="email"
                                         placeholder="Insira seu novo e-mail">
-                                    <button class="botaoPopup" onclick="trocarEmail()">Trocar e-mail</button>
+                                    <button class="botaoTrocar" onclick="trocarEmail()">
+                                        <img class="icone" src="assets-perfil/icon-escrever.svg">
+                                    </button>
                                 </div>
                             </div>
 
@@ -126,16 +131,9 @@
                                 <div class="formTrocarInfo">
                                     <input id="inputSenha" class="inputInformacoes" type="password"
                                         placeholder="Insira sua nova senha">
-                                    <button class="botaoPopup" onclick="trocarSenha()">Trocar senha</button>
-                                </div>
-                            </div>
-
-                            <div class="formTrocarInformacoes">
-                                <h3>Confirmar senha</h3>
-                                <div class="formTrocarInfo">
-                                    <input id="inputConfirmarSenha" class="inputInformacoes" type="password"
-                                        placeholder="Confirme sua nova senha">
-                                    <button class="botaoPopup" onclick="trocarSenha()">Confirmar Senha</button>
+                                    <button class="botaoTrocar" onclick="trocarSenha()">
+                                        <img class="icone" src="assets-perfil/icon-escrever.svg">
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -150,11 +148,11 @@
                 <div id="headerPopUpFoto">
                     <!-- botao sair -->
                     <div onclick="fecharPopupFoto()" class="opcao-icone" id="botaoSairPopupFoto">
-                        <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180  fa-2xl"></i>
-                        <p class="opcao-nome">Fechar</p>
+                        <img src="assets-perfil/sair.svg">
+                        <p class="opcao-nome ocultarResponsividade">Fechar</p>
                     </div>
                     <!-- titulo -->
-                    <h3>Alterar imagem</h3>
+                    <h3 id="tituloPopup">Alterar imagem</h3>
                 </div>
 
                 <!-- geracao de imagem -->
@@ -170,8 +168,8 @@
                         </div>
                     </div>
 
-                    <div id="areaFoto">
-                        <div id="foto"></div>
+                    <div class="ocultarResponsividade" id="areaFoto">
+                        <div class="ocultarResponsividade" id="foto"></div>
                     </div>
 
                 </div>
@@ -179,106 +177,111 @@
 
             <!-- dashboard -->
             <section class="secao" id="dashboard">
+                <h2 class="ocultarOriginal tituloMobile">Dashboard</h2>
                 <div id="container-progresso">
-                    <!-- progresso-investimentos -->
-                    <div onclick="progressoInvestimento()" class="box-progresso" id="progresso-investimentos">
-                        <h3>Investimento</h3>
-
-                        <div class="box-grafico-circulo">
-                            <svg class="circulo">
-                                <circle cx="70" cy="70" r="70"></circle>
-                                <circle id="circuloProgressoInvestimento" cx="70" cy="70" r="70"></circle>
-                            </svg>
-                            <div class="porcentagem" id="porcentagemProgressoInvestimento">
-                                0%
+                    <div>
+                        <!-- progresso-investimentos -->
+                        <div class="box-progresso" id="progresso-investimentos">
+                            <div>
+                                <h3>Investimento</h3>
+                                <p>Seu progresso atual:</p>
+                            </div>
+                            <div class="box-grafico-circulo">
+                                <svg class="circulo">
+                                    <circle cx="70" cy="70" r="70"></circle>
+                                    <circle id="circuloProgressoInvestimento" cx="70" cy="70" r="70"></circle>
+                                </svg>
+                                <div class="porcentagem" id="porcentagemProgressoInvestimento">
+                                    0%
+                                </div>
                             </div>
                         </div>
 
-                        <a href="../cursos/investimento/investimento.html" class="botaoDashboard">Continuar</a>
-
-                    </div>
-
-                    <!-- progresso tecnologia -->
-                    <div class="box-progresso" id="progresso-tecnologia">
-                        <h3>Tecnologia</h3>
-
-                        <div class="box-grafico-circulo">
-                            <svg class="circulo">
-                                <circle cx="70" cy="70" r="70"></circle>
-                                <circle id="circuloProgressoTecnologia" cx="70" cy="70" r="70"></circle>
-                            </svg>
-                            <div class="porcentagem" id="porcentagemProgressoTecnologia">
-                                0%
+                        <!-- progresso tecnologia -->
+                        <div class="box-progresso" id="progresso-tecnologia">
+                            <div>
+                                <h3>Tecnologia</h3>
+                                <p>Seu progresso atual:</p>
+                            </div>
+                            <div class="box-grafico-circulo">
+                                <svg class="circulo">
+                                    <circle cx="70" cy="70" r="70"></circle>
+                                    <circle id="circuloProgressoTecnologia" cx="70" cy="70" r="70"></circle>
+                                </svg>
+                                <div class="porcentagem" id="porcentagemProgressoTecnologia">
+                                    0%
+                                </div>
                             </div>
                         </div>
 
-                        <a href="../cursos/tecnologia/tecnologia.html" class="botaoDashboard">Continuar</a>
+                        <!-- progresso marketing -->
+                        <div class="box-progresso" id="progresso-marketing">
+                            <div>
+                                <h3>Marketing</h3>
+                                <p>Seu progresso atual:</p>
+                            </div>
 
-                    </div>
 
-                    <!-- progresso marketing -->
-                    <div class="box-progresso" id="progresso-marketing">
-                        <h3>Marketing</h3>
-
-                        <div class="box-grafico-circulo">
-                            <svg class="circulo">
-                                <circle cx="70" cy="70" r="70"></circle>
-                                <circle id="circuloProgressoMarketing" cx="70" cy="70" r="70"></circle>
-                            </svg>
-                            <div class="porcentagem" id="porcentagemProgressoMarketing">
-                                0%
+                            <div class="box-grafico-circulo">
+                                <svg class="circulo">
+                                    <circle cx="70" cy="70" r="70"></circle>
+                                    <circle id="circuloProgressoMarketing" cx="70" cy="70" r="70"></circle>
+                                </svg>
+                                <div class="porcentagem" id="porcentagemProgressoMarketing">
+                                    0%
+                                </div>
                             </div>
                         </div>
-
-                        <a href="../cursos/marketing/marketing.html" class="botaoDashboard">Continuar</a>
-
                     </div>
+
 
                     <!-- grafico -->
                     <div class="box-progresso" id="grafico-dashboard">
+                        <h3>Atividade Semanal</h3>
+                        <canvas id="chartCanvas">
 
+                        </canvas>
                     </div>
 
-                    <!-- atividades -->
-                    <div class="box-progresso" id="tarefas">
 
-                    </div>
+                    
                 </div>
             </section>
 
             <!-- meus cursos -->
             <section class="secao" id="cursos" class="escondido">
+                <h2 class="ocultarOriginal tituloMobile">Meus Cursos</h2>
 
-                <div onmouseover="extenderInformacoes()" onmouseleave="retrairInformacoes()"
-                    class="curso" id="cursoInvestimentos">
+                <div class="curso" id="cursoInvestimentos">
                     <div class="informacoesCurso">
                         <h3 class="informacoesTitulo">Investimento</h3>
 
                         <p class="informacoesTexto"></p>
 
-                        <a class="botaoDashboard btnDashboardFixado" href="../cursos/investimento/investimento.html">Continuar</a>
+                        <a class="botaoDashboard btnDashboardFixado"
+                            href="../cursos/investimento/investimento.html">Continuar</a>
                     </div>
                 </div>
 
-                <div onmouseover="informacoesTecnologia()" onmouseleave="retrairInformacoes()" class="curso"
-                    id="cursoTecnologia">
+                <div class="curso" id="cursoTecnologia">
                     <div class="informacoesCurso" id="infoTecnologia">
                         <h3 class="informacoesTitulo">Tecnologia</h3>
 
                         <p class="informacoesTexto"></p>
 
-                        <a class="botaoDashboard btnDashboardFixado" href="../cursos/tecnologia/tecnologia.html">Continuar</a>
+                        <a class="botaoDashboard btnDashboardFixado"
+                            href="../cursos/tecnologia/tecnologia.html">Continuar</a>
                     </div>
                 </div>
 
-                <div onmouseover="extenderInformacoes()" onmouseleave="retrairInformacoes()"
-                    class="curso" id="cursoMarketing">
+                <div class="curso" id="cursoMarketing">
                     <div class="informacoesCurso">
                         <h3 class="informacoesTitulo">Marketing</h3>
 
                         <p class="informacoesTexto"></p>
 
-                        <a class="botaoDashboard btnDashboardFixado" href="../cursos/marketing/marketing.html">Continuar</a>
+                        <a class="botaoDashboard btnDashboardFixado"
+                            href="../cursos/marketing/marketing.html">Continuar</a>
                     </div>
                 </div>
             </section>
@@ -287,19 +290,15 @@
             <section class="secao" id="ranking" class="escondido">
                 2
             </section>
-
-            <!-- atividades -->
-            <section class="secao" id="atividades" class="escondido">
-                3
-            </section>
         </nav>
 
     </main>
 
     <!-- script JS -->
     <script src="main-perfil.js"></script>
+    <script src="progresso.js"></script>
 
-    
+
 </body>
 
 </html>

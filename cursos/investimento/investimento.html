@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="../styleCursos.css">
     <link rel="stylesheet" href="../../style.css">
 
+    <!-- responsividade -->
+    <link rel="stylesheet" href="../mobile-styleCursos.css">
+
     <!-- scr FONTAWESOME -->
     <script src="https://kit.fontawesome.com/78f0f143f5.js" crossorigin="anonymous"></script>
 </head>
@@ -18,58 +21,70 @@
     <!-- ////////// CAPITULO1 ////////// -->
     <main id="capitulo1">
         <section id="menuBurger">
-            <div class="titulo">
+            <div class="titulo ocultarResponsividade">
                 <h2>Investimento</h2>
             </div>
 
-            <div class="barra-divisao"></div>
-            <div class="titulo">
+            <div class="barra-divisao ocultarResponsividade"></div>
+
+            <div class="titulo ocultarResponsividade">
                 <h3>Capítulo 1</h3>
             </div>
 
             <!-- opcoes -->
-            <a class="opcao-menuBurger" id="opcaoVideo">
-                <div class="opcao-icone">
-                    <img src="../icons-cursos/icon-videoCurso.svg">
-                </div>
-                <p class="opcao-nome">Assistir Vídeo</p>
-            </a>
+            <div class="opcoes-menuBurger">
+                <a class="opcao-menuBurger" id="opcaoVideo">
+                    <div class="opcao-icone">
+                        <img class="icone" src="../icons-cursos/icon-videoCurso.svg">
+                    </div>
+                    <p class="opcao-nome ocultarResponsividade">Assistir Vídeo</p>
+                </a>
 
 
-            <a class="opcao-menuBurger desativado" id="opcaoTexto">
-                <div class="opcao-icone">
-                    <img src="../icons-cursos/icon-graduacao.svg">
-                </div>
-                <p class="opcao-nome">Mais Informações</p>
-            </a>
+                <a class="opcao-menuBurger desativado" id="opcaoTexto">
+                    <div class="opcao-icone">
+                        <img class="icone" src="../icons-cursos/icon-graduacao.svg">
+                    </div>
+                    <p class="opcao-nome ocultarResponsividade">Mais Informações</p>
+                </a>
 
-            <a class="opcao-menuBurger desativado" id="opcaoQuestoes">
-                <div class="opcao-icone">
-                    <img src="../icons-cursos/icon-questoes.svg">
-                </div>
-                <p class="opcao-nome">Questionário</p>
-            </a>
+                <a class="opcao-menuBurger desativado" id="opcaoQuestoes">
+                    <div class="opcao-icone">
+                        <img class="icone" src="../icons-cursos/icon-questoes.svg">
+                    </div>
+                    <p class="opcao-nome ocultarResponsividade">Questionário</p>
+                </a>
+
+                <!-- opc Mobile -->
+                <a class="ocultarOriginal opcao-menuBurger">
+                    <div class="opcao-icone ocultarOriginal" onclick="abrirMenuMobile()">
+                        <img class="ocultarOriginal icone" src="../icons-cursos/icon-menu.svg">
+                    </div>
+                </a>
+            </div>
+
 
             <!-- //sair -->
             <a href="../../perfil/perfil.html" class="opcao-menuBurger" id="sair-menu">
                 <div class="opcao-icone">
-                    <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180  fa-2xl"></i>
+                    <img class="icone" src="../icons-cursos/sair.svg">
                 </div>
-                <p class="opcao-nome">Voltar</p>
+                <p class="opcao-nome ocultarResponsividade">Voltar</p>
             </a>
         </section>
 
+
         <!-- corpo curso -->
         <nav class="principal">
-            <section id="secaoVideo" class="secao">
+            <section class="secao secoesVideos" id="secaoVideo">
                 <div class="tituloCurso">
                     <h2>Vídeo: O básico que você precisa saber</h2>
                 </div>
                 <div class="videoCurso">
-                    <video id="investimentoVideo1" width="854px" height="480" controls
-                        src="../icons-cursos/videoTestApagar.mp4"></video>
 
-                    <button id="investimentoVideoBotao1" disabled class="botaoCurso">
+                    <video id="video1" controls src="../icons-cursos/videoTestApagar.mp4"></video>
+
+                    <button id="videoBotao1" disabled class="botaoCurso">
                         <div class="progresso" id="progresso1">
                             <div class="textoBotaoVideo">
                                 <p class="txtBotaoVideo">Prosseguir</p>
@@ -79,7 +94,7 @@
                 </div>
             </section>
 
-            <section class="secao" id="secaoTexto">
+            <section class="secao secoesTextos" id="secaoTexto">
                 <div class="titulo">
                     <h2>Investimento</h2>
                 </div>
@@ -164,21 +179,22 @@
 
             </section>
 
-            <section class="secao" id="secaoQuestoes">
+            <section class="secao secoesQuestionarios" id="secaoQuestoes">
                 <div class="titulo">
                     <h2>Questionário</h2>
                 </div>
 
-                <div class="secaoResposta"></div>
+                <div id="secaoResposta"></div>
 
             </section>
 
-            <section class="secao" id="conclusaoQuestoes">
+            <section class="secao secoesQuestionarios" id="conclusaoQuestoes">
                 <h3 id="tituloFimQuestoes"></h3>
                 <p id="textoFimQuestoes"></p>
 
-                <button onclick="tentarNovamente()" class="botaoContinuar" id="botaoFimQuestoesTentarNovamente">Tentar Novamente</button>
-                <button class="botaoContinuar" id="botaoFimQuestoesProsseguir">Prosseguir</button>
+                <button class="botaoContinuar" id="botaoFimQuestoesTentarNovamente">Tentar
+                    Novamente</button>
+                <button class="botaoContinuar btnProgressoInvestimento" id="botaoFimQuestoesProsseguir">Prosseguir</button>
             </section>
         </nav>
     </main>
@@ -186,59 +202,69 @@
     <!-- ////////// CAPITULO 2 ////////// -->
     <main id="capitulo2" style="display: none;">
         <section id="menuBurger">
-            <div class="titulo">
+            <div class="titulo ocultarResponsividade">
                 <h2>Investimento</h2>
             </div>
 
-            <div class="barra-divisao"></div>
-            <div class="titulo">
+            <div class="barra-divisao ocultarResponsividade"></div>
+
+            <div class="titulo ocultarResponsividade">
                 <h3>Capítulo 2</h3>
             </div>
 
             <!-- opcoes -->
-            <a class="opcao-menuBurger" id="opcaoVideo2">
-                <div class="opcao-icone">
-                    <img src="../icons-cursos/icon-videoCurso.svg">
-                </div>
-                <p class="opcao-nome">Assistir Vídeo</p>
-            </a>
+            <div class="opcoes-menuBurger">
+                <a class="opcao-menuBurger" id="opcaoVideo2">
+                    <div class="opcao-icone">
+                        <img class="icone" src="../icons-cursos/icon-videoCurso.svg">
+                    </div>
+                    <p class="opcao-nome ocultarResponsividade">Assistir Vídeo</p>
+                </a>
 
-            <a class="opcao-menuBurger" id="opcaoTexto2">
-                <div class="opcao-icone">
-                    <img src="../icons-cursos/icon-graduacao.svg">
-                </div>
-                <p class="opcao-nome">Mais Informações</p>
-            </a>
+                <a class="opcao-menuBurger" id="opcaoTexto2">
+                    <div class="opcao-icone">
+                        <img class="icone" src="../icons-cursos/icon-graduacao.svg">
+                    </div>
+                    <p class="opcao-nome ocultarResponsividade">Mais Informações</p>
+                </a>
 
-            <a class="opcao-menuBurger" id="opcaoQuestoes2">
-                <div class="opcao-icone">
-                    <img src="../icons-cursos/icon-questoes.svg">
-                </div>
-                <p class="opcao-nome">Questionário</p>
-            </a>
+                <a class="opcao-menuBurger" id="opcaoQuestoes2">
+                    <div class="opcao-icone">
+                        <img class="icone" src="../icons-cursos/icon-questoes.svg">
+                    </div>
+                    <p class="opcao-nome ocultarResponsividade">Questionário</p>
+                </a>
+
+                <!-- opc Mobile -->
+                <a class="ocultarOriginal opcao-menuBurger">
+                    <div class="opcao-icone ocultarOriginal" onclick="abrirMenuMobile()">
+                        <img class="ocultarOriginal icone" src="../icons-cursos/icon-menu.svg">
+                    </div>
+                </a>
+
+            </div>
 
             <!-- //sair -->
             <a href="../../perfil/perfil.html" class="opcao-menuBurger" id="sair-menu">
                 <div class="opcao-icone">
-                    <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180  fa-2xl"></i>
+                    <img class="icone" src="../icons-cursos/sair.svg">
                 </div>
-                <p class="opcao-nome">Voltar</p>
+                <p class="opcao-nome ocultarResponsividade">Voltar</p>
             </a>
         </section>
 
         <!-- corpo curso -->
         <nav class="principal">
-            <section class="secao" id="secaoVideo2">
+            <section class="secao secoesVideos" id="secaoVideo2">
 
                 <div class="videoCurso">
 
                     <div class="tituloCurso">
                         <h2>Vídeo: Recursos intermediários</h2>
                     </div>
-                    <video id="investimentoVideo2" width="854px" height="480" controls
-                        src="../icons-cursos/videoTestApagar.mp4"></video>
+                    <video id="video2" controls src="../icons-cursos/videoTestApagar.mp4"></video>
 
-                    <button id="investimentoVideoBotao2" disabled class="botaoCurso">
+                    <button id="videoBotao2" disabled class="botaoCurso">
                         <div class="progresso" id="progresso2">
                             <div class="textoBotaoVideo">
                                 <p class="txtBotaoVideo">Prosseguir</p>
@@ -248,12 +274,106 @@
                 </div>
             </section>
 
-            <section class="secao" id="secaoTexto2">
-                3
+            <section class="secao secoesTextos" id="secaoTexto2">
+                <div class="titulo">
+                    <h2>Investimento</h2>
+                </div>
+
+                <div class="divTexto">
+                    <h3>Título 1.1</h3>
+                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea non cumque, suscipit iusto eius
+                        eveniet
+                        reprehenderit laboriosam consequuntur laborum saepe odio blanditiis inventore debitis error
+                        minus
+                        dicta voluptates, modi odit? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
+                        obcaecati repudiandae provident aut eius eum enim recusandae praesentium earum deleniti. Quas
+                        dolor
+                        similique atque nihil culpa debitis esse assumenda ea. Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Maxime consequuntur eaque dolorum impedit recusandae, autem nesciunt. Placeat
+                        sint
+                        quisquam cum aut architecto, corporis consequatur vel maiores. Numquam accusamus reprehenderit
+                        atque?
+                    </p>
+                </div>
+
+                <div class="divTexto">
+                    <h3>Título 1.2</h3>
+                    <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, ex. Odit quia,
+                        accusantium
+                        facere blanditiis quas consequuntur enim velit ea cumque fuga, quasi magni iste doloribus
+                        veritatis
+                        consequatur ipsa. Animi?</p>
+                </div>
+
+                <div class="divTexto">
+                    <h3>Título 1.3</h3>
+                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea non cumque, suscipit iusto eius
+                        eveniet
+                        reprehenderit laboriosam consequuntur laborum saepe odio blanditiis inventore debitis error
+                        minus
+                        dicta voluptates, modi odit? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
+                        obcaecati repudiandae provident aut eius eum enim recusandae praesentium earum deleniti. Quas
+                        dolor
+                        similique atque nihil culpa debitis esse assumenda ea. Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Maxime consequuntur eaque dolorum impedit recusandae, autem nesciunt. Placeat
+                        sint
+                        quisquam cum aut architecto, corporis consequatur vel maiores. Numquam accusamus reprehenderit
+                        atque?
+                    </p>
+                </div>
+
+                <div class="divTexto">
+                    <h3>Título 1.4</h3>
+                    <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, ex. Odit quia,
+                        accusantium
+                        facere blanditiis quas consequuntur enim velit ea cumque fuga, quasi magni iste doloribus
+                        veritatis
+                        consequatur ipsa. Animi?</p>
+                </div>
+
+                <div class="divTexto">
+                    <h3>Título 1.5</h3>
+                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea non cumque, suscipit iusto eius
+                        eveniet
+                        reprehenderit laboriosam consequuntur laborum saepe odio blanditiis inventore debitis error
+                        minus
+                        dicta voluptates, modi odit? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
+                        obcaecati repudiandae provident aut eius eum enim recusandae praesentium earum deleniti. Quas
+                        dolor
+                        similique atque nihil culpa debitis esse assumenda ea. Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Maxime consequuntur eaque dolorum impedit recusandae, autem nesciunt. Placeat
+                        sint
+                        quisquam cum aut architecto, corporis consequatur vel maiores. Numquam accusamus reprehenderit
+                        atque?
+                    </p>
+                </div>
+
+                <div class="divTexto">
+                    <h3>Título 1.6</h3>
+                    <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, ex. Odit quia,
+                        accusantium
+                        facere blanditiis quas consequuntur enim velit ea cumque fuga, quasi magni iste doloribus
+                        veritatis
+                        consequatur ipsa. Animi?</p>
+                </div>
             </section>
 
-            <section class="secao" id="secaoQuestoes2">
-                4
+            <section class="secao secoesQuestionarios" id="secaoQuestoes2">
+                <div class="titulo">
+                    <h2>Questionário</h2>
+                </div>
+
+                <div id="secaoResposta2"></div>
+
+            </section>
+
+            <section class="secao secoesQuestionarios" id="conclusaoQuestoes2">
+                <h3 id="tituloFimQuestoes2"></h3>
+                <p id="textoFimQuestoes2"></p>
+
+                <button class="botaoContinuar" id="botaoFimQuestoesTentarNovamente2">Tentar
+                    Novamente</button>
+                <button class="botaoContinuar btnProgressoInvestimento" id="botaoFimQuestoesProsseguir2">Prosseguir</button>
             </section>
         </nav>
     </main>
@@ -261,57 +381,67 @@
     <!-- ////////// CAPITULO 3 ////////// -->
     <main id="capitulo3" style="display: none;">
         <section id="menuBurger">
-            <div class="titulo">
+            <div class="titulo ocultarResponsividade">
                 <h2>Investimento</h2>
             </div>
 
-            <div class="barra-divisao"></div>
-            <div class="titulo">
+            <div class="barra-divisao ocultarResponsividade"></div>
+
+            <div class="titulo ocultarResponsividade">
                 <h3>Capítulo 3</h3>
             </div>
 
             <!-- opcoes -->
-            <a class="opcao-menuBurger" id="opcaoVideo3">
-                <div class="opcao-icone">
-                    <img src="../icons-cursos/icon-videoCurso.svg">
-                </div>
-                <p class="opcao-nome">Assistir Vídeo</p>
-            </a>
+            <div class="opcoes-menuBurger">
+                <a class="opcao-menuBurger" id="opcaoVideo3">
+                    <div class="opcao-icone">
+                        <img class="icone" src="../icons-cursos/icon-videoCurso.svg">
+                    </div>
+                    <p class="opcao-nome ocultarResponsividade">Assistir Vídeo</p>
+                </a>
 
-            <a class="opcao-menuBurger" id="opcaoTexto3">
-                <div class="opcao-icone">
-                    <img src="../icons-cursos/icon-graduacao.svg">
-                </div>
-                <p class="opcao-nome">Mais Informações</p>
-            </a>
+                <a class="opcao-menuBurger" id="opcaoTexto3">
+                    <div class="opcao-icone">
+                        <img class="icone" src="../icons-cursos/icon-graduacao.svg">
+                    </div>
+                    <p class="opcao-nome ocultarResponsividade">Mais Informações</p>
+                </a>
 
-            <a class="opcao-menuBurger" id="opcaoQuestoes3">
-                <div class="opcao-icone">
-                    <img src="../icons-cursos/icon-questoes.svg">
-                </div>
-                <p class="opcao-nome">Questionário</p>
-            </a>
+                <a class="opcao-menuBurger" id="opcaoQuestoes3">
+                    <div class="opcao-icone">
+                        <img class="icone" src="../icons-cursos/icon-questoes.svg">
+                    </div>
+                    <p class="opcao-nome ocultarResponsividade">Questionário</p>
+                </a>
+
+                <!-- opc Mobile -->
+                <a class="ocultarOriginal opcao-menuBurger">
+                    <div class="opcao-icone ocultarOriginal" onclick="abrirMenuMobile()">
+                        <img class="ocultarOriginal icone" src="../icons-cursos/icon-menu.svg">
+                    </div>
+                </a>
+            </div>
 
             <!-- //sair -->
             <a href="../../perfil/perfil.html" class="opcao-menuBurger" id="sair-menu">
                 <div class="opcao-icone">
-                    <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180  fa-2xl"></i>
+                    <img class="icone" src="../icons-cursos/sair.svg">
                 </div>
-                <p class="opcao-nome">Voltar</p>
+                <p class="opcao-nome ocultarResponsividade">Voltar</p>
             </a>
         </section>
 
         <!-- corpo curso -->
         <nav class="principal">
-            <section class="secao" id="secaoVideo3">
+            <section class="secao secoesVideos" id="secaoVideo3">
                 <div class="tituloCurso">
                     <h2>Vídeo: Tudo que você precisa saber para investir</h2>
                 </div>
                 <div class="videoCurso">
-                    <video id="investimentoVideo3" width="854px" height="480" controls
+                    <video id="video3" width="854px" height="480" controls
                         src="../icons-cursos/videoTestApagar.mp4"></video>
 
-                    <button id="investimentoVideoBotao3" disabled class="botaoCurso">
+                    <button id="videoBotao3" disabled class="botaoCurso">
                         <div class="progresso" id="progresso3">
                             <div class="textoBotaoVideo">
                                 <p class="txtBotaoVideo">Prosseguir</p>
@@ -321,46 +451,91 @@
                 </div>
             </section>
 
-            <section class="secao" id="secaoTexto3">
+            <section class="secao secoesTextos" id="secaoTexto3">
                 5
             </section>
 
-            <section class="secao" id="secaoQuestoes3">
-                6
+            <!-- questionario 3 -->
+            <section class="secao secoesQuestionarios" id="secaoQuestoes3">
+                <div class="titulo">
+                    <h2>Questionário</h2>
+                </div>
+
+                <div id="secaoResposta3"></div>
+            </section>
+
+            <section class="secao secoesQuestionarios" id="conclusaoQuestoes3">
+                <h3 id="tituloFimQuestoes3"></h3>
+                <p id="textoFimQuestoes3"></p>
+
+                <button class="botaoContinuar" id="botaoFimQuestoesTentarNovamente3">Tentar
+                    Novamente</button>
+                <button class="botaoContinuar btnProgressoInvestimento" id="botaoFimQuestoesProsseguir3">Prosseguir</button>
             </section>
 
         </nav>
     </main>
 
     <!-- ////////// MENU CAPITULOS ////////// -->
-    <nav class="menuCapitulosCurso">
+    <nav class="menuCapitulosCurso" id="menuDesktop">
         <details>
-            <summary class="sumarioCapitulosCurso">Visualizar capítulos</summary>
+            <summary class="sumarioCapitulosCurso">
+                Visualizar capítulos
+            </summary>
 
             <div class="barra-divisao"></div>
 
             <div class="capituloMenu" id="botaoCapitulo1">
-                <div class="marcadorConclusao"></div>
+                <div class="marcadorConclusao" id="marcadorConclusaoI1"></div>
                 <p>1: O básico</p>
             </div>
 
             <div class="capituloMenu" id="botaoCapitulo2">
-                <div class="marcadorConclusao"></div>
+                <div class="marcadorConclusao" id="marcadorConclusaoI2"></div>
                 <p>2: O intermediário</p>
             </div>
 
             <div class="capituloMenu" id="botaoCapitulo3">
-                <div class="marcadorConclusao"></div>
+                <div class="marcadorConclusao" id="marcadorConclusaoI3"></div>
                 <p>3: O avançado</p>
             </div>
+
 
         </details>
     </nav>
 
+    <div class="ocultarOriginal'" id="escurecimentoFundo"></div>
 
+    <!-- menuMobile -->
+    <nav id="menuMobile" class="ocultarOriginal">
+        <section class="headerMenuMobile">
+            <div class="ocultarOriginal">
+                <img class="ocultarOriginal opcao-menuBurger btnFecharMenuMobile" onclick="fecharMenuMobile()"
+                    src="../icons-cursos/icon-fechar.svg">
+            </div>
+
+            <h2 class="titulo">Investimento</h2>
+
+
+        </section>
+
+        <div class="barra-divisao"></div>
+
+        <h3 class="titulo">Capítulos</h3>
+
+        <!-- botao sair mobile -->
+        <a href="../../perfil/perfil.html" class="capituloMenu ocultarOriginal" id="btnSairMobile">
+            <div class="opcao-icone ocultarOriginal marcadorConclusao">
+                <img class="icone ocultarOriginal" src="../icons-cursos/sair.svg">
+            </div>
+            <p class="opcao-nome ocultarOriginal">Voltar</p>
+        </a>
+    </nav>
 
     <!-- scriptJS -->
-    <script src="investimentoMain.js"></script>
+    <script src="../mainCursos.js"></script>
+    <script src="../../perfil/progresso.js"></script>
+    <script src="quizInvestimento.js"></script>
 </body>
 
 </html>
