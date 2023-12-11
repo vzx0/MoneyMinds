@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const cortinaDireita = gsap.to(".cortina-direita", { width: "0%", duration: 1.5, ease: "power2.out", delay: 0.5 });
 
     // Combine as animações para esperar que ambas terminem antes de ocultar o contêiner
-    gsap.timeline({ onComplete: fecharIntro }).add(cortinaEsquerda).add(cortinaDireita, 0); 
+    gsap.timeline({ onComplete: fecharIntro }).add(cortinaEsquerda).add(cortinaDireita, 0);
 });
 
 // - Explicação do GSAP para vcs
@@ -23,6 +23,53 @@ const fecharIntro = () => {
     introContainer.style.display = 'none';
 };
 
+// menuMobile
+// Verifica se a largura da página é menor ou igual a 425px
+const mobile = window.matchMedia('(max-width: 425px)').matches;
+const iconMenuMobile = document.getElementById('iconMenuMobile');
+
+const inicioMenuMobile = document.getElementById('inicioMenuMobile');
+const escurecimentoFundo = document.getElementById('escurecimentoFundo');
+
+const botoesHeader = document.querySelectorAll('.botaoHeader');
+
+function abrirInicioMenuMobile() {
+    escurecimentoFundo.style.display = 'flex';
+    setTimeout(() => {
+        escurecimentoFundo.style.opacity = '1';
+        inicioMenuMobile.style.right = '0';
+    }, 50);
+    inicioMenuMobile.style.display = 'flex';
+}
+
+function fecharInicioMenuMobile() {
+    escurecimentoFundo.style.opacity = '0';
+    setTimeout(() => {
+        escurecimentoFundo.style.display = 'none';
+        inicioMenuMobile.style.right = '-300px';
+    }, 500);
+    setTimeout(() => {
+        inicioMenuMobile.style.display = 'none';
+    }, 1500);
+}
+
+if (mobile) {
+    // Itera sobre os botões e os move para a div inicioMenuMobile
+    botoesHeader.forEach(botaoHeader => {
+        inicioMenuMobile.appendChild(botaoHeader);
+    });
+}
+
+const opcoesHeaderNavegacao = document.getElementById('opcoesHeaderNavegacao')
+const opcoesHeaderPrincipal = document.getElementById('opcoesHeaderPrincipal');
+
+const original = window.matchMedia('min-width: 401px').matches;
+
+if (original) {
+    botoesHeader.forEach(botaoHeader => {
+        inicioMenuMobile.appendChild(botaoHeader);
+    });
+}
 
 const chatbotToggler = document.querySelector(".chatbot-toggler");
 const closeBtn = document.querySelector(".close-btn");
@@ -109,4 +156,3 @@ chatInput.addEventListener("keydown", (e) => {
 sendChatBtn.addEventListener("click", handleChat);
 closeBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
 chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
-
