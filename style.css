@@ -112,7 +112,7 @@ p {
 
 a {
   transition-duration: 0.3s;
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 button {
@@ -745,7 +745,6 @@ nav>a:hover {
   border: none;
   border-radius: 8px;
   padding: 12px 16px;
-  font-size: 1.4rem;
   transition-duration: 0.3s;
   font-weight: 400;
   width: max-content;
@@ -759,7 +758,6 @@ nav>a:hover {
   border: 1px #fff solid;
   border-radius: 8px;
   padding: 12px 16px;
-  font-size: 1.4rem;
   transition-duration: 0.3s;
   font-weight: 400;
   width: max-content;
