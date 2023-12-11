@@ -23,6 +23,53 @@ const fecharIntro = () => {
     introContainer.style.display = 'none';
 };
 
+// menuMobile
+// Verifica se a largura da página é menor ou igual a 425px
+const mobile = window.matchMedia('(max-width: 425px)').matches;
+const iconMenuMobile = document.getElementById('iconMenuMobile');
+
+const inicioMenuMobile = document.getElementById('inicioMenuMobile');
+const escurecimentoFundo = document.getElementById('escurecimentoFundo');
+
+const botoesHeader = document.querySelectorAll('.botaoHeader');
+
+function abrirInicioMenuMobile() {
+    escurecimentoFundo.style.display = 'flex';
+    setTimeout(() => {
+        escurecimentoFundo.style.opacity = '1';
+        inicioMenuMobile.style.right = '0';
+    }, 50);
+    inicioMenuMobile.style.display = 'flex';
+}
+
+function fecharInicioMenuMobile() {
+    escurecimentoFundo.style.opacity = '0';
+    setTimeout(() => {
+        escurecimentoFundo.style.display = 'none';
+        inicioMenuMobile.style.right = '-300px';
+    }, 500);
+    setTimeout(() => {
+        inicioMenuMobile.style.display = 'none';
+    }, 1500);
+}
+
+if (mobile) {
+    // Itera sobre os botões e os move para a div inicioMenuMobile
+    botoesHeader.forEach(botaoHeader => {
+        inicioMenuMobile.appendChild(botaoHeader);
+    });
+}
+
+const opcoesHeaderNavegacao = document.getElementById('opcoesHeaderNavegacao')
+const opcoesHeaderPrincipal = document.getElementById('opcoesHeaderPrincipal');
+
+const original = window.matchMedia('min-width: 401px').matches;
+
+if (original) {
+    botoesHeader.forEach(botaoHeader => {
+        inicioMenuMobile.appendChild(botaoHeader);
+    });
+}
 
 const chatbotToggler = document.querySelector(".chatbot-toggler");
 const closeBtn = document.querySelector(".close-btn");
@@ -109,50 +156,3 @@ chatInput.addEventListener("keydown", (e) => {
 sendChatBtn.addEventListener("click", handleChat);
 closeBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
 chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
-// menuMobile
-// Verifica se a largura da página é menor ou igual a 425px
-const mobile = window.matchMedia('(max-width: 425px)').matches;
-const iconMenuMobile = document.getElementById('iconMenuMobile');
-
-const inicioMenuMobile = document.getElementById('inicioMenuMobile');
-const escurecimentoFundo = document.getElementById('escurecimentoFundo');
-
-const botoesHeader = document.querySelectorAll('.botaoHeader');
-
-function abrirInicioMenuMobile() {
-    escurecimentoFundo.style.display = 'flex';
-    setTimeout(() => {
-        escurecimentoFundo.style.opacity = '1';
-        inicioMenuMobile.style.right = '0';
-    }, 50);
-    inicioMenuMobile.style.display = 'flex';
-}
-
-function fecharInicioMenuMobile() {
-    escurecimentoFundo.style.opacity = '0';
-    setTimeout(() => {
-        escurecimentoFundo.style.display = 'none';
-        inicioMenuMobile.style.right = '-300px';
-    }, 500);
-    setTimeout(() => {
-        inicioMenuMobile.style.display = 'none';
-    }, 1500);
-}
-
-if (mobile) {
-    // Itera sobre os botões e os move para a div inicioMenuMobile
-    botoesHeader.forEach(botaoHeader => {
-        inicioMenuMobile.appendChild(botaoHeader);
-    });
-}
-
-const opcoesHeaderNavegacao = document.getElementById('opcoesHeaderNavegacao')
-const opcoesHeaderPrincipal = document.getElementById('opcoesHeaderPrincipal');
-
-const original = window.matchMedia('min-width: 401px').matches;
-
-if (original) {
-    botoesHeader.forEach(botaoHeader => {
-        inicioMenuMobile.appendChild(botaoHeader);
-    });
-}
