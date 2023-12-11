@@ -2115,10 +2115,6 @@ h1 {
   }
 }
 
-#iconMenuMobile {
-  display: none;
-}
-
 /* Teste Infos */
 
 @media (min-width: 1200px) {
@@ -2168,9 +2164,12 @@ h1 {
     width: 100;
   }
 
-
-  #iconMenuMobile {
-    display: flex;
+  #countdown {
+    background-color: #211e29;
+    border-radius: 10px;
+    padding: 0 10px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   #escurecimentoFundo {
@@ -2186,6 +2185,11 @@ h1 {
     opacity: 0;
 
     transition: opacity 0.5s ease;
+  }
+
+  .titulo-promo {
+    font-size: 12px;
+    font-weight: 600;
   }
 
   .botao-login {
@@ -2232,6 +2236,16 @@ h1 {
     padding-top: 30px;
     font-weight: 285;
   }
+
+  .logo {
+    position: absolute;
+    left: 0;
+    margin: 0px 10px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+
+  }
 }
 
 @media (max-width: 375px) {
@@ -2261,7 +2275,11 @@ h1 {
     height: 70rem;
   }
 
-
+  #iconMenuBurger {
+    position: absolute;
+    margin: 0px 10px;
+    right: 0;
+  }
 }
 
 
