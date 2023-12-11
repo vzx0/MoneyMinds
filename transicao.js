@@ -22,3 +22,5 @@ const fecharIntro = () => {
     const introContainer = document.querySelector('.cortina-container');
     introContainer.style.display = 'none';
 };
+
+
