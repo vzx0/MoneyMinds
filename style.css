@@ -1,9 +1,11 @@
-@import url('https://fonts.cdnfonts.com/css/poppins');
+
+@import url('https://fonts.cdnfonts.com/css/satoshi');
+          
 
 
 :root {
-  --font-principal: 'Poppins', sans-serif;
-  --font-secundaria: 'Poppins', sans-serif;
+  --font-principal: 'Satoshi', sans-serif;
+  --font-secundaria: 'Satoshi', sans-serif;
 
   --cor-primaria: #268DF3;
   --cor-secundaria: #6ab5ff;
@@ -719,10 +721,22 @@ nav>a:hover {
   align-items: center;
 }
 
-.botao-login:hover {
-  background-color: white;
-  color: var(--cor-primaria);
+.botao-comprar:hover {
+  color: rgb(0, 0, 0);
+  border: 1px #fff solid;
+  font-size: 1.4rem;
+  background-color: #fff;
+  transition-duration: 0.3s;
 }
+
+#botao-principal a:hover {
+  color: rgb(0, 0, 0);
+  border: 1px #fff solid;
+  font-size: 1.4rem;
+  background: #fff;
+  transition-duration: 0.3s;
+}
+
 
 .botao-section-principal {
   background-color: var(--cor-primaria);
@@ -764,14 +778,18 @@ nav>a:hover {
 /* Pacotes */
 
 .pacotes { 
-  padding-block: var(--section-padding); 
+  padding-block: 80px; 
   align-items: center;
   justify-content: center;
 }
 
-.pacotes-lista { margin-bottom: 40px; }
+.pacotes-lista { 
+  margin-bottom: 40px;
+ }
 
-.pacotes-lista > li:not(:last-child) { margin-bottom: 30px; }
+.pacotes-lista > li:not(:last-child) { 
+  margin-bottom: 30px;
+ }
 
 .pacotes-card {
   /* background: #fff; */
@@ -779,7 +797,9 @@ nav>a:hover {
   border-radius: 15px;
 }
 
-.pacotes-card .card-banner { height: 250px; }
+.pacotes-card .card-banner { 
+  height: 250px;
+ }
 
 .pacotes-card .card-banner img {
   width: 100%;
@@ -1425,9 +1445,9 @@ p {
   line-height: 1.5;
 }
 
-.sobre-lista .item-lista:not(:last-child) { 
+/* .sobre-lista .item-lista:not(:last-child) { 
   margin-block-end: 15px;
- }
+ } */
 
 .sobre-lista .item-lista::before {
   top: 10px;
@@ -1514,9 +1534,10 @@ p {
   justify-content: center;
   align-items: center;
   margin: auto;
-  margin-block: 130px;
+  margin-block: 230px;
   overflow: hidden;
   position: relative;
+  margin-top: 320px;
 }
 .slide-empresa::before, .slide-empresa::after {
   background: -webkit-gradient(linear, left top, right top, from(white), to(rgba(255, 255, 255, 0)));
@@ -1680,6 +1701,7 @@ hr {
 .faq-todos {
   margin-top: 40px;
   gap: 16px;
+  max-width: 454px;
   display: flex;
   flex-direction: column;
 }
@@ -2226,10 +2248,18 @@ h1 {
   width: calc(100% - 28px); 
 }
 
-.sobre-wrapper:last-child {
-  display: flex;
-  flex-direction: column-reverse;
+@media screen and (max-width:450px) {
+  .sobre-wrapper{
+    display: flex !important ;
+    flex-direction: column;
+    
+  }
+  .dois {
+    flex-direction: column-reverse;
+  }
+
 }
+
 
 .botao-grupo {
   display: flex;
@@ -2245,21 +2275,12 @@ h1 {
    */
 
   .sobre-wrapper {
-    display: grid !important;
+    display: grid ;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 90px;
   }
 
-
-  .sobre-wrapper:not(:last-child) { 
-    margin-bottom: 100px;
-   }
-
-  .sobre-wrapper:last-child .sobre-banner {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-  }
 
 
 
