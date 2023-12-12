@@ -362,12 +362,12 @@ function questionario2() {
 function questionario3() {
     const perguntas3 = [
         {
-            pergunta: "A vida faz sentido?",
+            pergunta: "Lorem Ipsun?",
             respostas: [
-                { texto: "Não sei", correta: true },
-                { texto: "Neymar?", correta: false },
-                { texto: "Certamente que não", correta: false },
-                { texto: "Certamente que sim", correta: false }
+                { texto: "Dolor asperiores maxime dignissimos", correta: true },
+                { texto: "Dolor sit amet", correta: false },
+                { texto: "Esse consectetur odit odio distinctio recusandae in fuga.", correta: false },
+                { texto: "Vero quibusdam perferendis modi debitis sint architecto", correta: false }
             ]
         },
         {
@@ -380,21 +380,21 @@ function questionario3() {
             ]
         },
         {
-            pergunta: "Você gosta de javascript",
+            pergunta: "5*5",
             respostas: [
-                { texto: "Depende do dia", correta: true },
-                { texto: "Claro", correta: false },
-                { texto: "Não", correta: false },
-                { texto: "Adoro fazer programa", correta: false }
+                { texto: "25", correta: true },
+                { texto: "0", correta: false },
+                { texto: "125", correta: false },
+                { texto: "10", correta: false }
             ]
         },
         {
-            pergunta: "Por que esse site precisa de um coco para funcionar?",
+            pergunta: "100*100",
             respostas: [
-                { texto: "Coco?", correta: false },
-                { texto: "Team Fortress 2", correta: true },
-                { texto: "Sla fi", correta: false },
-                { texto: "Concordo plenamente", correta: false }
+                { texto: "1000", correta: false },
+                { texto: "10000", correta: true },
+                { texto: "1", correta: false },
+                { texto: "Sim", correta: false }
             ]
         },
     ];

@@ -26,39 +26,39 @@ const marcadorConclusaoCapM3 = document.getElementById('marcadorConclusaoM3');
 function questionario1() {
     const perguntas = [
         {
-            pergunta: "Quanto é 1+1?",
+            pergunta: "Qual é o principal objetivo do marketing de conteúdo?",
             respostas: [
-                { texto: "6", correta: false },
-                { texto: "2", correta: true },
-                { texto: "7", correta: false },
-                { texto: "8", correta: false }
+                { texto: "Aumentar o número de seguidores nas redes sociais", correta: false },
+                { texto: "Criar conteúdo relevante para educar, engajar e atrair o público-alvo", correta: true },
+                { texto: "Vender produtos e serviços a todo custo", correta: false },
+                { texto: "Priorizar a publicidade paga em detrimento do conteúdo orgânico", correta: false }
             ]
         },
         {
-            pergunta: "Quanto é 2+2",
+            pergunta: "O que é a segmentação de mercado no contexto do marketing?",
             respostas: [
-                { texto: "7", correta: false },
-                { texto: "5", correta: false },
-                { texto: "4", correta: true },
-                { texto: "9", correta: false }
+                { texto: "A definição de uma identidade de marca", correta: false },
+                { texto: "A criação de anúncios específicos para diferentes plataformas", correta: false },
+                { texto: "A divisão do mercado em grupos menores com características e necessidades similares", correta: true },
+                { texto: "A escolha do melhor canal de distribuição para um produto ou serviço", correta: false }
             ]
         },
         {
-            pergunta: "Quanto é 3+3",
+            pergunta: "O que é o funil de vendas no marketing digital?",
             respostas: [
-                { texto: "6", correta: true },
-                { texto: "5", correta: false },
-                { texto: "12", correta: false },
-                { texto: "9", correta: false }
+                { texto: "Um método para adquirir clientes de maneira agressiva", correta: false },
+                { texto: "Uma estratégia exclusiva para vendas online", correta: false },
+                { texto: "Uma representação das etapas que um potencial cliente percorre antes de realizar uma compra", correta: true },
+                { texto: "Um processo para diminuir o número de clientes em potencial", correta: false }
             ]
         },
         {
-            pergunta: "Quanto é 4+4",
+            pergunta: "Qual é o principal objetivo da análise SWOT (Strengths, Weaknesses, Opportunities, Threats) no contexto do marketing?",
             respostas: [
-                { texto: "7", correta: false },
-                { texto: "5", correta: false },
-                { texto: "8", correta: true },
-                { texto: "9", correta: false }
+                { texto: "Identificar concorrentes diretos para superá-los", correta: false },
+                { texto: "Avaliar o retorno sobre o investimento em marketing", correta: false },
+                { texto: "Aumentar a satisfação do cliente por meio de estratégias de marketing digital", correta: false },
+                { texto: " Identificar os pontos fortes e fracos internos, bem como as oportunidades e ameaças externas", correta: true }
             ]
         },
     ];
