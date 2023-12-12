@@ -2602,10 +2602,10 @@ h1 {
   margin-bottom: 100px;
 }
 
-.sobre-wrapper:last-child .sobre-banner {
+/* .sobre-wrapper:last-child .sobre-banner {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
-}
+} */
 
 
 
