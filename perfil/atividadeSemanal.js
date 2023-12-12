@@ -1,3 +1,14 @@
+// Gráfico Dashboard
+
+function registrarTempoNoSite() {
+    const agora = new Date();
+    const dataAtual = `${agora.getFullYear()}-${(agora.getMonth() + 1).toString().padStart(2, '0')}-${agora.getDate().toString().padStart(2, '0')}`;
+
+    let tempoNoSite = parseInt(localStorage.getItem(dataAtual)) || 0;
+
+    localStorage.setItem(dataAtual, tempoNoSite);
+}
+
 // Função para registrar o momento em que o usuário entra no site
 function registrarEntradaNoSite() {
     const agora = new Date();
