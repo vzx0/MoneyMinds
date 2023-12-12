@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="style.css">
+         
+    <title>Teste Login</title> 
+</head>
+<body>
+    
+    <div class="container">
+        <div class="forms">
+            <div class="form login">
+                <span class="titulo">Login</span>
+
+                <form action="#">
+                    <div class="campo-input">
+                        <input type="text" placeholder="exemplo@gmail.com" maxlength="25" required>
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="campo-input">
+                        <input type="senha" class="senha" placeholder="Escreva sua senha" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+
+                    <div class="checkbox-texto">
+                        <div class="checkbox-conteudo">
+                            <input type="checkbox" id="lembrar">
+                            <label for="lembrar" class="texto">Lembrar-me</label>
+                        </div>
+                        
+                        <a href="/index.html" class="texto">Esqueceu a senha?</a>
+                    </div>
+
+                    <div class="campo-input botao" href="/perfil/perfil.html">
+                        <a href="/perfil/perfil.html" class="botao-link">
+                        <input type="button" value="Login">
+                    </div>
+                </a>
+                </form>
+
+                <div class="login-registro">
+                    <span class="texto">Não possui um cadastro?
+                        <a href="#" class="texto registro-link">Registra-se agora</a>
+                    </span>
+                </div>
+            </div>
+
+
+            <!-- Registro -->
+            <div class="form registro">
+                <span class="titulo">Registro</span>
+
+                <form action="#">
+                    <div class="campo-input">
+                        <input type="text" placeholder="Escreva seu nome" maxlength="25" required>
+                        <i class="uil uil-user"></i>
+                    </div>
+                    <div class="campo-input">
+                        <input type="text" placeholder="Seu e-mail" required>
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="campo-input senha-campo">
+                        <input type="password" class="senha" placeholder="Criar uma senha" required>
+                        <i id="teste" class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+                    <div class="requisitos esconder">
+                        <p class="titulo-requisito">A senha deve conter:</p>
+                        <ul class="requisito-lista">
+                            <li>
+                                <i class="fa-solid fa-x"></i>
+                                <span>Minímo de 8 caracteres</span>
+                              </li>
+                              <li>
+                                <i class="fa-solid fa-x"></i>
+                                <span>Número (0-9)</span>
+                              </li>
+                              <li>
+                                <i class="fa-solid fa-x"></i>
+                                <span>Letra maiuscúla</span>
+                              </li>
+                              <li>
+                                <i class="fa-solid fa-x"></i>
+                                <span>Caracter especial</span>
+                              </li>
+                              <li>
+                                <i class="fa-solid fa-x"></i>
+                                <span>Letra minuscula</span>
+                              </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="campo-input">
+                        <input type="password" class="senha" placeholder="Confirme sua senha" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+
+                    <div class="checkbox-texto">
+                        <div class="checkbox-conteudo">
+                            <input type="checkbox" id="termos">
+                            <label for="termos" class="texto">Eu aceito todos termos e condições.</label>
+                        </div>
+                    </div>
+
+                    <div class="campo-input botao">
+                        <a href="/perfil/perfil.html" class="botao-link">
+                        <input type="button" value="Registrar">
+                    </a>
+                    </div>
+                </form>
+
+                <div class="login-registro">
+                    <span class="texto">Já possui cadastro?
+                        <a href="#" class="texto login-link">Entrar</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <script src="script.js"></script> 
+</body>
+</html>
