@@ -51,3 +51,23 @@ function fecharInicioMenuMobile() {
     }, 1500);
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    const sectionMain = document.querySelector('.section-main');
+  
+    // Configuração inicial da seção
+    gsap.set(sectionMain, { opacity: 0, y: 250 });
+  
+    // Animação para revelar a seção <main>
+    gsap.to(sectionMain, {
+      opacity: 1,
+      y: 0,
+      duration: 3.5,
+      ease: 'power1.out',
+      onComplete: function() {
+        console.log('Animação de revelação da section-main concluída!');
+      }
+    });
+  });
+  
+  
+

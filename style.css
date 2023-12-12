@@ -305,7 +305,20 @@ button {
   .sobre .secao-texto {
     margin-bottom: 20px !important;
     text-align: center;
+    font-size: 2rem !important;
   }
+
+  .sobre .titulo-sobre {
+    margin-bottom: 15px;
+    letter-spacing: -2px;
+    font-size: 4rem !important;
+    text-align: center;
+  }
+
+  .oferecemos{
+    font-size: 4rem !important;
+  }
+  
 
   .faq-conteudo{
     font-size: 1.7rem !important;
@@ -1237,6 +1250,11 @@ small {
   align-items: center;
 }
 
+.oferecemos{
+  color: #268DF3;
+  font-size: 5rem;
+}
+
 .cortina {
   position: absolute;
   top: 0;
@@ -1244,7 +1262,7 @@ small {
   height: 100%;
   width: 100%;
   /* Metade da largura da tela */
-  background-color: #211e29;
+  background-color: #212121;
 }
 
 .cortina-esquerda {
@@ -1726,7 +1744,7 @@ hr {
 
 .empresa-logo img{
   width: 130px;
-  height: 100px;
+  height: 40px;
 }
 
 
@@ -2484,12 +2502,14 @@ h1 {
 .sobre .titulo-sobre {
   margin-bottom: 15px;
   letter-spacing: -2px;
+  font-size: 5rem;
   text-align: center;
 }
 
 .sobre .secao-texto {
   margin-bottom: 190px;
   text-align: center;
+  font-size: 2.5rem;
 
 }
 
