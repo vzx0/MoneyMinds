@@ -129,8 +129,6 @@ function renderizarGraficoSemanal() {
 
         const { dias: novosDias, tempos: novosTempos } = obterDadosGrafico();
         atualizarGrafico(novosDias, novosTempos);
-
-        console.log('Atualizando gráfico');
     }, 5000); // Atualiza a cada 5 segundos (5000 milissegundos)
 }
 

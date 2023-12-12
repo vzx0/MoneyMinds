@@ -5,7 +5,7 @@ main {
     flex-direction: row;
 
     background-color: var(--background-principal);
-    background-image: linear-gradient(to right, var(--cor-primaria), var(--background-principal));
+    background-image: linear-gradient(to right, var(--background-principal) 70%,  var(--cor-primaria) 200%);
 }
 
 .ocultarOriginal {

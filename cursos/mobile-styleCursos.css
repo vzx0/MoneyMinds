@@ -190,12 +190,15 @@
     .secoesTextos {
         position: relative;
     
-        top: 0px;
-    
         height: auto;
+
+        margin: 50px 0px;
     }
 
-
+    .tituloMobile {
+        text-align: center;
+        margin: 10px;
+    }
 
     /* questionario */
     .secoesQuestionarios {
@@ -215,6 +218,8 @@
         align-items: center;
         justify-content: center;
         width: 100%;
+
+        text-align: center;
     }
 
     .respostas {

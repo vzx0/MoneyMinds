@@ -26,39 +26,39 @@ const marcadorConclusaoCapI3 = document.getElementById('marcadorConclusaoI3');
 function questionario1() {
     const perguntas = [
         {
-            pergunta: "Quanto é 1+1?",
+            pergunta: "Qual é a principal vantagem da diversificação de investimentos?",
             respostas: [
-                { texto: "6", correta: false },
-                { texto: "2", correta: true },
-                { texto: "7", correta: false },
-                { texto: "8", correta: false }
+                { texto: "Redução dos riscos", correta: true },
+                { texto: "Aumento dos custos", correta: false },
+                { texto: "Diminuição dos retornos", correta: false },
+                { texto: "Limitação da liquidez", correta: false }
             ]
         },
         {
-            pergunta: "Quanto é 2+2",
+            pergunta: "Qual é uma característica da análise técnica no mercado de investimentos?",
             respostas: [
-                { texto: "7", correta: false },
-                { texto: "5", correta: false },
-                { texto: "4", correta: true },
-                { texto: "9", correta: false }
+                { texto: "Baseia-se em eventos econômicos", correta: false },
+                { texto: "Utiliza indicadores macroeconômicos", correta: false },
+                { texto: "Analisa o comportamento passado dos preços", correta: true },
+                { texto: "Considera apenas os fundamentos das empresas", correta: false }
             ]
         },
         {
-            pergunta: "Quanto é 3+3",
+            pergunta: "Qual tipo de investimento geralmente é mais associado a retornos fixos?",
             respostas: [
-                { texto: "6", correta: true },
-                { texto: "5", correta: false },
-                { texto: "12", correta: false },
-                { texto: "9", correta: false }
+                { texto: "Ações", correta: false },
+                { texto: "Fundos Imobiliários", correta: false },
+                { texto: "Títulos de Renda Fixa", correta: true },
+                { texto: "Fundos de Ações", correta: false }
             ]
         },
         {
-            pergunta: "Quanto é 4+4",
+            pergunta: "O que é essencial ao considerar o perfil de investidor?",
             respostas: [
-                { texto: "7", correta: false },
-                { texto: "5", correta: false },
-                { texto: "8", correta: true },
-                { texto: "9", correta: false }
+                { texto: "Investimento sem avaliação de riscos", correta: false },
+                { texto: "Investimento sem avaliação de riscos", correta: false },
+                { texto: "Especulação no mercado de ações", correta: false },
+                { texto: "Objetivos de longo prazo", correta: true }
             ]
         },
     ];
