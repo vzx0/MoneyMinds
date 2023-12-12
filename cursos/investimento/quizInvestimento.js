@@ -197,39 +197,39 @@ function questionario1() {
 function questionario2() {
     const perguntas2 = [
         {
-            pergunta: "A vida faz sentido?",
+            pergunta: "Qual é a principal diferença entre ações e títulos de renda fixa?",
             respostas: [
-                { texto: "Não sei", correta: true },
-                { texto: "Neymar?", correta: false },
-                { texto: "Certamente que não", correta: false },
-                { texto: "Certamente que sim", correta: false }
+                { texto: "Ações representam empréstimos, enquanto títulos representam propriedade em uma empresa", correta: true },
+                { texto: "Ações oferecem retornos fixos, enquanto títulos são mais voláteis", correta: false },
+                { texto: "Ações não pagam dividendos, enquanto títulos pagam juros fixos", correta: false },
+                { texto: "Ações são mais seguras que títulos", correta: false }
             ]
         },
         {
-            pergunta: "7*7",
+            pergunta: "O que é um indicador de mercado utilizado na análise técnica?",
             respostas: [
-                { texto: "190", correta: false },
-                { texto: "27", correta: false },
-                { texto: "14", correta: false },
-                { texto: "49", correta: true }
+                { texto: "Preço/Lucro (P/L)", correta: false },
+                { texto: "Retorno sobre Patrimônio Líquido (ROE)", correta: false },
+                { texto: "Lucro Operacional", correta: false },
+                { texto: "Média Móvel", correta: true }
             ]
         },
         {
-            pergunta: "Você gosta de javascript",
+            pergunta: "Qual é a vantagem de investir em fundos de investimento?",
             respostas: [
-                { texto: "Depende do dia", correta: true },
-                { texto: "Claro", correta: false },
-                { texto: "Não", correta: false },
-                { texto: "Adoro fazer programa", correta: false }
+                { texto: "Maior controle sobre os investimentos", correta: false },
+                { texto: "Retornos garantidos", correta: false },
+                { texto: "Risco mínimo", correta: false },
+                { texto: "Acesso a uma carteira diversificada mesmo com baixos montantes de investimento", correta: true }
             ]
         },
         {
-            pergunta: "Por que esse site precisa de um coco para funcionar?",
+            pergunta: "Qual é a importância da análise fundamentalista no mercado de ações?",
             respostas: [
-                { texto: "Coco?", correta: false },
-                { texto: "Team Fortress 2", correta: true },
-                { texto: "Sla fi", correta: false },
-                { texto: "Concordo plenamente", correta: false }
+                { texto: "Avalia o histórico de preços das ações", correta: false },
+                { texto: "Analisa os fundamentos financeiros das empresas", correta: true },
+                { texto: "Baseia-se apenas na intuição do investidor", correta: false },
+                { texto: "Considera apenas os fatores técnicos do mercado", correta: false }
             ]
         },
     ];
@@ -362,25 +362,25 @@ function questionario2() {
 function questionario3() {
     const perguntas3 = [
         {
-            pergunta: "A vida faz sentido?",
+            pergunta: "Qual é a vantagem principal da estratégia de longo prazo ao investir?",
             respostas: [
-                { texto: "Não sei", correta: true },
-                { texto: "Neymar?", correta: false },
-                { texto: "Certamente que não", correta: false },
-                { texto: "Certamente que sim", correta: false }
+                { texto: "Menos impacto das flutuações de curto prazo", correta: true },
+                { texto: "Maior volatilidade", correta: false },
+                { texto: "Lucros imediatos garantidos", correta: false },
+                { texto: "Menos diversificação", correta: false }
             ]
         },
         {
-            pergunta: "7*7",
+            pergunta: "Quais são alguns fatores que os investidores consideram ao escolher ações para investir?",
             respostas: [
-                { texto: "190", correta: false },
-                { texto: "27", correta: false },
-                { texto: "14", correta: false },
-                { texto: "49", correta: true }
+                { texto: "Apenas o preço das ações", correta: false },
+                { texto: "Histórico de dividendos", correta: false },
+                { texto: "Notícias recentes sobre a empresa", correta: false },
+                { texto: "Todos os outros itens", correta: true }
             ]
         },
         {
-            pergunta: "Você gosta de javascript",
+            pergunta: "O que representa o índice de Sharpe em investimentos?",
             respostas: [
                 { texto: "Depende do dia", correta: true },
                 { texto: "Claro", correta: false },
@@ -389,12 +389,12 @@ function questionario3() {
             ]
         },
         {
-            pergunta: "Por que esse site precisa de um coco para funcionar?",
+            pergunta: "O que é um portfólio de investimentos?",
             respostas: [
-                { texto: "Coco?", correta: false },
-                { texto: "Team Fortress 2", correta: true },
-                { texto: "Sla fi", correta: false },
-                { texto: "Concordo plenamente", correta: false }
+                { texto: "Uma única ação de uma empresa", correta: false },
+                { texto: "Uma coleção de investimentos diversificados", correta: true },
+                { texto: "Apenas investimentos de curto prazo", correta: false },
+                { texto: "Um tipo específico de título de renda fixa", correta: false }
             ]
         },
     ];
