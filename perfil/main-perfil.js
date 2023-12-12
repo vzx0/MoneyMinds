@@ -1,28 +1,40 @@
 // executar funcoes quando a página carrega
 document.addEventListener("DOMContentLoaded", function () {
-    trocarNome()
+    ocultarPaginas();
+    dashboard.style.display = "flex";
 })
 
-// funcoes trocar pagina
+// Definicao de variaveis que armazenam elementos através de id
 alteracaoPerfil = document.getElementById('alteracaoPerfil')
 dashboard = document.getElementById('dashboard');
 cursosDashboard = document.getElementById('cursos');
 ranking = document.getElementById('ranking');
 
+// selecao do elemento com a classe "principal"
 principal = document.querySelector('.principal');
 
+// verifica se a largura da página é de no máximo 400px
+// .matches retorna valor Boolean (Verdadeiro ou false)
 const mobile = window.matchMedia('(max-width: 400px)').matches;
 
+function ocultarPaginas() {
+    alteracaoPerfil.style.display = "none"
+    dashboard.style.display = "none";
+    cursosDashboard.style.display = "none";
+    ranking.style.display = "none";
+}
+
+// funcao para exibir a página com base no "onclick" do botao
 function exibirAlteracaoPerfil() {
+    // se a página já estiver sendo exibida, a funcao é encerrada
     if (alteracaoPerfil.style.display === "flex") {
         return
     } else {
-        alteracaoPerfil.style.display = "flex"
-        dashboard.style.display = "none";
-        cursosDashboard.style.display = "none";
-        ranking.style.display = "none";
+        // se não, as outras páginas são ocultadas e o a altura da página é definida para 
+        ocultarPaginas();
+        alteracaoPerfil.style.display = "flex";
 
-        principal.style.height = "100vh"
+        principal.style.height = "100vh";
     }
 }
 
@@ -30,10 +42,8 @@ function exibirDashboard() {
     if (dashboard.style.display === "flex") {
         return
     } else {
-        alteracaoPerfil.style.display = "none"
+        ocultarPaginas();
         dashboard.style.display = "flex";
-        cursosDashboard.style.display = "none";
-        ranking.style.display = "none";
 
         principal.style.height = "auto"
 
@@ -46,24 +56,20 @@ function exibirCursos() {
     if (cursosDashboard.style.display === "flex") {
         return
     } else {
-        alteracaoPerfil.style.display = "none"
-        dashboard.style.display = "none";
+        ocultarPaginas();
         cursosDashboard.style.display = "flex";
-        ranking.style.display = "none";
 
-        principal.style.height = "100%"
+        principal.style.height = "100%";
     }
 }
 function exibirRanking() {
     if (ranking.style.display === "flex") {
         return
     } else {
-        alteracaoPerfil.style.display = "none"
-        dashboard.style.display = "none";
-        cursosDashboard.style.display = "none";
+        ocultarPaginas();
         ranking.style.display = "flex";
 
-        principal.style.height = "100vh"
+        principal.style.height = "100vh";
     }
 }
 
