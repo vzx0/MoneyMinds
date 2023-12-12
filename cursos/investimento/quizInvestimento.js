@@ -31,7 +31,7 @@ function questionario1() {
         {
             pergunta: "Qual é a principal vantagem da diversificação de investimentos?",
             respostas: [
-                { texto: "Redução dos riscos", correta: true },
+                { texto: "Redução dos riscos.", correta: true },
                 { texto: "Aumento dos custos", correta: false },
                 { texto: "Diminuição dos retornos", correta: false },
                 { texto: "Limitação da liquidez", correta: false }
@@ -42,7 +42,7 @@ function questionario1() {
             respostas: [
                 { texto: "Baseia-se em eventos econômicos", correta: false },
                 { texto: "Utiliza indicadores macroeconômicos", correta: false },
-                { texto: "Analisa o comportamento passado dos preços", correta: true },
+                { texto: "Analisa o comportamento passado dos preços.", correta: true },
                 { texto: "Considera apenas os fundamentos das empresas", correta: false }
             ]
         },
@@ -51,7 +51,7 @@ function questionario1() {
             respostas: [
                 { texto: "Ações", correta: false },
                 { texto: "Fundos Imobiliários", correta: false },
-                { texto: "Títulos de Renda Fixa", correta: true },
+                { texto: "Títulos de Renda Fixa.", correta: true },
                 { texto: "Fundos de Ações", correta: false }
             ]
         },
@@ -61,7 +61,7 @@ function questionario1() {
                 { texto: "Investimento sem avaliação de riscos", correta: false },
                 { texto: "Investimento sem avaliação de riscos", correta: false },
                 { texto: "Especulação no mercado de ações", correta: false },
-                { texto: "Objetivos de longo prazo", correta: true }
+                { texto: "Objetivos de longo prazo.", correta: true }
             ]
         },
     ];
@@ -225,7 +225,7 @@ function questionario2() {
         {
             pergunta: "Qual é a principal diferença entre ações e títulos de renda fixa?",
             respostas: [
-                { texto: "Ações representam empréstimos, enquanto títulos representam propriedade em uma empresa", correta: true },
+                { texto: "Ações representam empréstimos, enquanto títulos representam propriedade em uma empresa.", correta: true },
                 { texto: "Ações oferecem retornos fixos, enquanto títulos são mais voláteis", correta: false },
                 { texto: "Ações não pagam dividendos, enquanto títulos pagam juros fixos", correta: false },
                 { texto: "Ações são mais seguras que títulos", correta: false }
@@ -237,7 +237,7 @@ function questionario2() {
                 { texto: "Preço/Lucro (P/L)", correta: false },
                 { texto: "Retorno sobre Patrimônio Líquido (ROE)", correta: false },
                 { texto: "Lucro Operacional", correta: false },
-                { texto: "Média Móvel", correta: true }
+                { texto: "Média Móvel.", correta: true }
             ]
         },
         {
@@ -246,14 +246,14 @@ function questionario2() {
                 { texto: "Maior controle sobre os investimentos", correta: false },
                 { texto: "Retornos garantidos", correta: false },
                 { texto: "Risco mínimo", correta: false },
-                { texto: "Acesso a uma carteira diversificada mesmo com baixos montantes de investimento", correta: true }
+                { texto: "Acesso a uma carteira diversificada mesmo com baixos montantes de investimento.", correta: true }
             ]
         },
         {
             pergunta: "Qual é a importância da análise fundamentalista no mercado de ações?",
             respostas: [
                 { texto: "Avalia o histórico de preços das ações", correta: false },
-                { texto: "Analisa os fundamentos financeiros das empresas", correta: true },
+                { texto: "Analisa os fundamentos financeiros das empresas.", correta: true },
                 { texto: "Baseia-se apenas na intuição do investidor", correta: false },
                 { texto: "Considera apenas os fatores técnicos do mercado", correta: false }
             ]
@@ -390,7 +390,7 @@ function questionario3() {
         {
             pergunta: "Qual é a vantagem principal da estratégia de longo prazo ao investir?",
             respostas: [
-                { texto: "Menos impacto das flutuações de curto prazo", correta: true },
+                { texto: "Menos impacto das flutuações de curto prazo.", correta: true },
                 { texto: "Maior volatilidade", correta: false },
                 { texto: "Lucros imediatos garantidos", correta: false },
                 { texto: "Menos diversificação", correta: false }
@@ -402,13 +402,13 @@ function questionario3() {
                 { texto: "Apenas o preço das ações", correta: false },
                 { texto: "Histórico de dividendos", correta: false },
                 { texto: "Notícias recentes sobre a empresa", correta: false },
-                { texto: "Todos os outros itens", correta: true }
+                { texto: "Todos os outros itens.", correta: true }
             ]
         },
         {
             pergunta: "O que representa o índice de Sharpe em investimentos?",
             respostas: [
-                { texto: "Depende do dia", correta: true },
+                { texto: "Depende do dia.", correta: true },
                 { texto: "Claro", correta: false },
                 { texto: "Não", correta: false },
                 { texto: "Adoro fazer programa", correta: false }
@@ -418,7 +418,7 @@ function questionario3() {
             pergunta: "O que é um portfólio de investimentos?",
             respostas: [
                 { texto: "Uma única ação de uma empresa", correta: false },
-                { texto: "Uma coleção de investimentos diversificados", correta: true },
+                { texto: "Uma coleção de investimentos diversificados.", correta: true },
                 { texto: "Apenas investimentos de curto prazo", correta: false },
                 { texto: "Um tipo específico de título de renda fixa", correta: false }
             ]

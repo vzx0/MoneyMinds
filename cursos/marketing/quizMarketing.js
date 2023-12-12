@@ -29,7 +29,7 @@ function questionario1() {
             pergunta: "Qual é o principal objetivo do marketing de conteúdo?",
             respostas: [
                 { texto: "Aumentar o número de seguidores nas redes sociais", correta: false },
-                { texto: "Criar conteúdo relevante para educar, engajar e atrair o público-alvo", correta: true },
+                { texto: "Criar conteúdo relevante para educar, engajar e atrair o público-alvo.", correta: true },
                 { texto: "Vender produtos e serviços a todo custo", correta: false },
                 { texto: "Priorizar a publicidade paga em detrimento do conteúdo orgânico", correta: false }
             ]
@@ -39,7 +39,7 @@ function questionario1() {
             respostas: [
                 { texto: "A definição de uma identidade de marca", correta: false },
                 { texto: "A criação de anúncios específicos para diferentes plataformas", correta: false },
-                { texto: "A divisão do mercado em grupos menores com características e necessidades similares", correta: true },
+                { texto: "A divisão do mercado em grupos menores com características e necessidades similares.", correta: true },
                 { texto: "A escolha do melhor canal de distribuição para um produto ou serviço", correta: false }
             ]
         },
@@ -48,7 +48,7 @@ function questionario1() {
             respostas: [
                 { texto: "Um método para adquirir clientes de maneira agressiva", correta: false },
                 { texto: "Uma estratégia exclusiva para vendas online", correta: false },
-                { texto: "Uma representação das etapas que um potencial cliente percorre antes de realizar uma compra", correta: true },
+                { texto: "Uma representação das etapas que um potencial cliente percorre antes de realizar uma compra.", correta: true },
                 { texto: "Um processo para diminuir o número de clientes em potencial", correta: false }
             ]
         },
@@ -58,7 +58,7 @@ function questionario1() {
                 { texto: "Identificar concorrentes diretos para superá-los", correta: false },
                 { texto: "Avaliar o retorno sobre o investimento em marketing", correta: false },
                 { texto: "Aumentar a satisfação do cliente por meio de estratégias de marketing digital", correta: false },
-                { texto: " Identificar os pontos fortes e fracos internos, bem como as oportunidades e ameaças externas", correta: true }
+                { texto: " Identificar os pontos fortes e fracos internos, bem como as oportunidades e ameaças externas.", correta: true }
             ]
         },
     ];
