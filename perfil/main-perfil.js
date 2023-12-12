@@ -30,7 +30,7 @@ function exibirAlteracaoPerfil() {
     if (alteracaoPerfil.style.display === "flex") {
         return
     } else {
-        // se não, as outras páginas são ocultadas e o a altura da página é definida para 
+        // se não, as outras páginas são ocultadas e a altura do conteudo é definido para ocupar toda a altura da página
         ocultarPaginas();
         alteracaoPerfil.style.display = "flex";
 
@@ -47,6 +47,8 @@ function exibirDashboard() {
 
         principal.style.height = "auto"
 
+        // neste caso, se o parametro mobile for verdadeiro, a altura do conteudo é definida para ocupar 100% do elemento "pai"
+        // para se ajustar na responsividade
         if (mobile){
             principal.style.height = "100%";
         }
@@ -75,20 +77,29 @@ function exibirRanking() {
 
 
 // ---------- CURSOS ----------
+// seleciona e retorna todos os elementos com a classe curso em uma especie de "array"
 let cursos = document.querySelectorAll('.curso');
 
+// a funcao é chamada com base no parametro event
 function mostrarTexto(event) {
+    // aqui o elemento com a classe informacoesCurso que o usuário manipulou é selecionado
     let informacoesCurso = event.currentTarget.querySelector('.informacoesCurso');
+
+    // entao se a a altura do elemento for diferente de 250px, a altura é definida como 250px
     if (informacoesCurso.style.height !== "250px") {
         informacoesCurso.style.height = "250px";
     }
 
     let informacoesTexto = event.currentTarget.querySelector('.informacoesTexto');
 
-
+    // se o parametro informacoesTexto for verdadeiro
     if (informacoesTexto) {
-        // Definir um texto diferente para cada curso
+        // define um texto diferente para cada curso
+
+        // define o texto como vazio
         let texto = "";
+
+        // se o elemento que o usuário manipulou possui o id correto, um texto específico é definido para cada banner
         if (event.currentTarget.id === "cursoInvestimentos") {
             texto = "Descubra o poder das finanças e transforme sua relação com o dinheiro neste curso abrangente sobre finanças.";
         } else if (event.currentTarget.id === "cursoTecnologia") {
@@ -97,13 +108,18 @@ function mostrarTexto(event) {
             texto = "Aprenda estratégias de marketing eficazes e melhore suas habilidades neste curso dinâmico.";
         }
 
+        // define o textContent do banner = ao respectivo texto
         informacoesTexto.textContent = texto;
+
+        // animacao para o surgimento do texto de forma suave
         informacoesTexto.style.opacity = '1';
+
+        // mover o elemento no eixo Y para 0
         informacoesTexto.style.transform = 'translateY(0)';
     }
 }
 
-// Definir a função para esconder o texto ao retirar o cursor
+// função para esconder o texto ao retirar o cursor
 function esconderTexto(event) {
     let informacoesCurso = event.currentTarget.querySelector('.informacoesCurso');
     if (informacoesCurso.style.height !== "175px") {
@@ -119,7 +135,7 @@ function esconderTexto(event) {
     }
 }
 
-// Adicionar os eventos de mouseover e mouseleave a cada curso
+// eventos de mouseover e mouseleave para cada curso cada curso
 cursos.forEach(curso => {
     curso.addEventListener("mouseover", mostrarTexto);
     curso.addEventListener("mouseleave", esconderTexto);
@@ -130,6 +146,7 @@ cursos.forEach(curso => {
 // popup imagem
 popupImagem = document.getElementById('alteracaoPerfil-imagem')
 
+// funcoes onclick para exibicao do popup
 function popupFoto() {
     popupImagem.style.display = "flex";
 }
@@ -142,17 +159,23 @@ function fecharPopupFoto() {
 var mediaStream;
 
 function abrirCamera() {
+    // pega a midia de vídeo da camera do usuario
     navigator.mediaDevices.getUserMedia({ video: true, audio: false })
         .then(function (stream) {
+
+            // entao ao permitir o acesso a camera, o video da mesma é exibido na constante areaVideo
             mediaStream = stream;
             const areaVideo = document.getElementById('camera');
             areaVideo.srcObject = stream;
         })
+
+        // se um erro for detectado ou o acesso não for permitido, essa mensagem é exibida no console
         .catch(function (error) {
             console.error('Erro ao acessar a câmera', error)
         })
 };
 
+// desativa o acesso ao video da camera e a exibicao na tela
 function fecharCamera() {
     navigator.mediaDevices.getUserMedia({ video: false });
 
@@ -174,8 +197,10 @@ function tirarFoto() {
     canvas.height = areaVideo.videoHeight;
 
     const context = canvas.getContext('2d');
+    // "desenha" o video da camera a partir do ponto 0 dos eixos x e y do canvas
     context.drawImage(areaVideo, 0, 0, canvas.width, canvas.height);
 
+    // transforma o conteudo do canva na foto de perfil
     const imageDataURL = canvas.toDataURL();
     const fotoDiv = document.getElementById('foto');
 
@@ -184,7 +209,7 @@ function tirarFoto() {
     // armazena a foto no localStorage
     localStorage.setItem('fotoPerfil', imageDataURL);
 
-    // def img do perfil com a foto capturada
+    // define a imagem do perfil com a foto capturada
     perfilImg.style.backgroundImage = `url(${imageDataURL})`;
     perfilImg.style.backgroundSize = "cover";
 
@@ -207,8 +232,10 @@ function tirarFoto() {
 
 // Função para verificar e carregar a foto do localStorage ao carregar a página
 document.addEventListener("DOMContentLoaded", function () {
+    // define a constante fotoSalva como o item fotoPerfil do localStorage
     const fotoSalva = localStorage.getItem('fotoPerfil');
 
+    // se houver uma fotoSalva
     if (fotoSalva) {
         const fotoDiv = document.getElementById('foto');
         fotoDiv.style.backgroundImage = `url(${fotoSalva})`;
@@ -231,15 +258,20 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+// funcao para trocar de nome com o parametro de novoNome
 function trocarNome(novoNome) {
+    // a constante inputNome recebe o novo nome cortando espacos em branco no inicio e fim com .trim()
+    // se não haver nada no .trim() o inputNome é definido como usuário
+    // || = OU
     const inputNome = novoNome.trim() || 'Usuário';
     const nomes = document.querySelectorAll('.nomeDeUsuario');
 
+    // cada elemento que exibe o nome de usuario recebe o valor do inputNome
     nomes.forEach(nome => {
         nome.textContent = inputNome;
     });
 
-    // Armazenar o novo nome no localStorage
+    // armazena o novo nome no localStorage
     localStorage.setItem('nomeUsuario', inputNome);
 }
 
@@ -248,6 +280,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const nomeArmazenado = localStorage.getItem('nomeUsuario');
 
     if (nomeArmazenado) {
+        // se haver um nome armazenado no local storage, o nome é trocado para este
         trocarNome(nomeArmazenado);
     }
 });
@@ -255,6 +288,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // Adiciona um evento para o botão
 const botaoTrocarNome = document.getElementById('botaoTrocarNome');
 botaoTrocarNome.addEventListener('click', function () {
+    // a funcao trocar nome recebe o parametro novoNome, que é obtido extraindo o valor do inputNome
     const novoNome = document.getElementById('inputNome').value;
     trocarNome(novoNome);
 });
