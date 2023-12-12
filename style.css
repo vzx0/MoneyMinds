@@ -125,7 +125,8 @@ button {
 
 #titulo-pc {
   text-align: center;
-  line-height: 70px;
+  line-height: 50px;
+  margin-top: 100px;
   font-weight: 600;
   font-size: 7rem
 }
@@ -178,7 +179,7 @@ button {
 \*-----------------------------------*/
 
 .porque {
-  padding-block: var(--section-padding);
+  padding-block: 80px;
 }
 
 .porque-content {
@@ -481,6 +482,7 @@ button {
   padding: 3em 1.5em;
   display: grid;
   margin: 180px auto;
+  margin-top: -40px;
   place-items: center;
   font-family: "League Spartan", system-ui, sans-serif;
   font-size: 1.5rem;
@@ -490,8 +492,8 @@ button {
 
 .main__heading {
   font-weight: 600;
-  font-size: 2.25em;
-  margin-bottom: 0.75em;
+  font-size: 3.25em;
+  margin-bottom: 2.75em;
   text-align: center;
   color: #eceff1;
 }
@@ -541,6 +543,7 @@ button {
 
 .card__bullets {
   line-height: 1.4;
+  font-size: 14px;
 }
 
 .card__bullets li::before {
@@ -564,12 +567,14 @@ button {
 
 
 .card__price {
-  font-size: 1.75em;
+  font-size: 2.75em;
+  text-align: center;
+  padding-top: 20px;
   font-weight: 700;
 }
 
 .flow>*+* {
-  margin-top: var(--flow-space, 1.25em);
+  margin-top: 1.25em;
 }
 
 .cta {
@@ -582,24 +587,22 @@ button {
   background-color: #0d0d0d;
   padding: 1.7em;
   border-radius: 10px;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   font-weight: 600;
 }
 
-.overlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  user-select: none;
-  opacity: var(--opacity, 0);
-  -webkit-mask: radial-gradient(35rem 35rem at var(--x) var(--y),
-      #000 1%,
-      transparent 50%);
-  mask: radial-gradient(35rem 35rem at var(--x) var(--y),
-      #000 1%,
-      transparent 50%);
-  transition: 400ms mask ease;
-  will-change: mask;
+.cta:hover {
+  display: block;
+  align-self: end;
+  margin: 1em 0 0.5em 0;
+  text-align: center;
+  text-decoration: none;
+  color: #000000;
+  background-color: #ffffff;
+  padding: 1.7em;
+  border-radius: 10px;
+  font-size: 1.9rem;
+  font-weight: 600;
 }
 
 .overlay .card {
@@ -767,17 +770,23 @@ nav>a:hover {
 }
 
 .botao-comprar:hover {
-  color: rgb(0, 0, 0);
+  color: #080808;
   border: 1px #fff solid;
-  font-size: 1.4rem;
-  background-color: #fff;
+  border-radius: 8px;
+  padding: 12px 16px;
   transition-duration: 0.3s;
+  font-weight: 400;
+  width: max-content;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 #botao-principal a:hover {
   color: rgb(0, 0, 0);
   border: 1px #fff solid;
-  font-size: 1.4rem;
+  font-size: 2rem;
   background: #fff;
   transition-duration: 0.3s;
 }
@@ -808,6 +817,23 @@ nav>a:hover {
   border: 1px white solid;
   border-radius: 3rem;
   font-size: 19px;
+  padding: 15px 40px;
+  margin-top: 20px;
+  align-items: center;
+  font-weight: 400;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-around; */
+  justify-content: space-between;
+  width: max-content;
+}
+
+.botao-secundario:hover {
+  color: rgb(0, 0, 0);
+  border: 1px white solid;
+  border-radius: 3rem;
+  background-color: #fff;
   padding: 15px 40px;
   margin-top: 20px;
   align-items: center;
@@ -1242,7 +1268,7 @@ small {
 
 
 .faq-titulo {
-  font-size: 1.6rem;
+  font-size: 2rem;
   color: var(--text);
   font-weight: 500;
   width: 100%;
@@ -1368,7 +1394,7 @@ small {
 
 .footer-bottom {
   padding-block: 20px;
-  border-top: 1px solid var(--onyx);
+  border-top: 1px solid #797979;
 }
 
 .copyright {
@@ -1801,7 +1827,7 @@ hr {
 }
 
 .faq-conteudo {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   padding: 20px;
   max-width: 600px;
   /* Ajuste o valor conforme necessário para o seu layout */
@@ -2185,6 +2211,10 @@ h1 {
     display: flex;
   }
 
+  .main-flow{
+    margin-top: -20px;
+  }
+
   .ocultarMobile {
     display: none;
   }
@@ -2199,6 +2229,7 @@ h1 {
   .botaoHeader {
     margin: 20px;
     width: 100%;
+    text-align: center;
   }
 
 
@@ -2237,11 +2268,24 @@ h1 {
   .botao-login {
     display: flex;
     width: 260px;
+    align-items: center;
+    flex-direction: column;
   }
 
   .botao-comprar {
     display: flex;
     width: 260px;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .botao-comprar:hover {
+    display: flex;
+    width: 260px;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   #inicioMenuMobile {
@@ -2286,8 +2330,12 @@ h1 {
     margin: 0px 10px;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: -40px;
 
+  }
+
+  .container{
+    margin: 10px
   }
 }
 
