@@ -21,6 +21,10 @@ main {
     display: none;
 }
 
+.logoPerfil {
+    width: 300px;
+}
+
 .secao {
     display: none;
     
