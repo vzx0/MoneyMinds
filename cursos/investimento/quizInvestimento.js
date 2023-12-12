@@ -1,5 +1,6 @@
 // executar funcoes quando a página carrega
 document.addEventListener("DOMContentLoaded", function () {
+    // se o item existir no localStorage, o background-image do marcador passa a ser um sinal de check
     const marcadorSalvoI = localStorage.getItem('marcadorConclusaoCapI1');
     if (marcadorSalvoI) {
         marcadorConclusaoCapI1.style.backgroundImage = marcadorSalvoI;
@@ -24,6 +25,8 @@ const marcadorConclusaoCapI3 = document.getElementById('marcadorConclusaoI3');
 // QUIZ CAP 1
 // criacao de perguntas e suas respostas
 function questionario1() {
+    // declaracao do array perguntas que possui os objetos pergunta, que por sua vez possuem as propriedades pergunta e respostas
+    // respostas também é um array que armazena em conjuntos o texto da opcao, juntamente com o valor Boolean de verdadeiro ou falso
     const perguntas = [
         {
             pergunta: "Qual é a principal vantagem da diversificação de investimentos?",
@@ -63,49 +66,61 @@ function questionario1() {
         },
     ];
 
-    // Função para embaralhar array
+    // Função para embaralhar que recebe o array perguntas
     function shuffleArray(perguntas) {
+        // loop for iterando sobre o comprimento do array perguntas
         for (let i = perguntas.length - 1; i > 0; i--) {
+            // embaralhando a ordem das perguntas através do Math.random
             const j = Math.floor(Math.random() * (i + 1));
             [perguntas[i], perguntas[j]] = [perguntas[j], perguntas[i]];
         }
         return perguntas;
     }
 
-    // Embaralhar a ordem das perguntas
+    // embaralhar a ordem das perguntas
     const perguntasEmbaralhadas = shuffleArray(perguntas);
 
-    // Exibir perguntas e respostas na tela
+    // exibir perguntas e respostas na tela
     perguntasEmbaralhadas.forEach(pergunta => {
         shuffleArray(pergunta.respostas);
     });
 
-    // Função para criar elementos HTML para as perguntas e respostas
+    // função para criar elementos HTML para as perguntas e respostas
     let perguntaAtual = 0;
     let respostasCorretas = 0;
 
     function exibirPergunta() {
         const secaoResposta = document.getElementById('secaoResposta');
+        // limpar secaoResposta
         secaoResposta.innerHTML = '';
 
+        // obtém a pergunta atual no array
         const pergunta = perguntas[perguntaAtual];
 
+        // cria um elemento html div
         const divPergunta = document.createElement('div');
+        // adiciona a classe pergunta
         divPergunta.classList.add('pergunta');
+        // define o conteudo de texto da div como a pergunta
         divPergunta.textContent = pergunta.pergunta;
 
+        // criacao de div para inserir as opcoes de resposta
         const divRespostas = document.createElement('div');
         divRespostas.classList.add('respostas');
 
+        // geracao das respostas através do forEach com os parametros de resposta e o index
         pergunta.respostas.forEach((resposta, index) => {
             const divResposta = document.createElement('div');
             divResposta.classList.add('resposta');
             divResposta.textContent = resposta.texto;
+            // define atributo de data-correta para verificar se é a resposta certa
             divResposta.dataset.correta = resposta.correta;
+            // define atributo data-indice para identificar o indice da resposta
             divResposta.dataset.indice = index;
 
             divResposta.addEventListener('click', conferirResposta);
 
+            // insere a resposta na divRespostas
             divRespostas.appendChild(divResposta);
         });
 
@@ -114,7 +129,9 @@ function questionario1() {
     }
 
     function conferirResposta(event) {
+        // o evento é utilizado como argumento para identificar qual elemento foi clicado
         const respostaClicada = event.target;
+        // verifica se a resposta clicada é a resposta correta através do data-correta === "true"
         const respostaCorreta = respostaClicada.dataset.correta === 'true';
 
         const conclusaoQuestoes = document.getElementById('conclusaoQuestoes');
@@ -124,54 +141,60 @@ function questionario1() {
         const botaoFimQuestoesProsseguir = document.getElementById('botaoFimQuestoesProsseguir');
         const botaoFimQuestoesTentarNovamente = document.getElementById('botaoFimQuestoesTentarNovamente');
 
+        // se a resposta escolhida foi a correta
         if (respostaCorreta) {
+            // a classe correta é adicionada para exibir ao usuário se ele acertou ou não
             respostaClicada.classList.add('correta');
+            // adiciona 25 pontos à variavel respostas corretas
             respostasCorretas += 25;
         } else {
             respostaClicada.classList.add('errada');
             respostaClicada.style.backgroundColor = "red";
         }
 
+        // incrementa o valor de perguntaAtual
         perguntaAtual++;
         if (perguntaAtual < perguntas.length) {
+            // após 250ms, exibir pergunta avançará para a próxima
             setTimeout(exibirPergunta, 250);
         }
 
-        // se conseguiu
+        // se a pontuacao de respostas corretas for maior ou igual a 75
         else if (respostasCorretas >= 75) {
             secaoQuestoes.style.display = "none";
             conclusaoQuestoes.style.display = "flex";
 
             tituloFimQuestoes.textContent = "Parabéns, você conseguiu!";
+            // concatenacao do texto e a % de acertos
             textoFimQuestoes.textContent = `Você acertou ${respostasCorretas}% das questões, clique aqui para ir para a próxima fase: `
             botaoFimQuestoesProsseguir.style.display = "flex";
             botaoFimQuestoesTentarNovamente.style.display = "none";
 
-
-
-            // Adicione uma variável para rastrear o capítulo atual
+            // variavel para registrar o capitulo atual
             let capituloAtual = 0;
 
-            // No evento de clique do botão "Prosseguir"
+            // Ao clicar no botao "Prosseguir"
             botaoFimQuestoesProsseguir.addEventListener('click', () => {
-                // Certifique-se de não ultrapassar o número total de capítulos
+                // se o capitulo atual for menor que o comprimento dos capitulos - 1, a funcao passa para o proximo capitulo
                 if (capituloAtual < capitulos.length - 1) {
                     // Oculta o capítulo atual e exibe o próximo capítulo
                     capitulos[capituloAtual].style.display = 'none';
                     capituloAtual++;
                     capitulos[capituloAtual].style.display = 'flex';
 
+                    // declara o novoMarcador como a imagem do sinal de check e salva no localStorage
                     const novoMarcadorI = "url(../icons-cursos/checkConclusaoCap.svg)";
                     marcadorConclusaoCapI1.style.backgroundImage = novoMarcadorI;
                     localStorage.setItem('marcadorConclusaoCapI1', novoMarcadorI);
                 } else {
-                    // Se atingir o último capítulo, você pode ocultar a seção de questões ou realizar outra ação
+                    // Se atingir o último capítulo, a secao de questoes é ocultada
                     secaoQuestoes.style.display = 'none';
                 }
             });
 
         }
 
+        // se a % de acertos for menor que 75%
         else {
             secaoQuestoes.style.display = "none";
             conclusaoQuestoes.style.display = "flex";
@@ -180,6 +203,7 @@ function questionario1() {
             textoFimQuestoes.textContent = `Você acertou ${respostasCorretas}% das questões, clique aqui para tentar novamente: `
             botaoFimQuestoesTentarNovamente.style.display = "flex";
 
+            // ao clicar em tentar novamente, o questionario é resetado e as perguntas e respostas são novamente embaralhadas
             botaoFimQuestoesTentarNovamente.addEventListener('click', () => {
                 perguntaAtual = 0;
                 respostasCorretas = 0; // Reinicia as respostas corretas para zero
@@ -192,6 +216,8 @@ function questionario1() {
     };
     exibirPergunta();
 }
+
+// ----------  ----------  ----------  ----------  ----------  ----------  ----------  -----------
 
 // QUIZ CAP 2
 function questionario2() {
