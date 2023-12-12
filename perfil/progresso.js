@@ -1,19 +1,26 @@
-// progresso em cada curso
+// as variaveis de progresso em cada curso são originalmente definidas para 0
 let porcentagemProgressoInvestimento = 0;
 let porcentagemProgressoTecnologia = 0;
 let porcentagemProgressoMarketing = 0;
 
 // função para ajustar as porcentagens para uma escala de 0 a 100
 function ajustarPara100(valor) {
+    // retorna o valor convertido, possuindo o limite de 100 através do math.min
     return Math.min(100, Math.round((valor / 3) * 100)); 
 }
 
-// Funções de progresso definidas fora do bloco condicional
+
 function progressoInvestimento() {
     const circuloInvestimento = document.querySelector('#circuloProgressoInvestimento');
     const porcentagemAjustada = ajustarPara100(porcentagemProgressoInvestimento);
 
+    // exibicao da % de progresso no curso concatenando o valor da porcentagem com o simbolo "%"
     document.getElementById("porcentagemProgressoInvestimento").innerHTML = porcentagemAjustada + "%";
+
+    // a progressão do grafico é feita através de uma tecnica CSS utilizando uma propriedade em SVG
+    // strokeDashoffset determina o espacamento entre linhas tracejadas
+    // 440 é o valor equivalente a todo o comprimento do grafico, então é feito um calculo para diminuir o strokeDashoffset
+    // com base na % de progresso
     circuloInvestimento.style.strokeDashoffset = 440 - (440 * porcentagemAjustada) / 100;
 }
 
@@ -33,9 +40,11 @@ function progressoMarketing() {
     circuloInvestimento.style.strokeDashoffset = 440 - (440 * porcentagemAjustada) / 100;
 }
 
+// no carregamento da pagina
 document.addEventListener('DOMContentLoaded', function () {
+    // se a pagina for perfil.html
     if (window.location.href.includes('perfil.html')) {
-        // Recuperar os valores do localStorage
+        // recuperar os valores do localStorage, ou 0 caso não haja
         porcentagemProgressoInvestimento = parseInt(localStorage.getItem('porcentagemProgressoInvestimento')) || 0;
         porcentagemProgressoTecnologia = parseInt(localStorage.getItem('porcentagemProgressoTecnologia')) || 0;
         porcentagemProgressoMarketing = parseInt(localStorage.getItem('porcentagemProgressoMarketing')) || 0;
@@ -47,19 +56,21 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// Botões de progresso dos cursos em outras páginas
+// constante que armazena todos botoes de progresso de investimento em nodeJS, de forma semelhante a um array
 const btnProgressoInvestimento = document.querySelectorAll('.btnProgressoInvestimento');
 
 btnProgressoInvestimento.forEach(btnI => {
     btnI.addEventListener('click', () => {
+        // ao clicar em um botao de prosseguir para o proximo capítulo
+        // se a % for maior que 100
         if (porcentagemProgressoInvestimento > 100) {
             porcentagemProgressoInvestimento = 100;
         } else {
-            // Incrementar a porcentagem
+            // incrementa a porcentagem
             porcentagemProgressoInvestimento++;
         }
 
-        // Salvar no localStorage
+        // salvar no localStorage
         localStorage.setItem('porcentagemProgressoInvestimento', porcentagemProgressoInvestimento);
     });
 });
@@ -71,11 +82,9 @@ btnProgressoTecnologia.forEach(btnT => {
         if (porcentagemProgressoTecnologia > 100) {
             porcentagemProgressoTecnologia = 100;
         } else {
-            // Incrementar a porcentagem
             porcentagemProgressoTecnologia++;
         }
 
-        // Salvar no localStorage
         localStorage.setItem('porcentagemProgressoTecnologia', porcentagemProgressoTecnologia);
     });
 });
@@ -87,11 +96,9 @@ btnProgressoMarketing.forEach(btnM => {
         if (porcentagemProgressoMarketing > 100) {
             porcentagemProgressoMarketing = 100;
         } else {
-            // Incrementar a porcentagem
             porcentagemProgressoMarketing++;
         }
 
-        // Salvar no localStorage
         localStorage.setItem('porcentagemProgressoMarketing', porcentagemProgressoMarketing);
     });
 });
